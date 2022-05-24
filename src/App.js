@@ -10,7 +10,8 @@ function App() {
     <div>
 
       <img className="logo" src={logoE} alt="logo in green" />
-
+      <p> hi </p>
+      
     </div>
   );
 }
