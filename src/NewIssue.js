@@ -13,7 +13,7 @@ const NewIssue = () => {
 
     const [issueName, setIssueName] = useState("")
     const [infoRadio, setInfoRadio] = useState("");
-    const [radioStatus, setRadioStatus] = useState("proactive");
+    const [radioStatus, setRadioStatus] = useState("usable");
 
     const handleIssueNameChange = (e) => {
         setIssueName(e.target.value);
