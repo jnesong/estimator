@@ -14,8 +14,7 @@ const NewIssue = () => {
     const [issueName, setIssueName] = useState("")
     const [infoRadio, setInfoRadio] = useState("");
     const [radioStatus, setRadioStatus] = useState("usable");
-    const [newItems, setNewItems] = useState([<NewItem key={1}/>, <NewItem key={2}/>])
-
+    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} />])
 
     const handleIssueNameChange = (e) => {
         setIssueName(e.target.value);
@@ -25,10 +24,15 @@ const NewIssue = () => {
         setRadioStatus(e.target.value);
     };
 
-    const holdItemCount = ( count ) => {
-        console.log(count)
-        setNewItems([...newItems, <NewItem key={count}/>])
+    const holdItemCount = (count) => {
+        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} />])
+    }
 
+    function deleteItem(count) {
+        console.log("count",count)
+        console.log(newItems)
+        let deleteFiltered = newItems.filter(item => item.props.count !== count)
+        setNewItems(deleteFiltered)
     }
 
     console.log(radioStatus)
@@ -86,8 +90,8 @@ const NewIssue = () => {
                 {newItems}
 
                 <div className="add-button">
-                    <AddItem 
-                    holdItemCount={holdItemCount}
+                    <AddItem
+                        holdItemCount={holdItemCount}
                     />
                 </div>
 

@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 
-const NewItem = () => {
+const NewItem = ( {count, deleteItem} ) => {
 
     const [itemName, setItemName] = useState("")
     const [costChange, setCostChange] = useState(0)
@@ -52,7 +52,7 @@ const NewItem = () => {
 
                 <CategoryCost />
                 <Quantity />
-                <DeleteButton />
+                <DeleteButton count={count} deleteItem={deleteItem}/>
                 
             </div>
         </>
