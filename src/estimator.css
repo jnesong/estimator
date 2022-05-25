@@ -8,10 +8,18 @@
     margin-top: 10px;
 }
 
-.item-name,
-.item-status {
+.item-name {
     display: inline-block;
     margin: 8px;
+}
+
+.issue-status {
+    display: inline-block;
+    margin: 5px;
+}
+
+.category {
+    display: inline-block;
 }
 
 .info-radio {

@@ -40,7 +40,7 @@ const NewIssue = () => {
                     onChange={handleIssueNameChange}
                 />
 
-                <div className="item-status">
+                <div className="issue-status">
 
                     <RadioGroup row name="row-radio-buttons-group" >
 
