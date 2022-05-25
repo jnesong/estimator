@@ -4,54 +4,57 @@ import { useState } from 'react';
 import CategoryCost from './CategoryCost'
 //css
 import TextField from '@mui/material/TextField';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputAdornment from '@mui/material/InputAdornment';
+import Quantity from './Quantity';
+
 
 
 const NewItem = () => {
 
     const [itemName, setItemName] = useState("")
-    const [category, setCategory] = useState("Other")
-
+    const [costChange, setCostChange] = useState(0)
 
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
     }
 
-    const handleCategoryChange = (e) => {
-        setCategory(e.target.value);
+    const handleCostChange = (e) => {
+        setCostChange(e.target.value);
     }
 
     console.log(itemName)
-    console.log(category)
+    console.log(costChange)
 
     return (
         <>
             <div className="new-item-container">
 
-                    <TextField
-                        required
-                        id="outlined-required"
-                        label="Item"
-                        variant="outlined"
-                        onChange={handleItemNameChange}
-                    />
+                <TextField
+                    required
+                    id="outlined-required"
+                    label="Item"
+                    variant="outlined"
+                    onChange={handleItemNameChange}
+                />
 
-                    <Select id="demo-select-small" value={category} label="Category" onChange={handleCategoryChange}>
-                        <MenuItem value="">
-                            <em>Other</em>
-                        </MenuItem>
-                        <MenuItem value={"material"}> Material Cost </MenuItem>
-                        <MenuItem value={"labor"}> Labor Cost </MenuItem>
-                        <MenuItem value={"all"}> All Inclusive </MenuItem>
-                    </Select>
+                <OutlinedInput
+                    onKeyPress={(event) => {
+                        if (!/[0-9]|\./.test(event.key) || //the key pressed is not the key for 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or “.” OR
+                            (/\./.test(event.key) && costChange.includes("."))) //it is a “.” AND the input value already includes a “.”
+                        { event.preventDefault(); }
+                    }}
+                    id="outlined-adornment-amount"
+                    value={costChange}
+                    onChange={handleCostChange}
+                    startAdornment={<InputAdornment position="start">$</InputAdornment>}
 
-                    <div>
-                        <CategoryCost />
-                    </div>
-                    <div> quantity </div>
+                />
 
 
+                <CategoryCost />
+                <Quantity/>
+                
             </div>
         </>
 
