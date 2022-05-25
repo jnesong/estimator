@@ -17,9 +17,11 @@
 .info-radio {
     letter-spacing: 2px;
     font-family: 'Mulish';
-    font-size: 12px;
+    font-size: 14px;
     display: inline-block;
-    z-index: 1px;
+    position: fixed;
+    z-index: 10px;
+    padding-top: 8px;
 }
 
 body {

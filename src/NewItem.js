@@ -8,7 +8,12 @@ import RadioGroup from '@mui/material/RadioGroup';
 
 const NewItem = () => {
 
-    const [infoRadio, setInfoRadio] = useState("")
+    const [infoRadio, setInfoRadio] = useState("");
+    const [radioStatus, setRadioStatus] = useState("proactive");
+
+    const handleChange = (e) => {
+        setRadioStatus(e.target.value);
+    };
 
 
 
@@ -28,14 +33,27 @@ const NewItem = () => {
 
                     <RadioGroup
                         row
-                        aria-labelledby="demo-row-radio-buttons-group-label"
                         name="row-radio-buttons-group"
                     >
 
-                        <Radio color="success" onClick={() => setInfoRadio("Critical")}/>
-                        
-                        <Radio color="warning" />
-                        <Radio color="error" />
+                        <Radio 
+                        color="success" 
+                        onClick={() => setInfoRadio("Proactive")}
+                        onChange={handleChange}
+                        value="proactive"
+                        />
+                        <Radio 
+                        color="warning"
+                        onClick={() => setInfoRadio("Usable")}
+                        onChange={handleChange}
+                        value="usable"
+                        />
+                        <Radio
+                        color="error" 
+                        onClick={() => setInfoRadio("Unusable")}
+                        onChange={handleChange}
+                        value="unusable"
+                        />
 
 
                     </RadioGroup>
