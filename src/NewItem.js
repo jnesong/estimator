@@ -2,15 +2,14 @@
 import { useState } from 'react';
 //components
 import CategoryCost from './CategoryCost'
+import DeleteButton from './buttons/DeleteButton';
+import Quantity from './Quantity';
 //css
 import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-import Quantity from './Quantity';
 
-
-
-const NewItem = () => {
+const NewItem = ( {count, deleteItem} ) => {
 
     const [itemName, setItemName] = useState("")
     const [costChange, setCostChange] = useState(0)
@@ -51,9 +50,9 @@ const NewItem = () => {
 
                 />
 
-
                 <CategoryCost />
-                <Quantity/>
+                <Quantity />
+                <DeleteButton count={count} deleteItem={deleteItem}/>
                 
             </div>
         </>

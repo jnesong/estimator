@@ -4,11 +4,8 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
-const filter = createFilterOptions();
-
-
 const CategoryCost = () => {
-
+    const filter = createFilterOptions();
     const [categoryValue, setCategoryValue] = useState(null);
     const categories = ['All Inclusive', 'Labor', 'Materials'];
 

@@ -1,8 +1,8 @@
 //libraries
 import { useState } from 'react';
-
 //components
 import NewItem from './NewItem';
+import AddItem from './buttons/AddItem';
 //css
 import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
@@ -14,6 +14,7 @@ const NewIssue = () => {
     const [issueName, setIssueName] = useState("")
     const [infoRadio, setInfoRadio] = useState("");
     const [radioStatus, setRadioStatus] = useState("usable");
+    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} />])
 
     const handleIssueNameChange = (e) => {
         setIssueName(e.target.value);
@@ -23,6 +24,16 @@ const NewIssue = () => {
         setRadioStatus(e.target.value);
     };
 
+    const holdItemCount = (count) => {
+        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} />])
+    }
+
+    function deleteItem(count) {
+        console.log("count",count)
+        console.log(newItems)
+        let deleteFiltered = newItems.filter(item => item.props.count !== count)
+        setNewItems(deleteFiltered)
+    }
 
     console.log(radioStatus)
     console.log(issueName)
@@ -38,7 +49,7 @@ const NewIssue = () => {
                         id="outlined-required"
                         label="Issue Name"
                         variant="outlined"
-                        style={{width:"400px"}}
+                        style={{ width: "400px" }}
                         onChange={handleIssueNameChange}
                     />
 
@@ -76,9 +87,13 @@ const NewIssue = () => {
 
                 <br />
 
-                <NewItem />
-                <NewItem />
+                {newItems}
 
+                <div className="add-button">
+                    <AddItem
+                        holdItemCount={holdItemCount}
+                    />
+                </div>
 
             </form>
         </>
