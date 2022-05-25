@@ -1,8 +1,18 @@
+//libraries
+import { useState } from 'react';
 //css
 import TextField from '@mui/material/TextField';
 
 
 const NewItem = () => {
+
+    const [itemName, setItemName] = useState("")
+
+    const handleItemNameChange = (e) => {
+        setItemName(e.target.value);
+    }
+
+    console.log(itemName)
 
     return (
         <>
@@ -13,6 +23,7 @@ const NewItem = () => {
                         id="outlined-required"
                         label="Item"
                         variant="outlined"
+                        onChange={handleItemNameChange}
                     />
                 </div>
 

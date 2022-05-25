@@ -11,14 +11,21 @@ import RadioGroup from '@mui/material/RadioGroup';
 
 const NewIssue = () => {
 
+    const [issueName, setIssueName] = useState("")
     const [infoRadio, setInfoRadio] = useState("");
     const [radioStatus, setRadioStatus] = useState("proactive");
+
+    const handleIssueNameChange = (e) => {
+        setIssueName(e.target.value);
+    };
 
     const handleRadioChange = (e) => {
         setRadioStatus(e.target.value);
     };
 
+
     console.log(radioStatus)
+    console.log(issueName)
 
 
     return (
@@ -30,6 +37,7 @@ const NewIssue = () => {
                     id="outlined-required"
                     label="Issue Name"
                     variant="outlined"
+                    onChange={handleIssueNameChange}
                 />
 
                 <div className="item-status">
