@@ -2,11 +2,12 @@
 import { useState } from 'react';
 //components
 import CategoryCost from './CategoryCost'
+import DeleteButton from './DeleteButton';
+import Quantity from './Quantity';
 //css
 import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-import Quantity from './Quantity';
 
 
 
@@ -51,9 +52,9 @@ const NewItem = () => {
 
                 />
 
-
                 <CategoryCost />
-                <Quantity/>
+                <Quantity />
+                <DeleteButton />
                 
             </div>
         </>
