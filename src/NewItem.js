@@ -2,14 +2,12 @@
 import { useState } from 'react';
 //components
 import CategoryCost from './CategoryCost'
-import DeleteButton from './DeleteButton';
+import DeleteButton from './buttons/DeleteButton';
 import Quantity from './Quantity';
 //css
 import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-
-
 
 const NewItem = () => {
 

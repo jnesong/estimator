@@ -1,8 +1,8 @@
 //libraries
 import { useState } from 'react';
-
 //components
 import NewItem from './NewItem';
+import AddItem from './buttons/AddItem';
 //css
 import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
@@ -14,6 +14,8 @@ const NewIssue = () => {
     const [issueName, setIssueName] = useState("")
     const [infoRadio, setInfoRadio] = useState("");
     const [radioStatus, setRadioStatus] = useState("usable");
+    const [newItems, setNewItems] = useState([<NewItem key={1}/>, <NewItem key={2}/>])
+
 
     const handleIssueNameChange = (e) => {
         setIssueName(e.target.value);
@@ -23,6 +25,11 @@ const NewIssue = () => {
         setRadioStatus(e.target.value);
     };
 
+    const holdItemCount = ( count ) => {
+        console.log(count)
+        setNewItems([...newItems, <NewItem key={count}/>])
+
+    }
 
     console.log(radioStatus)
     console.log(issueName)
@@ -38,7 +45,7 @@ const NewIssue = () => {
                         id="outlined-required"
                         label="Issue Name"
                         variant="outlined"
-                        style={{width:"400px"}}
+                        style={{ width: "400px" }}
                         onChange={handleIssueNameChange}
                     />
 
@@ -76,9 +83,13 @@ const NewIssue = () => {
 
                 <br />
 
-                <NewItem />
-                <NewItem />
+                {newItems}
 
+                <div className="add-button">
+                    <AddItem 
+                    holdItemCount={holdItemCount}
+                    />
+                </div>
 
             </form>
         </>

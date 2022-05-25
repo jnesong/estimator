@@ -11,9 +11,13 @@ body {
 
 }
 
-/*
-styling for new issue and its items
-*/
+/* button div style */
+.add-button {
+    margin: 25px;
+    margin-left: 200px;
+}
+
+/* styling for new issue and its items */
 
 .issue-name {
     margin-left: 200px;
@@ -25,7 +29,7 @@ styling for new issue and its items
     align-items: center;
     text-align: center;
     margin-top: 25px;
-    padding:25px;
+    padding:15px;
     padding-left:200px;
     padding-right:200px;
     grid-template-columns: 300px 200px 200px 200px 50px;
@@ -47,7 +51,6 @@ styling for new issue and its items
     margin: 5px;
     margin-left: 16px;
 }
-
 
 .info-radio {
     letter-spacing: 2px;
