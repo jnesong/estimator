@@ -1,6 +1,19 @@
+body {
+    letter-spacing: 2px;
+    font-family: 'Mulish';
+    margin:auto
+}
+
 .logo {
     width: 260px;
     height: auto;
+    margin-left: 200px;
+
+}
+
+.issue-name {
+    margin-left: 200px;
+    display: inline-block;
 }
 
 .new-item-container {
@@ -16,9 +29,9 @@
     column-gap: 16px;
 }
 
-
 .item-name {
     display: inline-block;
+
 }
 
 .category {
@@ -28,6 +41,7 @@
 .issue-status {
     display: inline-block;
     margin: 5px;
+    margin-left: 16px;
 }
 
 
@@ -39,11 +53,4 @@
     position: fixed;
     z-index: 10px;
     padding-top: 8px;
-}
-
-body {
-    text-align: center;
-    letter-spacing: 2px;
-    font-family: 'Mulish';
-    margin:auto
 }

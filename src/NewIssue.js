@@ -32,43 +32,47 @@ const NewIssue = () => {
         <>
             <form>
 
-                <TextField
-                    required
-                    id="outlined-required"
-                    label="Issue Name"
-                    variant="outlined"
-                    onChange={handleIssueNameChange}
-                />
+                <div className="issue-name">
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="Issue Name"
+                        variant="outlined"
+                        style={{width:"400px"}}
+                        onChange={handleIssueNameChange}
+                    />
 
-                <div className="issue-status">
+                    <div className="issue-status">
 
-                    <RadioGroup row name="row-radio-buttons-group" >
+                        <RadioGroup row name="row-radio-buttons-group" >
 
-                        <Radio
-                            color="success"
-                            onClick={() => setInfoRadio("Proactive")}
-                            onChange={handleRadioChange}
-                            value="proactive"
-                        />
-                        <Radio
-                            color="warning"
-                            onClick={() => setInfoRadio("Usable")}
-                            onChange={handleRadioChange}
-                            value="usable"
-                        />
-                        <Radio
-                            color="error"
-                            onClick={() => setInfoRadio("Unusable")}
-                            onChange={handleRadioChange}
-                            value="unusable"
-                        />
+                            <Radio
+                                color="success"
+                                onClick={() => setInfoRadio("Proactive")}
+                                onChange={handleRadioChange}
+                                value="proactive"
+                            />
+                            <Radio
+                                color="warning"
+                                onClick={() => setInfoRadio("Usable")}
+                                onChange={handleRadioChange}
+                                value="usable"
+                            />
+                            <Radio
+                                color="error"
+                                onClick={() => setInfoRadio("Unusable")}
+                                onChange={handleRadioChange}
+                                value="unusable"
+                            />
 
 
-                    </RadioGroup>
+                        </RadioGroup>
+
+                    </div>
+
+                    <p className="info-radio"> {infoRadio} </p>
 
                 </div>
-
-                <p className="info-radio"> {infoRadio} </p>
 
                 <br />
 
