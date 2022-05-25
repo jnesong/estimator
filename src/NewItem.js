@@ -1,14 +1,18 @@
 //libraries
 import { useState } from 'react';
+//components
+import CategoryCost from './CategoryCost'
 //css
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
+
 const NewItem = () => {
 
     const [itemName, setItemName] = useState("")
     const [category, setCategory] = useState("Other")
+
 
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
@@ -42,7 +46,9 @@ const NewItem = () => {
                         <MenuItem value={"all"}> All Inclusive </MenuItem>
                     </Select>
 
-                    <div> cost </div>
+                    <div>
+                        <CategoryCost />
+                    </div>
                     <div> quantity </div>
 
 
