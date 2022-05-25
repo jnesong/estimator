@@ -1,8 +1,8 @@
 //components
 import NewItem from './NewItem';
-
 //css
 import TextField from '@mui/material/TextField';
+
 
 const NewIssue = () => {
 
@@ -12,14 +12,16 @@ const NewIssue = () => {
             <form>
 
                 <TextField
-                required
+                    required
                     id="outlined-required"
                     label="Issue Name"
                     variant="outlined"
-                    defaultValue="Issue Name"
                 />
 
-                <NewItem />
+                <br />
+
+                    <NewItem/>
+                    <NewItem/>
 
 
             </form>

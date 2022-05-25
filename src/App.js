@@ -8,8 +8,14 @@ import { createTheme, ThemeProvider } from '@mui/material'
 import './estimator.css'
 
 const jenny = createTheme ( {
+  palette:{
+    warning: {
+      main: '#f5b942'
+    }
+  },
   typography: {
-    fontFamily: "Mulish"
+    fontFamily: "Mulish",
+    fontSize: 12
   }
 } )
 
