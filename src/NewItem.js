@@ -23,8 +23,8 @@ const NewItem = () => {
 
     return (
         <>
-            <div className="new-item">
-                <div className="item-name">
+            <div className="new-item-container">
+
                     <TextField
                         required
                         id="outlined-required"
@@ -32,9 +32,7 @@ const NewItem = () => {
                         variant="outlined"
                         onChange={handleItemNameChange}
                     />
-                </div>
 
-                <div className="category">
                     <Select id="demo-select-small" value={category} label="Category" onChange={handleCategoryChange}>
                         <MenuItem value="">
                             <em>Other</em>
@@ -43,7 +41,10 @@ const NewItem = () => {
                         <MenuItem value={"labor"}> Labor Cost </MenuItem>
                         <MenuItem value={"all"}> All Inclusive </MenuItem>
                     </Select>
-                </div>
+
+                    <div> cost </div>
+                    <div> quantity </div>
+
 
             </div>
         </>

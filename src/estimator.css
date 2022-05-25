@@ -3,14 +3,26 @@
     height: auto;
 }
 
-.new-item {
-    display: block;
-    margin-top: 10px;
+.new-item-container {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    padding:25px;
+    padding-left:200px;
+    padding-right:200px;
+    grid-template-columns: 300px 200px 200px 200px 50px;
+    grid-template-rows: 1fr;
+    column-gap: 16px;
 }
+
 
 .item-name {
     display: inline-block;
-    margin: 8px;
+}
+
+.category {
+    display:inline-block;
 }
 
 .issue-status {
@@ -18,9 +30,6 @@
     margin: 5px;
 }
 
-.category {
-    display: inline-block;
-}
 
 .info-radio {
     letter-spacing: 2px;
@@ -36,4 +45,5 @@ body {
     text-align: center;
     letter-spacing: 2px;
     font-family: 'Mulish';
+    margin:auto
 }
