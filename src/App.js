@@ -1,11 +1,32 @@
+//components
+import NewIssue from './NewIssue'
 
-function App() {
+//graphics
+import logoE from './graphics/logoE.png'
+//css
+import { createTheme, ThemeProvider } from '@mui/material'
+import './estimator.css'
+
+const jenny = createTheme ( {
+  palette:{
+    warning: {
+      main: '#f5b942'
+    }
+  },
+  typography: {
+    fontFamily: "Mulish",
+    fontSize: 12
+  }
+} )
+
+const App = () => {
   return (
-    <div>
-
-      <p> hey </p>
-
-    </div>
+    <ThemeProvider theme={jenny}>
+      <div>
+        <img className="logo" src={logoE} alt="logo in green" />
+        <NewIssue />
+      </div>
+    </ThemeProvider>
   );
 }
 
