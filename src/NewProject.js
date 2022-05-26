@@ -10,19 +10,16 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Button from '@mui/material/Button';
 
-
-
 const NewProject = () => {
-
+    const serverURL = "http://localhost:3000/projects"; // array of displayed projects
+    const [saveClicked, setSavedClicked] = useState(false); //this change tells the NewItem component to send up its data
     const [projectName, setProjectName] = useState(""); // holds user entered project name, updates onChange
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("usable"); //holds user selected status value, updated onChange
-    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemsArray={createItemsArray} />]); 
+    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItemsArray} saveClicked={saveClicked}/>]); 
     // ^ holds array of item-line form to add new item-line, default starts with 1, each item line is passed a key, a matching count/id
     // modifications to this requires to change to holdItemCount <NewItem /> component
     const [itemsArray, setItemsArray] = useState([]); //holds array of user created item-lines
-    const savedProject = {};
-    //^ object to keep each project's data together.... this may need to be changed but goal is to send this to server
     let [totalProjectCost, setTotalProjectCost] = useState(0); // this is super buggy cost holder, needs critical work on accurate calculating
 
     const handleProjectNameChange = (e) => {
@@ -34,9 +31,9 @@ const NewProject = () => {
     }; // updates status value with user selection
 
     const holdItemCount = (count) => {
-        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemsArray={createItemsArray} />]);
+        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItemsArray} saveClicked={saveClicked}/>]);
         //^ with every "add new item" click, a <NewItem /> component is added to the newItems array and the count becomes the identifier. 
-        // this is going to be a problem when the count resets but my projectdb.json does not... may need to clear server with each page refresh.
+        // this is going to be a problem when the count resets but my project db.json does not... may need to clear server with each page refresh.
         // or save the count somewhere on my server 
         itemsArray.forEach(item => {
             setTotalProjectCost(totalProjectCost => totalProjectCost + parseInt(item.cost));
@@ -52,20 +49,29 @@ const NewProject = () => {
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
     function createItemsArray(item) {
+        console.log(item)
         setItemsArray([...itemsArray, item]);
-    }; // 
-
-    console.log(status)
-    console.log(projectName)
-    console.log(itemsArray)
+    }; // making items array per issue
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log("save clicked!");
-        savedProject[projectName] = status;
-    }
-
-
+        setSavedClicked(!saveClicked); // this change tells the NewItem component to send up its data
+        const savedProject ={
+            name: projectName,
+            status: status,
+            cost: totalProjectCost,
+            items: itemsArray
+        }
+        setTimeout(fetch(serverURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(savedProject)
+        })
+            .then(r => r.json())
+            .then(data => console.log(data)), 300);
+    };
 
     return (
         <>
@@ -89,19 +95,19 @@ const NewProject = () => {
                                 color="success"
                                 onClick={() => setInfoRadio("Proactive")}
                                 onChange={handleRadioChange}
-                                value="proactive"
+                                value="🟢"
                             />
                             <Radio
                                 color="warning"
-                                onClick={() => setInfoRadio("Usable")}
+                                onClick={() => setInfoRadio("Serviceable")}
                                 onChange={handleRadioChange}
-                                value="usable"
+                                value="🟡"
                             />
                             <Radio
                                 color="error"
-                                onClick={() => setInfoRadio("Unusable")}
+                                onClick={() => setInfoRadio("Critical")}
                                 onChange={handleRadioChange}
-                                value="unusable"
+                                value="🔴"
                             />
 
 
@@ -133,7 +139,7 @@ const NewProject = () => {
             </form>
 
             <Saved
-                savedProject={savedProject}
+                savedProject={saveClicked}
             />
         </>
     )
