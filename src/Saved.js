@@ -7,12 +7,14 @@ import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
+import { blue } from '@mui/material/colors';
 
 const Saved = ({ savedProject }) => {
 
     const cardStyle = {
         width: "950px",
         margin: "auto",
+        backgroundColor: "#d4e9ff"
     }
 
     console.log(savedProject)
@@ -38,12 +40,13 @@ const Saved = ({ savedProject }) => {
 
     return (
         <div className="saved">
+            <p className="projects-total-text"> Projects Total: $200 </p>
             <Stack>
                 <div className="each-saved-div">
                     <Card style={cardStyle}>
                         <CardActionArea>
                             <CardContent>
-                                <p className="saved-text"> Project </p>
+                                <p className="saved-text"> Plumbing </p>
                             </CardContent>
                         </CardActionArea>
                     </Card>

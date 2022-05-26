@@ -1,0 +1,18 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "name": "Carpet",
+        "status": "proactive",
+        "total": 100,
+        "items": []
+      },
+      {
+        "id": 2,
+        "name": "Paint",
+        "status": "usable",
+        "total": 50,
+        "items": []
+      }
+    ]
+  }
