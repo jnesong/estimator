@@ -11,10 +11,13 @@ import RadioGroup from '@mui/material/RadioGroup';
 
 const NewIssue = () => {
 
-    const [issueName, setIssueName] = useState("")
+    const [issueName, setIssueName] = useState("");
     const [infoRadio, setInfoRadio] = useState("");
     const [radioStatus, setRadioStatus] = useState("usable");
-    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} />])
+    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemsArray={createItemsArray}/>]);
+    const [itemsArray, setItemsArray] = useState([])
+    //cost
+    let [totalIssueCost, setTotalIssueCost] = useState(0)
 
     const handleIssueNameChange = (e) => {
         setIssueName(e.target.value);
@@ -25,19 +28,28 @@ const NewIssue = () => {
     };
 
     const holdItemCount = (count) => {
-        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} />])
-    }
+        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemsArray={createItemsArray}/>]);
+        setTotalIssueCost(0)
+        itemsArray.forEach(item => {
+            setTotalIssueCost(totalIssueCost => totalIssueCost+parseInt(item.cost));
+            console.log(totalIssueCost);
+        });
+    };
 
     function deleteItem(count) {
-        console.log("count",count)
-        console.log(newItems)
-        let deleteFiltered = newItems.filter(item => item.props.count !== count)
-        setNewItems(deleteFiltered)
+        let deleteFiltered = newItems.filter(item => item.props.count !== count);
+        let deletedItem = itemsArray.filter(item => item.id !== count);
+        setNewItems(deleteFiltered);
+        setItemsArray(deletedItem);
+    };
+
+    function createItemsArray ( item ) {
+        setItemsArray([...itemsArray, item])
     }
 
     console.log(radioStatus)
     console.log(issueName)
-
+    console.log(itemsArray)
 
     return (
         <>
@@ -82,8 +94,11 @@ const NewIssue = () => {
                     </div>
 
                     <p className="info-radio"> {infoRadio} </p>
+                    <p className="issue-name-display"> {issueName} total:  $ {totalIssueCost ? totalIssueCost : 0} </p>
 
                 </div>
+
+
 
                 <br />
 
