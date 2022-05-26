@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "id": 2,
+      "name": "Carpet",
+      "status": "🟢",
+      "cost": 100,
+      "items": []
+    },
+    {
+      "id": 1,
+      "name": "Paint",
+      "status": "🟡",
+      "cost": 50,
+      "items": []
+    }
+  ],
+  "undo": []
+}
