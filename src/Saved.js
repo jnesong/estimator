@@ -1,16 +1,19 @@
+//components
+import DeleteButton from './buttons/DeleteButton';
 //css
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button, CardActionArea } from '@mui/material';
 
 const Saved = ({ savedIssue }) => {
 
     const cardStyle = {
         width: "950px",
         margin: "auto",
-        marginLeft: "200px",
     }
+
+    console.log(savedIssue)
 
     // let savedCards = savedIssue.map(issue => {
     //     <Card style={cardStyle} key={issue.id}>
@@ -25,13 +28,16 @@ const Saved = ({ savedIssue }) => {
     return (
         <div className="saved">
             <Stack>
-                <Card style={cardStyle}>
-                    <CardActionArea>
-                        <CardContent>
-                            <p className="saved-text"> issue </p>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
+                <div className="each-saved-div">
+                    <Card style={cardStyle}>
+                        <CardActionArea>
+                            <CardContent>
+                                <p className="saved-text"> issue </p>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                    <DeleteButton />
+                </div>
             </Stack>
         </div>
     )

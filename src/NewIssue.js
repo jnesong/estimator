@@ -18,7 +18,7 @@ const NewIssue = () => {
     const [radioStatus, setRadioStatus] = useState("usable");
     const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemsArray={createItemsArray}/>]);
     const [itemsArray, setItemsArray] = useState([])
-    const [savedIssue, setSavedIssue] = useState({})
+    const savedIssue = {}
     //cost
     let [totalIssueCost, setTotalIssueCost] = useState(0)
 
@@ -56,8 +56,8 @@ const NewIssue = () => {
 
     //put this click handle on the div instead of the component so no need to pass props
     const handleSaveClick = () => {
-        console.log("save clicked!")
-        // setSavedIssue({issueName: itemsArray})
+        console.log("save clicked!");
+        savedIssue[issueName] = itemsArray;
     };
 
     return (

@@ -34,7 +34,7 @@ body {
     font-size: 16px;
     display: inline-block;
     margin-left: 200px;
-    position: fixed;
+    position: absolute;
 }
 
 .new-item-container {
@@ -70,7 +70,7 @@ body {
     font-family: 'Mulish';
     font-size: 14px;
     display: inline-block;
-    position: fixed;
+    position: absolute;
     padding-top: 5px;
 }
 
@@ -78,6 +78,8 @@ body {
 
 .saved {
     padding-top: 50px;
+    padding-bottom: 50px;
+
 }
 
 .saved-text {
@@ -85,4 +87,14 @@ body {
     font-family: 'Mulish';
     font-size: 16px;
     padding: 10px;
+}
+
+.each-saved-div {
+    display: grid;
+    text-align: left;
+    margin-top: 25px;
+    margin-left: 200px;
+    grid-template-columns: 950px 50px;
+    grid-template-rows: 1fr;
+    column-gap: 16px;
 }
