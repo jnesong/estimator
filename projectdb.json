@@ -1,33 +1,70 @@
 {
   "projects": [
     {
-      "id": 50,
-      "name": "Paint",
-      "status": "🟡",
-      "cost": 50,
-      "items": []
-    },
-    {
-      "id": 20,
-      "name": "Carpet",
+      "name": "Light",
       "status": "🟢",
-      "cost": 100,
-      "items": []
-    },
-    {
-      "name": "Monitors",
-      "status": "🔴",
-      "cost": 100,
+      "cost": 50,
       "items": [
         {
           "id": 1,
-          "name": "Handyman",
-          "cost": "100",
+          "name": "Bulbs",
+          "cost": "50",
+          "category": "Materials",
+          "quantity": null
+        },
+        {
+          "id": 2,
+          "name": "Electrician",
+          "cost": "4000",
           "category": "Labor",
           "quantity": "1"
         }
       ],
-      "id": 52
+      "id": 54
+    },
+    {
+      "name": "Wallpaper",
+      "status": "🟢",
+      "cost": 100,
+      "items": [
+        {
+          "id": 1,
+          "name": "Flower Roll",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        {
+          "id": 2,
+          "name": "Glue",
+          "cost": "50",
+          "category": "Materials",
+          "quantity": "1"
+        }
+      ],
+      "id": 55
+    },
+    {
+      "name": "Monitors",
+      "status": "🔴",
+      "cost": 10,
+      "items": [
+        {
+          "id": 1,
+          "name": "Monitors",
+          "cost": "10",
+          "category": "Materials",
+          "quantity": "7"
+        },
+        {
+          "id": 2,
+          "name": "Cables",
+          "cost": "2",
+          "category": "Materials",
+          "quantity": "7"
+        }
+      ],
+      "id": 56
     }
   ]
 }
