@@ -1,5 +1,5 @@
 //components
-import NewIssue from './NewIssue'
+import NewProject from './NewProject'
 //graphics
 import logoE from './graphics/logoE.png'
 //css
@@ -25,7 +25,7 @@ const App = () => {
     <ThemeProvider theme={jenny}>
       <div>
         <img className="logo" src={logoE} alt="logo in green" />
-        <NewIssue />
+        <NewProject />
       </div>
     </ThemeProvider>
   );

@@ -21,14 +21,14 @@ body {
     margin-left: 200px;
 }
 
-/* styling for new issue and its items */
+/* styling for new project and its items */
 
-.issue-name {
+.project-name {
     margin-left: 200px;
     display: inline-block;
 }
 
-.issue-name-display {
+.project-name-display {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 16px;
@@ -59,7 +59,7 @@ body {
     display:inline-block;
 }
 
-.issue-status {
+.project-status {
     display: inline-block;
     margin: 5px;
     margin-left: 16px;

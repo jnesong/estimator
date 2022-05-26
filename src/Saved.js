@@ -8,26 +8,26 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 
-const Saved = ({ savedIssue }) => {
+const Saved = ({ savedProject }) => {
 
     const cardStyle = {
         width: "950px",
         margin: "auto",
     }
 
-    console.log(savedIssue)
+    console.log(savedProject)
 
     let savedList = []
 
     useEffect (() => {
-        savedList.push(savedIssue)
+        savedList.push(savedProject)
         return () => {console.log("cleanup!")}
-    }, [savedIssue])
+    }, [savedProject])
 
     console.log(savedList)
 
-    // let savedCards = savedIssue.map(issue => {
-    //     <Card style={cardStyle} key={issue.id}>
+    // let savedCards = savedProject.map(project => {
+    //     <Card style={cardStyle} key={project.id}>
     //         <CardActionArea>
     //             <CardContent>
     //                 <p className="saved-text"> item.name </p>
@@ -43,7 +43,7 @@ const Saved = ({ savedIssue }) => {
                     <Card style={cardStyle}>
                         <CardActionArea>
                             <CardContent>
-                                <p className="saved-text"> issue </p>
+                                <p className="saved-text"> Project </p>
                             </CardContent>
                         </CardActionArea>
                     </Card>
