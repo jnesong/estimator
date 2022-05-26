@@ -1,19 +1,33 @@
 {
   "projects": [
     {
-      "id": 2,
+      "id": 50,
+      "name": "Paint",
+      "status": "🟡",
+      "cost": 50,
+      "items": []
+    },
+    {
+      "id": 20,
       "name": "Carpet",
       "status": "🟢",
       "cost": 100,
       "items": []
     },
     {
-      "id": 1,
-      "name": "Paint",
-      "status": "🟡",
-      "cost": 50,
-      "items": []
+      "name": "Monitors",
+      "status": "🔴",
+      "cost": 100,
+      "items": [
+        {
+          "id": 1,
+          "name": "Handyman",
+          "cost": "100",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      ],
+      "id": 52
     }
-  ],
-  "undo": []
+  ]
 }
