@@ -3,12 +3,13 @@ import { useState } from 'react';
 //components
 import NewItem from './NewItem';
 import AddItem from './buttons/AddItem';
-import SaveButton from './buttons/SaveButton';
 import Saved from './Saved';
 //css
 import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import Button from '@mui/material/Button';
+
 
 
 const NewIssue = () => {
@@ -16,11 +17,11 @@ const NewIssue = () => {
     const [issueName, setIssueName] = useState("");
     const [infoRadio, setInfoRadio] = useState("");
     const [radioStatus, setRadioStatus] = useState("usable");
-    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemsArray={createItemsArray}/>]);
-    const [itemsArray, setItemsArray] = useState([])
-    const savedIssue = {}
+    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemsArray={createItemsArray} />]);
+    const [itemsArray, setItemsArray] = useState([]);
+    const savedIssue = {};
     //cost
-    let [totalIssueCost, setTotalIssueCost] = useState(0)
+    let [totalIssueCost, setTotalIssueCost] = useState(0);
 
     const handleIssueNameChange = (e) => {
         setIssueName(e.target.value);
@@ -31,10 +32,10 @@ const NewIssue = () => {
     };
 
     const holdItemCount = (count) => {
-        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemsArray={createItemsArray}/>]);
-        setTotalIssueCost(0)
+        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemsArray={createItemsArray} />]);
+        setTotalIssueCost(0);
         itemsArray.forEach(item => {
-            setTotalIssueCost(totalIssueCost => totalIssueCost+parseInt(item.cost));
+            setTotalIssueCost(totalIssueCost => totalIssueCost + parseInt(item.cost));
             console.log(totalIssueCost);
         });
     };
@@ -46,23 +47,25 @@ const NewIssue = () => {
         setItemsArray(deletedItem);
     };
 
-    function createItemsArray ( item ) {
-        setItemsArray([...itemsArray, item])
-    }
+    function createItemsArray(item) {
+        setItemsArray([...itemsArray, item]);
+    };
 
     console.log(radioStatus)
     console.log(issueName)
     console.log(itemsArray)
 
-    //put this click handle on the div instead of the component so no need to pass props
-    const handleSaveClick = () => {
+    function handleSubmit(e) {
+        e.preventDefault();
         console.log("save clicked!");
-        savedIssue[issueName] = itemsArray;
-    };
+        savedIssue[issueName] = radioStatus;
+    }
+
+
 
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
 
                 <div className="issue-name">
                     <TextField
@@ -117,14 +120,16 @@ const NewIssue = () => {
                     />
                 </div>
 
-                <div className="save-button" onClick={handleSaveClick}>
-                    <SaveButton />
+                <div className="save-button">
+                    <Button variant="outlined" color="success" type="submit">
+                        Save Issue
+                    </Button>
                 </div>
 
             </form>
 
             <Saved
-            savedIssue={savedIssue}
+                savedIssue={savedIssue}
             />
         </>
     )

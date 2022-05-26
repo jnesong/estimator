@@ -1,10 +1,12 @@
+//libraries
+import { useEffect } from 'react';
 //components
 import DeleteButton from './buttons/DeleteButton';
 //css
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Button, CardActionArea } from '@mui/material';
+import { CardActionArea } from '@mui/material';
 
 const Saved = ({ savedIssue }) => {
 
@@ -14,6 +16,15 @@ const Saved = ({ savedIssue }) => {
     }
 
     console.log(savedIssue)
+
+    let savedList = []
+
+    useEffect (() => {
+        savedList.push(savedIssue)
+        return () => {console.log("cleanup!")}
+    }, [savedIssue])
+
+    console.log(savedList)
 
     // let savedCards = savedIssue.map(issue => {
     //     <Card style={cardStyle} key={issue.id}>
