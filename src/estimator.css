@@ -24,6 +24,15 @@ body {
     display: inline-block;
 }
 
+.issue-name-display {
+    letter-spacing: 2px;
+    font-family: 'Mulish';
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 200px;
+    position: fixed;
+}
+
 .new-item-container {
     display: grid;
     align-items: center;
@@ -58,6 +67,5 @@ body {
     font-size: 14px;
     display: inline-block;
     position: fixed;
-    z-index: 10px;
-    padding-top: 8px;
+    padding-top: 5px;
 }

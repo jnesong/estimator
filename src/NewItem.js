@@ -1,5 +1,5 @@
 //libraries
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //components
 import CategoryCost from './CategoryCost'
 import DeleteButton from './buttons/DeleteButton';
@@ -9,10 +9,13 @@ import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 
-const NewItem = ( {count, deleteItem} ) => {
+const NewItem = ({ count, deleteItem, createItemsArray }) => {
 
     const [itemName, setItemName] = useState("")
     const [costChange, setCostChange] = useState(0)
+    const [itemObj, setItemObj] = useState({})
+    const [category, setCategory] = useState("")
+    const [quantity, setQuantity] = useState(1)
 
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
@@ -22,8 +25,24 @@ const NewItem = ( {count, deleteItem} ) => {
         setCostChange(e.target.value);
     }
 
-    console.log(itemName)
-    console.log(costChange)
+    useEffect(() => {
+        setItemObj({
+            id: count,
+            name: itemName,
+            cost: costChange,
+            category: category,
+            quantity: quantity
+        })
+    }, [count, itemName, costChange, category, quantity])
+
+    function holdCategory(category) {
+        setCategory(category)
+    }
+    function holdQuantity(quantity) {
+        setQuantity(quantity)
+    }
+
+    createItemsArray(itemObj)
 
     return (
         <>
@@ -50,10 +69,10 @@ const NewItem = ( {count, deleteItem} ) => {
 
                 />
 
-                <CategoryCost />
-                <Quantity />
-                <DeleteButton count={count} deleteItem={deleteItem}/>
-                
+                <CategoryCost holdCategory={holdCategory} />
+                <Quantity holdQuantity={holdQuantity}/>
+                <DeleteButton count={count} deleteItem={deleteItem} />
+
             </div>
         </>
 
