@@ -13,10 +13,11 @@ import Button from '@mui/material/Button';
 const NewProject = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [saveClicked, setSavedClicked] = useState(false); //this change tells the NewItem component to send up its data
+    const [buttonSubmitToggle, setButtonSubmitToggle] = useState(true);
     const [projectName, setProjectName] = useState(""); // holds user entered project name, updates onChange
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("usable"); //holds user selected status value, updated onChange
-    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItemsArray} saveClicked={saveClicked}/>]); 
+    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItemsArray} saveClicked={saveClicked} />]);
     // ^ holds array of item-line form to add new item-line, default starts with 1, each item line is passed a key, a matching count/id
     // modifications to this requires to change to holdItemCount <NewItem /> component
     const [itemsArray, setItemsArray] = useState([]); //holds array of user created item-lines
@@ -31,7 +32,7 @@ const NewProject = () => {
     }; // updates status value with user selection
 
     const holdItemCount = (count) => {
-        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItemsArray} saveClicked={saveClicked}/>]);
+        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItemsArray} saveClicked={saveClicked} />]);
         //^ with every "add new item" click, a <NewItem /> component is added to the newItems array and the count becomes the identifier. 
         // this is going to be a problem when the count resets but my project db.json does not... may need to clear server with each page refresh.
         // or save the count somewhere on my server 
@@ -42,9 +43,9 @@ const NewProject = () => {
     };
 
     function deleteItem(count) {
-        let deleteFiltered = newItems.filter(item => item.props.count !== count); 
+        let deleteFiltered = newItems.filter(item => item.props.count !== count);
         setNewItems(deleteFiltered); // deletes display of <NewItem /> form component 
-        let deletedItem = itemsArray.filter(item => item.id !== count); 
+        let deletedItem = itemsArray.filter(item => item.id !== count);
         setItemsArray(deletedItem); // deletes display of <NewItem /> form component 
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
@@ -56,12 +57,13 @@ const NewProject = () => {
     function handleSubmit(e) {
         e.preventDefault();
         setSavedClicked(!saveClicked); // this change tells the NewItem component to send up its data
-        const savedProject ={
+        const savedProject = {
             name: projectName,
             status: status,
             cost: totalProjectCost,
             items: itemsArray
         }
+        setButtonSubmitToggle(!buttonSubmitToggle);
         setTimeout(fetch(serverURL, {
             method: "POST",
             headers: {
@@ -71,6 +73,15 @@ const NewProject = () => {
         })
             .then(r => r.json())
             .then(data => console.log(data)), 300);
+        setTimeout(() => { 
+            setButtonSubmitToggle(true) 
+            // setProjectName("")
+            // setInfoRadio("")
+            // setNewItems([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItemsArray} saveClicked={saveClicked} />])
+            // setItemsArray([])
+            // setTotalProjectCost(0)
+            //^ not sure why these are not resetting the project form
+        }, 900);
     };
 
     return (
@@ -132,7 +143,7 @@ const NewProject = () => {
 
                 <div className="save-button">
                     <Button variant="outlined" color="success" type="submit">
-                        Save Project
+                        {buttonSubmitToggle ? "submit" : "✔ scroll down"}
                     </Button>
                 </div>
 
