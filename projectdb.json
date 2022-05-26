@@ -1,18 +1,20 @@
 {
-    "projects": [
-      {
-        "id": 1,
-        "name": "Carpet",
-        "status": "proactive",
-        "total": 100,
-        "items": []
-      },
-      {
-        "id": 2,
-        "name": "Paint",
-        "status": "usable",
-        "total": 50,
-        "items": []
-      }
-    ]
-  }
+  "projects": [
+    {
+      "id": 0,
+      "name": "Carpet",
+      "status": "🟢",
+      "cost": 100,
+      "items": []
+    }
+  ],
+  "undo": [
+    {
+      "id": 1,
+      "name": "Paint",
+      "status": "🟡",
+      "cost": 50,
+      "items": []
+    }
+  ]
+}

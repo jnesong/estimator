@@ -21,6 +21,16 @@ body {
     margin-left: 200px;
 }
 
+.saved-nav{
+    display: grid;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    padding-left:200px;
+    grid-template-columns: 930px 100px;
+    grid-template-rows: 1fr;
+}
+
 /* styling for new project and its items */
 
 .project-name {
@@ -68,7 +78,7 @@ body {
 .info-radio {
     letter-spacing: 2px;
     font-family: 'Mulish';
-    font-size: 14px;
+    font-size: 16px;
     display: inline-block;
     position: absolute;
     padding-top: 5px;
@@ -89,11 +99,23 @@ body {
 
 }
 
-.saved-text {
+.saved-text-left {
     letter-spacing: 2px;
     font-family: 'Mulish';
-    font-size: 16px;
-    padding: 10px;
+    font-size: 18px;
+    margin-left: 50px;
+    padding: 20px;
+    display: inline;
+}
+
+.saved-text-right {
+    letter-spacing: 2px;
+    font-family: 'Mulish';
+    font-size: 18px;
+    margin-left: 100px;
+    padding: 20px;
+    text-align: right;
+    display: inline;
 }
 
 .each-saved-div {
