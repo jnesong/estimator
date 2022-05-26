@@ -12,8 +12,7 @@ import UndoIcon from '@mui/icons-material/Undo';
 
 const Saved = ({ savedProject }) => {
 
-    const serverURL = "http://localhost:3000/projects" // array of displayed projects
-    const undoURL = "http://localhost:3000/undo" // stack of deleted projects
+    const serverURL = "http://localhost:3000/projects"; // array of displayed projects
 
     const cardStyle = {
         width: "900px",
@@ -21,36 +20,47 @@ const Saved = ({ savedProject }) => {
         backgroundColor: "#f2f8ff",
         opacity: "80%",
         padding: "25px"
-    } // custom styling for card
+    }; // custom styling for card
 
-    console.log(savedProject)//will change, currently keep so useEffect knows when to fire
-    const [savedList, setSavedList] = useState([]) // projects 
+    console.log(savedProject);//will change, currently keep so useEffect knows when to fire
+    const [savedList, setSavedList] = useState([]); // projects 
+    const [undoStack, setUndoStack] = useState([]) // deleted projects
 
     useEffect(() => {
         fetch(serverURL)
             .then(r => r.json())
             .then(data => setSavedList(data))
-    }, [savedProject]) // GET fetch projects from projects db.json
+    }, [savedProject]); // GET fetch projects from projects db.json
 
     const deleteProject = (id) => {
-        let byeProject = savedList.find(project => project.id === id) // find project being deleted, necessary to add to undo stack in db.json
-        fetch(undoURL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(byeProject)
-        })
-            .then(r => r.json())
-            .then(data => console.log(data)) 
-        //^ posts deleted project to undo stack in db.json
+        let byeProject = savedList.find(project => project.id === id); // find project being deleted, necessary to add to undo stack in db.json
+        setUndoStack([...undoStack, byeProject])
+        //^ adds deleted project to undo stack
         fetch(serverURL + `/${id}`, {
             method: "DELETE"
-        }) // actually deletes project from projects db.json
-        let newSavedCards = savedList.filter(project => project.id !== id)
-        setSavedList(newSavedCards) // removes project from visible projects array, without page refresh
+        }); // deletes project from projects db.json
+        let newSavedCards = savedList.filter(project => project.id !== id);
+        setSavedList(newSavedCards); // removes project from visible projects array, without page refresh
     };
 
+    const handleUndoClick = () => {
+        if (undoStack[0]) {
+            let lastDeleted = undoStack[undoStack.length - 1]
+            setSavedList([...savedList, lastDeleted])
+            fetch(serverURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(lastDeleted)
+            })
+                .then(r => r.json())
+                .then(data => console.log(data))
+            undoStack.pop()
+        } else { console.log("undo stack empty! ") }
+    };
+
+    //below, creates cards from savedList array
     let savedCardsList = savedList.map(project => (
         <div className="each-saved-div" key={project.id}>
             <Card style={cardStyle}>
@@ -65,14 +75,14 @@ const Saved = ({ savedProject }) => {
             </Card>
             <DeleteButton count={project.id} deleteItem={deleteProject} />
         </div>
-    ))
+    ));
 
     return (
         <div className="saved">
             <p className="projects-total-text"> Projects Total: $200 </p>
             <div className="saved-nav">
-                <div/><div/><div/>
-                <Button variant="outlined" startIcon={<UndoIcon />}>
+                <div /><div /><div />
+                <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick}>
                     Undo
                 </Button>
             </div>
