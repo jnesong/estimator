@@ -1,70 +1,77 @@
 {
   "projects": [
     {
-      "name": "Light",
-      "status": "🟢",
-      "cost": 50,
-      "items": [
-        {
+      "name": "Monitors",
+      "status": "🟡",
+      "cost": 1360,
+      "items": {
+        "1": {
           "id": 1,
-          "name": "Bulbs",
-          "cost": "50",
+          "name": "Monitors",
+          "cost": "100",
           "category": "Materials",
-          "quantity": null
+          "quantity": "12"
         },
-        {
+        "2": {
           "id": 2,
-          "name": "Electrician",
-          "cost": "4000",
+          "name": "Cables",
+          "cost": "5",
+          "category": "Materials",
+          "quantity": "12"
+        },
+        "3": {
+          "id": 3,
+          "name": "Installation",
+          "cost": "100",
           "category": "Labor",
           "quantity": "1"
         }
-      ],
-      "id": 54
+      },
+      "id": 2
     },
     {
-      "name": "Wallpaper",
-      "status": "🟢",
-      "cost": 100,
-      "items": [
-        {
-          "id": 1,
-          "name": "Flower Roll",
-          "cost": "100",
-          "category": "Materials",
-          "quantity": "1"
-        },
-        {
-          "id": 2,
-          "name": "Glue",
-          "cost": "50",
-          "category": "Materials",
-          "quantity": "1"
-        }
-      ],
-      "id": 55
-    },
-    {
-      "name": "Monitors",
+      "name": "Sink",
       "status": "🔴",
-      "cost": 10,
-      "items": [
-        {
+      "cost": 400,
+      "items": {
+        "1": {
           "id": 1,
-          "name": "Monitors",
-          "cost": "10",
+          "name": "Faucet",
+          "cost": "20",
           "category": "Materials",
-          "quantity": "7"
+          "quantity": "5"
         },
-        {
+        "2": {
           "id": 2,
-          "name": "Cables",
-          "cost": "2",
-          "category": "Materials",
-          "quantity": "7"
+          "name": "Plumber",
+          "cost": "300",
+          "category": "Labor",
+          "quantity": "1"
         }
-      ],
-      "id": 56
+      },
+      "id": 3
+    },
+    {
+      "name": "Lights",
+      "status": "🟢",
+      "cost": 300,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Bulbs",
+          "cost": "5",
+          "category": "Materials",
+          "quantity": "20"
+        },
+        "2": {
+          "id": 2,
+          "name": "Electrician",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      },
+      "id": 4
     }
   ]
 }

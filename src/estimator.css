@@ -93,17 +93,33 @@ body {
     font-size: 20px;
 }
 
-.saved {
-    padding-top: 50px;
-    padding-bottom: 50px;
+.pdf-summary-text {
+    margin-left: 980px;
+    letter-spacing: 2px;
+    font-family: 'Mulish';
+    font-size: 16px;
+    transition: transform .4s;
+}
 
+.pdf-summary-text:hover {
+    transform: scale(1.4); 
+    cursor: pointer;
+}
+
+.sort-bar {
+    text-align: left;
+}
+
+.saved {
+    padding-top: 10px;
+    padding-bottom: 50px;
 }
 
 .saved-text-left {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 18px;
-    margin-left: 50px;
+    margin-left: 10px;
     padding: 20px;
     display: inline;
 }
@@ -112,7 +128,7 @@ body {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 18px;
-    margin-left: 100px;
+    margin-left: 120px;
     padding: 20px;
     text-align: right;
     display: inline;

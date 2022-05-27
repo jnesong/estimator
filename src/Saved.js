@@ -17,14 +17,24 @@ const Saved = ({ savedProject }) => {
     const cardStyle = {
         width: "900px",
         margin: "auto",
-        backgroundColor: "#f2f8ff",
-        opacity: "80%",
+        // backgroundColor: "#f2f8ff",
+        backgroundColor: "#f0f3f7",
+        // opacity: "80%",
         padding: "25px"
     }; // custom styling for card
 
-    console.log(savedProject);//will change, currently keep so useEffect knows when to fire
     const [savedList, setSavedList] = useState([]); // projects 
-    const [undoStack, setUndoStack] = useState([]) // deleted projects
+    const [undoStack, setUndoStack] = useState([]); // deleted projects
+    const [totalSavedCost, setTotalSavedCost] = useState(0);
+
+    function calculateSavedCost() {
+        console.log("calculate saved cost!")
+        let totalSavedCost = 0;
+        Object.values(savedList).forEach(project => {
+            totalSavedCost += project.cost
+        })
+        setTotalSavedCost(totalSavedCost)
+    } // calculateCost() runs with every click out of an item line field 
 
     useEffect(() => {
         fetch(serverURL)
@@ -44,9 +54,9 @@ const Saved = ({ savedProject }) => {
     };
 
     const handleUndoClick = () => {
-        if (undoStack[0]) {
-            let lastDeleted = undoStack[undoStack.length - 1]
-            setSavedList([...savedList, lastDeleted])
+        if (undoStack[0]) { //if the undo stack has anything in it
+            let lastDeleted = undoStack[undoStack.length - 1] // set last item in the stack equal to lastDeleted
+            setSavedList([...savedList, lastDeleted]) // add that to the displayed savedList, then post it to the backend projects db.json
             fetch(serverURL, {
                 method: "POST",
                 headers: {
@@ -56,7 +66,7 @@ const Saved = ({ savedProject }) => {
             })
                 .then(r => r.json())
                 .then(data => console.log(data))
-            undoStack.pop()
+            undoStack.pop() // remove it from the end of the stack
         } else { console.log("undo stack empty! ") }
     };
 
@@ -68,28 +78,37 @@ const Saved = ({ savedProject }) => {
                     <CardContent>
                         <p className="saved-text-left"> {project.status} </p>
                         <p className="saved-text-left"> {project.name} </p>
-                        <p className="saved-text-right"> Item Count: {project.items.length} </p>
+                        <p className="saved-text-right"> View Items ({Object.values(project.items).length}) </p>
                         <p className="saved-text-right"> $ {project.cost} </p>
                     </CardContent>
                 </CardActionArea>
             </Card>
-            <DeleteButton count={project.id} deleteItem={deleteProject} />
+            <DeleteButton itemId={project.id} deleteItem={deleteProject} />
         </div>
     ));
 
     return (
-        <div className="saved">
-            <p className="projects-total-text"> Projects Total: $200 </p>
-            <div className="saved-nav">
-                <div /><div /><div />
-                <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick}>
-                    Undo
-                </Button>
+        <>
+            <p className="pdf-summary-text"> Download PDF Summary </p>
+
+            <div className="saved">
+                <p className="projects-total-text"> Projects Total: $ {totalSavedCost} </p>
+                <div className="saved-nav">
+                    <div className="sort-bar">
+                        <p style={{display:"inline", fontSize:"18px"}}> SORT BY:</p>
+                        <Button variant="outlined" style={{marginLeft:"16px"}}>Alphabet</Button>
+                        <Button variant="outlined" style={{marginLeft:"16px"}}>Status</Button>
+                        <Button variant="outlined" style={{marginLeft:"16px"}}>Cost</Button>
+                    </div>
+                    <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick}>
+                        Undo
+                    </Button>
+                </div>
+                <Stack onMouseEnter={calculateSavedCost} onMouseLeave={calculateSavedCost}>
+                    {savedCardsList}
+                </Stack>
             </div>
-            <Stack>
-                {savedCardsList}
-            </Stack>
-        </div>
+        </>
     )
 
 };
