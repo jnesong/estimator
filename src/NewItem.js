@@ -71,7 +71,7 @@ const NewItem = ({ count, deleteItem, createItemLine }) => {
 
                 <CategoryCost holdCategory={holdCategory} />
                 <Quantity holdQuantity={holdQuantity} />
-                <DeleteButton count={count} deleteItem={deleteItem} />
+                <DeleteButton itemId={count} deleteItem={deleteItem} />
 
             </div>
         </>

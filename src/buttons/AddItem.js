@@ -1,5 +1,5 @@
 //libraries
-import { useState } from 'react';
+import { useState} from 'react';
 //css
 import Button from '@mui/material/Button';
 
@@ -9,8 +9,9 @@ const AddItem = ( {holdItemCount} ) => {
 
     const handleAddItem = () => {
         setItemCount( itemCount => itemCount+1)
-        holdItemCount(itemCount)
+        setTimeout(holdItemCount(itemCount), 500)
     };
+
 
   return (
       <Button variant="outlined" color="success" onClick={handleAddItem}>
