@@ -23,7 +23,7 @@ Please refer to MUI documentation for further details: https://v1.mui.com/
 
 
 <details>
-<summary> This application used JSON server. </summary>
+<summary> This application uses JSON server. </summary>
 If installation is needed, run:
 <br/> 
 ```npm install -g json-server```
