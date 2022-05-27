@@ -68,7 +68,7 @@ const Saved = ({ savedProject }) => {
                     <CardContent>
                         <p className="saved-text-left"> {project.status} </p>
                         <p className="saved-text-left"> {project.name} </p>
-                        <p className="saved-text-right"> Item Count: {project.items.length} </p>
+                        <p className="saved-text-right"> Item Count: {Object.values(project.items).length} </p>
                         <p className="saved-text-right"> $ {project.cost} </p>
                     </CardContent>
                 </CardActionArea>

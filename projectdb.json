@@ -65,6 +65,43 @@
         }
       ],
       "id": 56
+    },
+    {
+      "name": "Plumbing",
+      "status": "🔴",
+      "cost": 100,
+      "items": [
+        {
+          "id": 1,
+          "name": "Faucet",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        {
+          "id": 2,
+          "name": "Plumber",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      ],
+      "id": 57
+    },
+    {
+      "name": "Flooring",
+      "status": "🟡",
+      "cost": 200,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Wood",
+          "cost": "200",
+          "category": "Materials",
+          "quantity": "1"
+        }
+      },
+      "id": 58
     }
   ]
 }

@@ -9,15 +9,13 @@ import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 
-const NewItem = ({ count, deleteItem, createItemLine, saveClicked }) => {
+const NewItem = ({ count, deleteItem, createItemLine }) => {
 
     const [itemName, setItemName] = useState("")
     const [itemCost, setItemCost] = useState(0)
     const [category, setCategory] = useState("")
     const [quantity, setQuantity] = useState(1)
-    const [itemLineObj, setItemLineObj] = useState({})
-
-    createItemLine(itemLineObj) //send item line object up to New Project component
+    // const [itemLineObj, setItemLineObj] = useState({})
 
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
@@ -28,14 +26,15 @@ const NewItem = ({ count, deleteItem, createItemLine, saveClicked }) => {
     } // updates item cost with user typing 
 
     useEffect(() => {
-        setItemLineObj({
+        let updatedValues = {
             id: count,
             name: itemName,
             cost: itemCost,
             category: category,
             quantity: quantity
-        })
-    }, [count, itemName, itemCost, category, quantity])
+        }
+        createItemLine(updatedValues) //send item line object up to New Project component
+    }, [count, createItemLine, itemName, itemCost, category, quantity])
     // updates itemLineObj with change in any item inputs
 
     function holdCategory(category) {
