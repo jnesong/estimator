@@ -12,7 +12,6 @@ import Button from '@mui/material/Button';
 // import Stack from '@mui/material/Stack';
 
 let items = {};
-
 const NewProject = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [saveClicked, setSavedClicked] = useState(false); //this is used to let other components know when save has been clicked
@@ -20,7 +19,7 @@ const NewProject = () => {
     const [projectName, setProjectName] = useState(""); // holds user entered project name, updates onChange
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
-    const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems} />]);
+    const [newItems, setNewItems] = useState({1: <NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems} />});
     // ^ holds array of item-line form to add new item-line, default starts with 1, each item line is passed a key, a matching count/id
     // modifications to this requires to change to holdItemCount <NewItem /> component
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
@@ -34,7 +33,8 @@ const NewProject = () => {
     }; // updates status value with user selection
 
     const holdItemCount = (count) => {
-        setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItems} />]);
+        // setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItems} />]);
+        setNewItems({...newItems, count:<NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItems} />})
         //^ with every "add new item" click, a <NewItem /> component is added to the newItems array and the count becomes the identifier. 
         // this is going to be a problem when the count resets but my project db.json does not... may need to clear server with each page refresh.
     };
@@ -141,7 +141,7 @@ const NewProject = () => {
                 <br />
 
                 <div onBlur={calculateCost}>
-                    {newItems}
+                    {Object.values(newItems)}
                 </div>
 
                 <div className="add-button">
