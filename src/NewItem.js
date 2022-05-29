@@ -14,9 +14,6 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
 
     const [itemName, setItemName] = useState("")
     const [itemCost, setItemCost] = useState(0)
-    // const [category, setCategory] = useState("")
-    // const [quantity, setQuantity] = useState(1)
-    // const [itemLineObj, setItemLineObj] = useState({})
 
     //variables for category and quantity
     const filter = createFilterOptions();
@@ -50,23 +47,16 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
     } // updates item cost with user typing 
 
     useEffect(() => {
-        let updatedValues = {
+        let itemLine = {
             id: id,
             name: itemName,
             cost: itemCost,
             category: category,
             quantity: quantity
         }
-        createItemLine(updatedValues) //send item line object up to New Project component
+        createItemLine(itemLine) //send item line object up to New Project component
     }, [id, createItemLine, itemName, itemCost, category, quantity])
     // updates itemLineObj with change in any item inputs
-
-    // function holdCategory(category) {
-    //     setCategory(category)
-    // } // updates category with user selection
-    // function holdQuantity(quantity) {
-    //     setQuantity(quantity)
-    // } //updates quantity with user selection 
 
     return (
         <>
@@ -176,7 +166,7 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
                     )}
                 />
 
-                <DeleteButton itemId={id} deleteItem={deleteItem} />
+                <DeleteButton id={id} deleteItem={deleteItem} />
 
             </div>
         </>

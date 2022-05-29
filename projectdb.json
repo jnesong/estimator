@@ -28,6 +28,43 @@
       },
       "recorded": "2022-05-29T15:57:29.229Z",
       "id": 1
+    },
+    {
+      "name": "Restroom",
+      "status": "🟡",
+      "cost": 400,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Sink",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "2"
+        },
+        "d0fedd-3221-ccc3-f2d2-e7fe2e357a1": {
+          "id": "d0fedd-3221-ccc3-f2d2-e7fe2e357a1",
+          "name": "Plumber",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "165c85f-5f7f-10c-734b-a2d8700a824": {
+          "id": "165c85f-5f7f-10c-734b-a2d8700a824",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "122e11-7e3-136b-2a7c-7bd7b4538184": {
+          "id": "122e11-7e3-136b-2a7c-7bd7b4538184",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-05-29T16:50:24.635Z",
+      "id": 2
     }
   ]
 }

@@ -84,7 +84,7 @@ const Saved = ({ savedProject }) => {
                     </CardContent>
                 </CardActionArea>
             </Card>
-            <DeleteButton itemId={project.id} deleteItem={deleteProject} />
+            <DeleteButton id={project.id} deleteItem={deleteProject} />
         </div>
     ));
 
