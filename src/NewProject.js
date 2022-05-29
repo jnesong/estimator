@@ -24,6 +24,8 @@ const NewProject = () => {
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
     // let newItemComponents = { 1: <NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems} /> };
     const [newItemComponents, setNewItemComponents] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems}/>])
+    let date = new Date() //current date and time
+
 
     const handleProjectNameChange = (e) => {
         setProjectName(e.target.value);
@@ -69,7 +71,8 @@ const NewProject = () => {
             name: projectName,
             status: status,
             cost: totalProjectCost,
-            items: items
+            items: items,
+            recorded: date
         } // creates object to send to server
         console.log(savedProject)
         setButtonSubmitToggle(!buttonSubmitToggle);
@@ -97,12 +100,16 @@ const NewProject = () => {
         // console.log("calculate cost!")
         let totalCost = 0;
         Object.values(items).forEach(item => {
-            if(item.cost != ''){
+            if(item.cost !== ''){
                 totalCost += parseFloat(item.cost) * parseInt(item.quantity)
             }
         })
         setTotalProjectCost(totalCost)
     } // calculateCost() runs with every click out of an item line field 
+
+    let newItemComponentsList = newItemComponents.map( component => (
+        component
+    ));
 
     return (
         <>
@@ -154,7 +161,7 @@ const NewProject = () => {
                 <br />
 
                 <div onBlur={calculateCost}>
-                    {newItemComponents}
+                    {newItemComponentsList}
                 </div>
 
                 <div className="add-button">

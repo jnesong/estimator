@@ -1,76 +1,33 @@
 {
   "projects": [
     {
-      "name": "Monitors",
-      "status": "🟡",
-      "cost": 1360,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Monitors",
-          "cost": "100",
-          "category": "Materials",
-          "quantity": "12"
-        },
-        "2": {
-          "id": 2,
-          "name": "Cables",
-          "cost": "5",
-          "category": "Materials",
-          "quantity": "12"
-        },
-        "3": {
-          "id": 3,
-          "name": "Installation",
-          "cost": "100",
-          "category": "Labor",
-          "quantity": "1"
-        }
-      },
-      "id": 2
-    },
-    {
-      "name": "Lights",
+      "name": "New Lights",
       "status": "🟢",
-      "cost": 300,
+      "cost": 320,
       "items": {
-        "1": {
-          "id": 1,
+        "undefined": {
           "name": "Bulbs",
-          "cost": "5",
+          "cost": "1",
           "category": "Materials",
-          "quantity": "20"
+          "quantity": "100"
         },
-        "2": {
-          "id": 2,
+        "de16dd-6fbd-66b3-2dc8-d88874ca2043": {
+          "id": "de16dd-6fbd-66b3-2dc8-d88874ca2043",
           "name": "Electrician",
           "cost": "200",
           "category": "Labor",
           "quantity": "1"
-        }
-      },
-      "id": 4
-    },
-    {
-      "name": "Plumbing",
-      "status": "🔴",
-      "cost": 400,
-      "items": {
-        "undefined": {
-          "name": "Sink",
-          "cost": "10",
-          "category": "Materials",
-          "quantity": "20"
         },
-        "32b1878-0186-a76-78f6-147d41f6b6b7": {
-          "id": "32b1878-0186-a76-78f6-147d41f6b6b7",
-          "name": "Plumbers",
-          "cost": "200",
-          "category": "Labor",
-          "quantity": "1"
+        "0577d87-b04a-bb1-fc6-868a34be565": {
+          "id": "0577d87-b04a-bb1-fc6-868a34be565",
+          "name": "Dimmers",
+          "cost": "2",
+          "category": "Materials",
+          "quantity": "10"
         }
       },
-      "id": 5
+      "recorded": "2022-05-29T15:57:29.229Z",
+      "id": 1
     }
   ]
 }

@@ -76,6 +76,7 @@ const Saved = ({ savedProject }) => {
             <Card style={cardStyle}>
                 <CardActionArea>
                     <CardContent>
+                        <p className="saved-text-date"> {project.recorded.slice(0, 10)} </p>
                         <p className="saved-text-left"> {project.status} </p>
                         <p className="saved-text-left"> {project.name} </p>
                         <p className="saved-text-right"> View Items ({Object.values(project.items).length}) </p>
@@ -95,10 +96,10 @@ const Saved = ({ savedProject }) => {
                 <p className="projects-total-text"> Projects Total: $ {totalSavedCost} </p>
                 <div className="saved-nav">
                     <div className="sort-bar">
-                        <p style={{display:"inline", fontSize:"18px"}}> SORT BY:</p>
-                        <Button variant="outlined" style={{marginLeft:"16px"}}>Alphabet</Button>
-                        <Button variant="outlined" style={{marginLeft:"16px"}}>Status</Button>
-                        <Button variant="outlined" style={{marginLeft:"16px"}}>Cost</Button>
+                        <p style={{ display: "inline", fontSize: "18px" }}> SORT BY:</p>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Alphabet</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Status</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Cost</Button>
                     </div>
                     <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick}>
                         Undo
