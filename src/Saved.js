@@ -15,12 +15,11 @@ const Saved = ({ savedProject }) => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
 
     const cardStyle = {
-        width: "900px",
+        width: "300px",
         margin: "auto",
         // backgroundColor: "#f2f8ff",
         backgroundColor: "#f0f3f7",
         // opacity: "80%",
-        padding: "25px"
     }; // custom styling for card
 
     const [savedList, setSavedList] = useState([]); // projects 
@@ -72,20 +71,20 @@ const Saved = ({ savedProject }) => {
 
     //below, creates cards from savedList array
     let savedCardsList = savedList.map(project => (
-        <div className="each-saved-div" key={project.id}>
             <Card style={cardStyle}>
                 <CardActionArea>
-                    <CardContent>
+                    <CardContent >
+                        <p className="saved-text-status"> {project.status} </p>
                         <p className="saved-text-date"> {project.recorded.slice(0, 10)} </p>
-                        <p className="saved-text-left"> {project.status} </p>
-                        <p className="saved-text-left"> {project.name} </p>
-                        <p className="saved-text-right"> View Items ({Object.values(project.items).length}) </p>
-                        <p className="saved-text-right"> $ {project.cost} </p>
+                        <p className="saved-text-main"> {project.name} </p>
+                        <p className="saved-text-main"> View Items ({Object.values(project.items).length}) </p>
+                        <p className="saved-text-main"> Project total: $ {project.cost} </p>
                     </CardContent>
                 </CardActionArea>
+                <div className="trashcan-on-card-div">
+                    <DeleteButton id={project.id} deleteItem={deleteProject} />
+                </div>
             </Card>
-            <DeleteButton id={project.id} deleteItem={deleteProject} />
-        </div>
     ));
 
     return (
@@ -101,13 +100,13 @@ const Saved = ({ savedProject }) => {
                         <Button variant="outlined" style={{ marginLeft: "16px" }}>Status</Button>
                         <Button variant="outlined" style={{ marginLeft: "16px" }}>Cost</Button>
                     </div>
-                    <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick}>
-                        Undo
+                    <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick} style={{width:"180px"}}>
+                        Undo Delete
                     </Button>
                 </div>
-                <Stack onMouseEnter={calculateSavedCost} onMouseLeave={calculateSavedCost}>
+                <div className="saved-cards-grid" onMouseEnter={calculateSavedCost} onMouseLeave={calculateSavedCost} >
                     {savedCardsList}
-                </Stack>
+                </div>
             </div>
         </>
     )
@@ -116,14 +115,6 @@ const Saved = ({ savedProject }) => {
 
 export default Saved;
 
-
-// <div className="each-saved-div">
-// <Card style={cardStyle}>
-//     <CardActionArea>
-//         <CardContent>
-//             <p className="saved-text"> Plumbing </p>
-//         </CardContent>
-//     </CardActionArea>
-// </Card>
-// <DeleteButton />
-// </div>
+// <Stack onMouseEnter={calculateSavedCost} onMouseLeave={calculateSavedCost}>
+// {savedCardsList}
+// </Stack>

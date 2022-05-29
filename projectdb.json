@@ -65,6 +65,29 @@
       },
       "recorded": "2022-05-29T16:50:24.635Z",
       "id": 2
+    },
+    {
+      "name": "Air Conditioning",
+      "status": "🔴",
+      "cost": 100,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Filters",
+          "cost": "25",
+          "category": "Materials",
+          "quantity": "4"
+        },
+        "d7e270c-3ca-0406-4500-a8b7feac04c": {
+          "id": "d7e270c-3ca-0406-4500-a8b7feac04c",
+          "name": "C",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-05-29T17:53:49.667Z",
+      "id": 4
     }
   ]
 }
