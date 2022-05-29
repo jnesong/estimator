@@ -53,101 +53,24 @@
     },
     {
       "name": "Plumbing",
-      "status": "🟡",
+      "status": "🔴",
       "cost": 400,
       "items": {
         "undefined": {
-          "name": "Sinks",
-          "cost": "100",
+          "name": "Sink",
+          "cost": "10",
           "category": "Materials",
-          "quantity": "2"
+          "quantity": "20"
         },
-        "c321e36-6aa5-542-5ef-e6aae7d15b0": {
-          "id": "c321e36-6aa5-542-5ef-e6aae7d15b0",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "413c63-fb1a-4d28-37c8-2cabb28de03c": {
-          "id": "413c63-fb1a-4d28-37c8-2cabb28de03c",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "816cce-5b1-44f5-63-350e7bce2dc1": {
-          "id": "816cce-5b1-44f5-63-350e7bce2dc1",
-          "name": "Plumber",
+        "32b1878-0186-a76-78f6-147d41f6b6b7": {
+          "id": "32b1878-0186-a76-78f6-147d41f6b6b7",
+          "name": "Plumbers",
           "cost": "200",
           "category": "Labor",
-          "quantity": "1"
-        },
-        "4e3ef7-3a0-5d17-0e5e-7675df2fb5e": {
-          "id": "4e3ef7-3a0-5d17-0e5e-7675df2fb5e",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "f57748-b700-8017-7a23-062b32ee76": {
-          "id": "f57748-b700-8017-7a23-062b32ee76",
-          "name": "",
-          "cost": 0,
-          "category": "",
           "quantity": "1"
         }
       },
       "id": 5
-    },
-    {
-      "name": "Air Conditioner",
-      "status": "🔴",
-      "cost": 200,
-      "items": {
-        "undefined": {
-          "name": "Filters",
-          "cost": "50",
-          "category": "Materials",
-          "quantity": "2"
-        },
-        "c321e36-6aa5-542-5ef-e6aae7d15b0": {
-          "id": "c321e36-6aa5-542-5ef-e6aae7d15b0",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "413c63-fb1a-4d28-37c8-2cabb28de03c": {
-          "id": "413c63-fb1a-4d28-37c8-2cabb28de03c",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "816cce-5b1-44f5-63-350e7bce2dc1": {
-          "id": "816cce-5b1-44f5-63-350e7bce2dc1",
-          "name": "Technician",
-          "cost": "100",
-          "category": "Labor",
-          "quantity": "1"
-        },
-        "4e3ef7-3a0-5d17-0e5e-7675df2fb5e": {
-          "id": "4e3ef7-3a0-5d17-0e5e-7675df2fb5e",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "f57748-b700-8017-7a23-062b32ee76": {
-          "id": "f57748-b700-8017-7a23-062b32ee76",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        }
-      },
-      "id": 6
     }
   ]
 }

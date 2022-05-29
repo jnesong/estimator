@@ -97,7 +97,9 @@ const NewProject = () => {
         // console.log("calculate cost!")
         let totalCost = 0;
         Object.values(items).forEach(item => {
-            totalCost += parseFloat(item.cost) * parseInt(item.quantity)
+            if(item.cost != ''){
+                totalCost += parseFloat(item.cost) * parseInt(item.quantity)
+            }
         })
         setTotalProjectCost(totalCost)
     } // calculateCost() runs with every click out of an item line field 
