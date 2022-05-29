@@ -86,17 +86,17 @@
     {
       "name": "Decorations",
       "status": "🟢",
-      "cost": 50,
+      "cost": 70,
       "items": {
         "1": {
           "id": 1,
-          "name": "Plant",
+          "name": "Plants",
           "cost": "10",
           "category": "Materials",
-          "quantity": "5"
+          "quantity": "7"
         }
       },
-      "recorded": "2022-05-29T18:42:41.662Z",
+      "recorded": "2022-05-29T20:01:57.730Z",
       "id": 6
     }
   ]

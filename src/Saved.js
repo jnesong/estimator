@@ -15,7 +15,6 @@ const Saved = ({ savedProject }) => {
     const [totalSavedCost, setTotalSavedCost] = useState(0);
 
     function calculateSavedCost() {
-        console.log("calculate saved cost!")
         let totalSavedCost = 0;
         Object.values(savedList).forEach(project => {
             totalSavedCost += project.cost
@@ -60,7 +59,7 @@ const Saved = ({ savedProject }) => {
     //sorting functions
     const costSortHandle = () => {
         const updatedSavedList = [...savedList]
-        updatedSavedList.sort((a, b) => b.cost - a.cost);
+        updatedSavedList.sort((a, b) => a.cost - b.cost);
         setSavedList(updatedSavedList);
     };
     const alphabeticalSortHandle = () => {
@@ -74,16 +73,23 @@ const Saved = ({ savedProject }) => {
         });
         setSavedList(updatedSavedList);
     };
+    const statusSortHandle = () => {
+        const proactiveList = [];
+        const serviceableList = [];
+        const criticalList = [];
+        savedList.forEach(project => {
+            if (project.status === "🟢") { proactiveList.push(project) }
+            else if (project.status === "🔴") { criticalList.push(project) }
+            else { serviceableList.push(project) }
+        });
+        const updatedSavedList = [...criticalList, ...serviceableList, ...proactiveList];
+        setSavedList(updatedSavedList);
+    };
 
     //below, creates cards from savedList array
     let savedCardsList = savedList.map(project => (
         <SavedCard key={project.id} project={project} deleteProject={deleteProject} />
     ));
-
-    useEffect(()=> {
-        console.log("saved list changed")
-        console.log(savedList)
-    }, [savedList])
 
     return (
         <>
@@ -95,8 +101,8 @@ const Saved = ({ savedProject }) => {
                     <div className="sort-bar">
                         <p style={{ display: "inline", fontSize: "18px" }}> SORT BY:</p>
                         <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={alphabeticalSortHandle}>Alphabet</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Status</Button>
                         <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={costSortHandle}>Cost</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={statusSortHandle}>Status</Button>
                     </div>
                     <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick} style={{ width: "180px" }}>
                         Undo Delete
