@@ -1,8 +1,9 @@
 //libraries
 import { useState } from 'react';
+import uuid from 'react-uuid'
 //components
 import NewItem from './NewItem';
-import AddItem from './buttons/AddItem';
+// import AddItem from './buttons/AddItem';
 import Saved from './Saved';
 //css
 import TextField from '@mui/material/TextField';
@@ -12,6 +13,7 @@ import Button from '@mui/material/Button';
 // import Stack from '@mui/material/Stack';
 
 let items = {};
+
 const NewProject = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [saveClicked, setSavedClicked] = useState(false); //this is used to let other components know when save has been clicked
@@ -19,10 +21,9 @@ const NewProject = () => {
     const [projectName, setProjectName] = useState(""); // holds user entered project name, updates onChange
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
-    const [newItems, setNewItems] = useState({1: <NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems} />});
-    // ^ holds array of item-line form to add new item-line, default starts with 1, each item line is passed a key, a matching count/id
-    // modifications to this requires to change to holdItemCount <NewItem /> component
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
+    // let newItemComponents = { 1: <NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems} /> };
+    const [newItemComponents, setNewItemComponents] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems}/>])
 
     const handleProjectNameChange = (e) => {
         setProjectName(e.target.value);
@@ -32,17 +33,27 @@ const NewProject = () => {
         setStatus(e.target.value);
     }; // updates status value with user selection
 
-    const holdItemCount = (count) => {
-        // setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItems} />]);
-        setNewItems({...newItems, count:<NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItems} />})
-        //^ with every "add new item" click, a <NewItem /> component is added to the newItems array and the count becomes the identifier. 
-        // this is going to be a problem when the count resets but my project db.json does not... may need to clear server with each page refresh.
+    // const holdItemCount = (count) => {
+    //     // setNewItems([...newItems, <NewItem key={count} count={count} deleteItem={deleteItem} createItemLine={createItems} />]);
+    //     let x = uuid()
+    //     setNewItems({ ...newItems, x: <NewItem key={x} count={count} deleteItem={deleteItem} createItemLine={createItems} /> })
+    //     console.log(newItems)
+    //     //^ with every "add new item" click, a <NewItem /> component is added to the newItems array and the count becomes the identifier. 
+    //     // this is going to be a problem when the count resets but my project db.json does not... may need to clear server with each page refresh.
+    // };
+
+    const handleAddItem = () => {
+        console.log("clicked!")
+        setNewItemComponents([...newItemComponents, <NewItem key={uuid()} id={uuid()} deleteItem={deleteItem} createItemLine={createItems} />])
     };
 
+    console.log(newItemComponents)
+
     function deleteItem(itemId) {
-        let deleteFiltered = newItems.filter(item => item.props.count !== itemId);
-        setNewItems(deleteFiltered); // deletes display of <NewItem /> form component 
-        delete items[itemId]
+        let updatedItemComponents = newItemComponents.filter(item => item.props.count !== itemId);
+        setNewItemComponents(updatedItemComponents);
+        // delete newItemComponents.itemId; // deletes display of <NewItem /> form component 
+        // delete items[itemId];
         // let updatedArray = Object.values(items).filter(item => item.id !== itemId);
         // items = updatedArray; // deletes display of <NewItem /> form component 
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
@@ -53,7 +64,7 @@ const NewProject = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setSavedClicked(!saveClicked); 
+        setSavedClicked(!saveClicked);
         const savedProject = {
             name: projectName,
             status: status,
@@ -141,13 +152,13 @@ const NewProject = () => {
                 <br />
 
                 <div onBlur={calculateCost}>
-                    {Object.values(newItems)}
+                    {newItemComponents}
                 </div>
 
                 <div className="add-button">
-                    <AddItem
-                        holdItemCount={holdItemCount}
-                    />
+                    <Button variant="outlined" color="success" onClick={handleAddItem}>
+                        Add New Item
+                    </Button>
                 </div>
 
                 <div className="save-button">

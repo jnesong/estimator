@@ -10,7 +10,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
-const NewItem = ({ count, deleteItem, createItemLine }) => {
+const NewItem = ({ id, deleteItem, createItemLine }) => {
 
     const [itemName, setItemName] = useState("")
     const [itemCost, setItemCost] = useState(0)
@@ -51,14 +51,14 @@ const NewItem = ({ count, deleteItem, createItemLine }) => {
 
     useEffect(() => {
         let updatedValues = {
-            id: count,
+            id: id,
             name: itemName,
             cost: itemCost,
             category: category,
             quantity: quantity
         }
         createItemLine(updatedValues) //send item line object up to New Project component
-    }, [count, createItemLine, itemName, itemCost, category, quantity])
+    }, [id, createItemLine, itemName, itemCost, category, quantity])
     // updates itemLineObj with change in any item inputs
 
     // function holdCategory(category) {
@@ -176,7 +176,7 @@ const NewItem = ({ count, deleteItem, createItemLine }) => {
                     )}
                 />
 
-                <DeleteButton itemId={count} deleteItem={deleteItem} />
+                <DeleteButton itemId={id} deleteItem={deleteItem} />
 
             </div>
         </>

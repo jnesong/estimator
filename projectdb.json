@@ -30,21 +30,6 @@
       "id": 2
     },
     {
-      "name": "Laptops",
-      "status": "🔴",
-      "cost": 3000,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "1",
-          "cost": "1500",
-          "category": "Materials",
-          "quantity": "2"
-        }
-      },
-      "id": 5
-    },
-    {
       "name": "Lights",
       "status": "🟢",
       "cost": 300,
@@ -67,41 +52,102 @@
       "id": 4
     },
     {
-      "name": "Floors",
+      "name": "Plumbing",
       "status": "🟡",
-      "cost": 2000,
+      "cost": 400,
       "items": {
-        "1": {
-          "id": 1,
-          "name": "Tiles",
+        "undefined": {
+          "name": "Sinks",
           "cost": "100",
           "category": "Materials",
-          "quantity": "10"
+          "quantity": "2"
         },
-        "2": {
-          "id": 2,
-          "name": "Installation",
-          "cost": "1000",
+        "c321e36-6aa5-542-5ef-e6aae7d15b0": {
+          "id": "c321e36-6aa5-542-5ef-e6aae7d15b0",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "413c63-fb1a-4d28-37c8-2cabb28de03c": {
+          "id": "413c63-fb1a-4d28-37c8-2cabb28de03c",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "816cce-5b1-44f5-63-350e7bce2dc1": {
+          "id": "816cce-5b1-44f5-63-350e7bce2dc1",
+          "name": "Plumber",
+          "cost": "200",
           "category": "Labor",
+          "quantity": "1"
+        },
+        "4e3ef7-3a0-5d17-0e5e-7675df2fb5e": {
+          "id": "4e3ef7-3a0-5d17-0e5e-7675df2fb5e",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "f57748-b700-8017-7a23-062b32ee76": {
+          "id": "f57748-b700-8017-7a23-062b32ee76",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        }
+      },
+      "id": 5
+    },
+    {
+      "name": "Air Conditioner",
+      "status": "🔴",
+      "cost": 200,
+      "items": {
+        "undefined": {
+          "name": "Filters",
+          "cost": "50",
+          "category": "Materials",
+          "quantity": "2"
+        },
+        "c321e36-6aa5-542-5ef-e6aae7d15b0": {
+          "id": "c321e36-6aa5-542-5ef-e6aae7d15b0",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "413c63-fb1a-4d28-37c8-2cabb28de03c": {
+          "id": "413c63-fb1a-4d28-37c8-2cabb28de03c",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "816cce-5b1-44f5-63-350e7bce2dc1": {
+          "id": "816cce-5b1-44f5-63-350e7bce2dc1",
+          "name": "Technician",
+          "cost": "100",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "4e3ef7-3a0-5d17-0e5e-7675df2fb5e": {
+          "id": "4e3ef7-3a0-5d17-0e5e-7675df2fb5e",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "f57748-b700-8017-7a23-062b32ee76": {
+          "id": "f57748-b700-8017-7a23-062b32ee76",
+          "name": "",
+          "cost": 0,
+          "category": "",
           "quantity": "1"
         }
       },
       "id": 6
-    },
-    {
-      "name": "Check",
-      "status": "🟢",
-      "cost": 1000,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "AC",
-          "cost": "1000",
-          "category": "Materials",
-          "quantity": "1"
-        }
-      },
-      "id": 7
     }
   ]
 }
