@@ -30,26 +30,19 @@
       "id": 2
     },
     {
-      "name": "Sink",
+      "name": "Laptops",
       "status": "🔴",
-      "cost": 400,
+      "cost": 3000,
       "items": {
         "1": {
           "id": 1,
-          "name": "Faucet",
-          "cost": "20",
+          "name": "1",
+          "cost": "1500",
           "category": "Materials",
-          "quantity": "5"
-        },
-        "2": {
-          "id": 2,
-          "name": "Plumber",
-          "cost": "300",
-          "category": "Labor",
-          "quantity": "1"
+          "quantity": "2"
         }
       },
-      "id": 3
+      "id": 5
     },
     {
       "name": "Lights",
@@ -72,6 +65,43 @@
         }
       },
       "id": 4
+    },
+    {
+      "name": "Floors",
+      "status": "🟡",
+      "cost": 2000,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Tiles",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "10"
+        },
+        "2": {
+          "id": 2,
+          "name": "Installation",
+          "cost": "1000",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      },
+      "id": 6
+    },
+    {
+      "name": "Check",
+      "status": "🟢",
+      "cost": 1000,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "AC",
+          "cost": "1000",
+          "category": "Materials",
+          "quantity": "1"
+        }
+      },
+      "id": 7
     }
   ]
 }

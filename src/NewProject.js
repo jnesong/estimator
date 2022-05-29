@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Button from '@mui/material/Button';
+// import Stack from '@mui/material/Stack';
 
 let items = {};
 
@@ -18,7 +19,7 @@ const NewProject = () => {
     const [buttonSubmitToggle, setButtonSubmitToggle] = useState(true); // controls display on save button
     const [projectName, setProjectName] = useState(""); // holds user entered project name, updates onChange
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
-    const [status, setStatus] = useState("usable"); //holds user selected status value, updated onChange
+    const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
     const [newItems, setNewItems] = useState([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems} />]);
     // ^ holds array of item-line form to add new item-line, default starts with 1, each item line is passed a key, a matching count/id
     // modifications to this requires to change to holdItemCount <NewItem /> component
@@ -59,6 +60,7 @@ const NewProject = () => {
             cost: totalProjectCost,
             items: items
         } // creates object to send to server
+        console.log(savedProject)
         setButtonSubmitToggle(!buttonSubmitToggle);
         setTimeout(fetch(serverURL, {
             method: "POST",
