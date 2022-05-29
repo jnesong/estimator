@@ -1,26 +1,14 @@
 //libraries
 import { useState, useEffect } from 'react';
 //components
-import DeleteButton from './buttons/DeleteButton';
+import SavedCard from './SavedCard';
 //css
-import Stack from '@mui/material/Stack';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import { CardActionArea } from '@mui/material';
 import Button from '@mui/material/Button';
 import UndoIcon from '@mui/icons-material/Undo';
 
 const Saved = ({ savedProject }) => {
 
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
-
-    const cardStyle = {
-        width: "300px",
-        margin: "auto",
-        // backgroundColor: "#f2f8ff",
-        backgroundColor: "#f0f3f7",
-        // opacity: "80%",
-    }; // custom styling for card
 
     const [savedList, setSavedList] = useState([]); // projects 
     const [undoStack, setUndoStack] = useState([]); // deleted projects
@@ -69,23 +57,33 @@ const Saved = ({ savedProject }) => {
         } else { console.log("undo stack empty! ") }
     };
 
+    //sorting functions
+    const costSortHandle = () => {
+        const updatedSavedList = [...savedList]
+        updatedSavedList.sort((a, b) => b.cost - a.cost);
+        setSavedList(updatedSavedList);
+    };
+    const alphabeticalSortHandle = () => {
+        const updatedSavedList = [...savedList]
+        updatedSavedList.sort((a, b) => {
+            let nameA = a.name.toLowerCase()
+            let nameB = b.name.toLowerCase();
+            if (nameA < nameB) return -1;
+            if (nameA > nameB) return 1;
+            return 0;
+        });
+        setSavedList(updatedSavedList);
+    };
+
     //below, creates cards from savedList array
     let savedCardsList = savedList.map(project => (
-            <Card style={cardStyle}>
-                <CardActionArea>
-                    <CardContent >
-                        <p className="saved-text-status"> {project.status} </p>
-                        <p className="saved-text-date"> {project.recorded.slice(0, 10)} </p>
-                        <p className="saved-text-main"> {project.name} </p>
-                        <p className="saved-text-main"> View Items ({Object.values(project.items).length}) </p>
-                        <p className="saved-text-main"> Project total: $ {project.cost} </p>
-                    </CardContent>
-                </CardActionArea>
-                <div className="trashcan-on-card-div">
-                    <DeleteButton id={project.id} deleteItem={deleteProject} />
-                </div>
-            </Card>
+        <SavedCard key={project.id} project={project} deleteProject={deleteProject} />
     ));
+
+    useEffect(()=> {
+        console.log("saved list changed")
+        console.log(savedList)
+    }, [savedList])
 
     return (
         <>
@@ -96,11 +94,11 @@ const Saved = ({ savedProject }) => {
                 <div className="saved-nav">
                     <div className="sort-bar">
                         <p style={{ display: "inline", fontSize: "18px" }}> SORT BY:</p>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Alphabet</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={alphabeticalSortHandle}>Alphabet</Button>
                         <Button variant="outlined" style={{ marginLeft: "16px" }}>Status</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Cost</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={costSortHandle}>Cost</Button>
                     </div>
-                    <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick} style={{width:"180px"}}>
+                    <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick} style={{ width: "180px" }}>
                         Undo Delete
                     </Button>
                 </div>

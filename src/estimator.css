@@ -126,6 +126,13 @@ body {
     row-gap: 16px;
 }
 
+/* .saved-card-div {
+    width: "300px";
+    margin: "auto";
+    border: 1px solid black;
+    padding: 25px;  
+} */
+
 .saved-text-date {
     letter-spacing: 2px;
     font-family: 'Mulish';
@@ -133,7 +140,7 @@ body {
     margin-left: 100px;
     padding: 5px;
     display: inline;
-    opacity: 50%
+    opacity: 60%
 }
 
 .saved-text-status {
@@ -148,42 +155,24 @@ body {
 .saved-text-main {
     letter-spacing: 2px;
     font-family: 'Mulish';
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 2px;
+    display: block;
+}
+
+.saved-text-sub {
+    letter-spacing: 2px;
+    font-family: 'Mulish';
     font-size: 16px;
     margin-left: 10px;
     padding: 2px;
     display: block;
+    color: rgb(62, 105, 199);
+    opacity: 80%
 }
 
 .trashcan-on-card-div {
     text-align: center;
     padding:20px;
 }
-
-.saved-text-left {
-    letter-spacing: 2px;
-    font-family: 'Mulish';
-    font-size: 18px;
-    margin-left: 10px;
-    padding: 20px;
-    display: inline;
-}
-
-.saved-text-right {
-    letter-spacing: 2px;
-    font-family: 'Mulish';
-    font-size: 18px;
-    margin-left: 120px;
-    padding: 20px;
-    text-align: right;
-    display: inline;
-}
-
-/* .each-saved-div {
-    display: grid;
-    text-align: left;
-    margin-top: 25px;
-    margin-left: 200px;
-    grid-template-columns: 950px 50px;
-    grid-template-rows: 1fr;
-    column-gap: 16px;
-} */

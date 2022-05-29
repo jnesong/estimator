@@ -1,35 +1,6 @@
 {
   "projects": [
     {
-      "name": "New Lights",
-      "status": "🟢",
-      "cost": 320,
-      "items": {
-        "undefined": {
-          "name": "Bulbs",
-          "cost": "1",
-          "category": "Materials",
-          "quantity": "100"
-        },
-        "de16dd-6fbd-66b3-2dc8-d88874ca2043": {
-          "id": "de16dd-6fbd-66b3-2dc8-d88874ca2043",
-          "name": "Electrician",
-          "cost": "200",
-          "category": "Labor",
-          "quantity": "1"
-        },
-        "0577d87-b04a-bb1-fc6-868a34be565": {
-          "id": "0577d87-b04a-bb1-fc6-868a34be565",
-          "name": "Dimmers",
-          "cost": "2",
-          "category": "Materials",
-          "quantity": "10"
-        }
-      },
-      "recorded": "2022-05-29T15:57:29.229Z",
-      "id": 1
-    },
-    {
       "name": "Restroom",
       "status": "🟡",
       "cost": 400,
@@ -81,6 +52,52 @@
       },
       "recorded": "2022-05-29T17:57:19.451Z",
       "id": 3
+    },
+    {
+      "name": "New Lights",
+      "status": "🟢",
+      "cost": 500,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Bulbs",
+          "cost": "20",
+          "category": "Materials",
+          "quantity": "10"
+        },
+        "227837f-cf7f-f582-36a6-c2a8bd55a10f": {
+          "id": "227837f-cf7f-f582-36a6-c2a8bd55a10f",
+          "name": "Electrician",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "84d83b1-a7ae-17ae-018-a3e1783aae6a": {
+          "id": "84d83b1-a7ae-17ae-018-a3e1783aae6a",
+          "name": "Dimmers",
+          "cost": "25",
+          "category": "Materials",
+          "quantity": "4"
+        }
+      },
+      "recorded": "2022-05-29T18:13:31.058Z",
+      "id": 5
+    },
+    {
+      "name": "Decorations",
+      "status": "🟢",
+      "cost": 50,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Plant",
+          "cost": "10",
+          "category": "Materials",
+          "quantity": "5"
+        }
+      },
+      "recorded": "2022-05-29T18:42:41.662Z",
+      "id": 6
     }
   ]
 }
