@@ -45,8 +45,7 @@ const NewProject = () => {
         let updatedItemComponents = newItemComponents.filter(item => item.props.id !== itemId);
         setNewItemComponents(updatedItemComponents);
         console.log(newItemComponents)
-    //     // delete newItemComponents.itemId; // deletes display of <NewItem /> form component 
-    //     // delete items[itemId];
+        delete items[itemId];
     //     // let updatedArray = Object.values(items).filter(item => item.id !== itemId);
     //     // items = updatedArray; // deletes display of <NewItem /> form component 
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project

@@ -21,16 +21,6 @@ body {
     margin-left: 200px;
 }
 
-.saved-nav{
-    display: grid;
-    align-items: center;
-    text-align: center;
-    margin-top: 25px;
-    padding-left:200px;
-    grid-template-columns: 930px 100px;
-    grid-template-rows: 1fr;
-}
-
 /* styling for new project and its items */
 
 .project-name {
@@ -110,46 +100,79 @@ body {
     text-align: left;
 }
 
+.saved-nav{
+    display: grid;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    padding-left:200px;
+    grid-template-columns: 810px 100px;
+    grid-template-rows: 1fr;
+}
+
 .saved {
     padding-top: 10px;
     padding-bottom: 50px;
 }
 
+.saved-cards-grid {
+    display: grid;
+    text-align: left;
+    margin: 15px;
+    margin-left: 220px;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: auto;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+/* .saved-card-div {
+    width: "300px";
+    margin: "auto";
+    border: 1px solid black;
+    padding: 25px;  
+} */
+
 .saved-text-date {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 100px;
     padding: 5px;
-    display: block;
-    opacity: 50%
+    display: inline;
+    opacity: 60%
 }
 
-.saved-text-left {
+.saved-text-status {
+    letter-spacing: 2px;
+    font-family: 'Mulish';
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 2px;
+    display: inline;
+}
+
+.saved-text-main {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 18px;
     margin-left: 10px;
-    padding: 20px;
-    display: inline;
+    padding: 2px;
+    display: block;
 }
 
-.saved-text-right {
+.saved-text-sub {
     letter-spacing: 2px;
     font-family: 'Mulish';
-    font-size: 18px;
-    margin-left: 120px;
-    padding: 20px;
-    text-align: right;
-    display: inline;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 2px;
+    display: block;
+    color: rgb(62, 105, 199);
+    opacity: 80%
 }
 
-.each-saved-div {
-    display: grid;
-    text-align: left;
-    margin-top: 25px;
-    margin-left: 200px;
-    grid-template-columns: 950px 50px;
-    grid-template-rows: 1fr;
-    column-gap: 16px;
+.trashcan-on-card-div {
+    text-align: center;
+    padding:20px;
 }

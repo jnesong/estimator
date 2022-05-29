@@ -1,12 +1,8 @@
 //libraries
 import { useState, useEffect } from 'react';
 //components
-import DeleteButton from './buttons/DeleteButton';
+import SavedCard from './SavedCard';
 //css
-import Stack from '@mui/material/Stack';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import { CardActionArea } from '@mui/material';
 import Button from '@mui/material/Button';
 import UndoIcon from '@mui/icons-material/Undo';
 
@@ -14,21 +10,11 @@ const Saved = ({ savedProject }) => {
 
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
 
-    const cardStyle = {
-        width: "900px",
-        margin: "auto",
-        // backgroundColor: "#f2f8ff",
-        backgroundColor: "#f0f3f7",
-        // opacity: "80%",
-        padding: "25px"
-    }; // custom styling for card
-
     const [savedList, setSavedList] = useState([]); // projects 
     const [undoStack, setUndoStack] = useState([]); // deleted projects
     const [totalSavedCost, setTotalSavedCost] = useState(0);
 
     function calculateSavedCost() {
-        console.log("calculate saved cost!")
         let totalSavedCost = 0;
         Object.values(savedList).forEach(project => {
             totalSavedCost += project.cost
@@ -70,22 +56,39 @@ const Saved = ({ savedProject }) => {
         } else { console.log("undo stack empty! ") }
     };
 
+    //sorting functions
+    const costSortHandle = () => {
+        const updatedSavedList = [...savedList]
+        updatedSavedList.sort((a, b) => a.cost - b.cost);
+        setSavedList(updatedSavedList);
+    };
+    const alphabeticalSortHandle = () => {
+        const updatedSavedList = [...savedList]
+        updatedSavedList.sort((a, b) => {
+            let nameA = a.name.toLowerCase()
+            let nameB = b.name.toLowerCase();
+            if (nameA < nameB) return -1;
+            if (nameA > nameB) return 1;
+            return 0;
+        });
+        setSavedList(updatedSavedList);
+    };
+    const statusSortHandle = () => {
+        const proactiveList = [];
+        const serviceableList = [];
+        const criticalList = [];
+        savedList.forEach(project => {
+            if (project.status === "🟢") { proactiveList.push(project) }
+            else if (project.status === "🔴") { criticalList.push(project) }
+            else { serviceableList.push(project) }
+        });
+        const updatedSavedList = [...criticalList, ...serviceableList, ...proactiveList];
+        setSavedList(updatedSavedList);
+    };
+
     //below, creates cards from savedList array
     let savedCardsList = savedList.map(project => (
-        <div className="each-saved-div" key={project.id}>
-            <Card style={cardStyle}>
-                <CardActionArea>
-                    <CardContent>
-                        <p className="saved-text-date"> {project.recorded.slice(0, 10)} </p>
-                        <p className="saved-text-left"> {project.status} </p>
-                        <p className="saved-text-left"> {project.name} </p>
-                        <p className="saved-text-right"> View Items ({Object.values(project.items).length}) </p>
-                        <p className="saved-text-right"> $ {project.cost} </p>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-            <DeleteButton id={project.id} deleteItem={deleteProject} />
-        </div>
+        <SavedCard key={project.id} project={project} deleteProject={deleteProject} />
     ));
 
     return (
@@ -97,17 +100,17 @@ const Saved = ({ savedProject }) => {
                 <div className="saved-nav">
                     <div className="sort-bar">
                         <p style={{ display: "inline", fontSize: "18px" }}> SORT BY:</p>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Alphabet</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Status</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }}>Cost</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={alphabeticalSortHandle}>Alphabet</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={costSortHandle}>Cost</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={statusSortHandle}>Status</Button>
                     </div>
-                    <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick}>
-                        Undo
+                    <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick} style={{ width: "180px" }}>
+                        Undo Delete
                     </Button>
                 </div>
-                <Stack onMouseEnter={calculateSavedCost} onMouseLeave={calculateSavedCost}>
+                <div className="saved-cards-grid" onMouseEnter={calculateSavedCost} onMouseLeave={calculateSavedCost} >
                     {savedCardsList}
-                </Stack>
+                </div>
             </div>
         </>
     )
@@ -116,14 +119,6 @@ const Saved = ({ savedProject }) => {
 
 export default Saved;
 
-
-// <div className="each-saved-div">
-// <Card style={cardStyle}>
-//     <CardActionArea>
-//         <CardContent>
-//             <p className="saved-text"> Plumbing </p>
-//         </CardContent>
-//     </CardActionArea>
-// </Card>
-// <DeleteButton />
-// </div>
+// <Stack onMouseEnter={calculateSavedCost} onMouseLeave={calculateSavedCost}>
+// {savedCardsList}
+// </Stack>
