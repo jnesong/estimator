@@ -100,9 +100,9 @@ const Saved = ({ savedProject }) => {
                 <div className="saved-nav">
                     <div className="sort-bar">
                         <p style={{ display: "inline", fontSize: "18px" }}> SORT BY:</p>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={alphabeticalSortHandle}>Alphabet</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={costSortHandle}>Cost</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={statusSortHandle}>Status</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={alphabeticalSortHandle}>Alphabet: A - Z</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={costSortHandle}> Cost: $ MIN - MAX </Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={statusSortHandle}> Status: 🔴  🟡  🟢</Button>
                     </div>
                     <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick} style={{ width: "180px" }}>
                         Undo Delete

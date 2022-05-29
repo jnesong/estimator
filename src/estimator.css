@@ -152,7 +152,7 @@ body {
     display: inline;
 }
 
-.saved-text-main {
+.saved-text-name {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 18px;
@@ -161,7 +161,23 @@ body {
     display: block;
 }
 
-.saved-text-sub {
+.saved-text-items {
+    letter-spacing: 2px;
+    font-family: 'Mulish';
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 2px;
+    display: block;
+    color: rgb(62, 105, 199);
+    opacity: 80%
+}
+
+.saved-text-items:hover {
+    font-weight:900;
+    cursor: pointer;
+}
+
+.saved-text-cost {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 16px;
