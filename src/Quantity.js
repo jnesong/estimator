@@ -4,7 +4,7 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
-const Quantity = ( {holdQuantity} ) => {
+const Quantity = ({ holdQuantity }) => {
     const filter = createFilterOptions();
     const [quantity, setQuantity] = useState('1');
     const quantities = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];

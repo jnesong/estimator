@@ -1,77 +1,70 @@
 {
   "projects": [
     {
-      "name": "Monitors",
-      "status": "🟡",
-      "cost": 1360,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Monitors",
-          "cost": "100",
-          "category": "Materials",
-          "quantity": "12"
-        },
-        "2": {
-          "id": 2,
-          "name": "Cables",
-          "cost": "5",
-          "category": "Materials",
-          "quantity": "12"
-        },
-        "3": {
-          "id": 3,
-          "name": "Installation",
-          "cost": "100",
-          "category": "Labor",
-          "quantity": "1"
-        }
-      },
-      "id": 2
-    },
-    {
-      "name": "Sink",
-      "status": "🔴",
-      "cost": 400,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Faucet",
-          "cost": "20",
-          "category": "Materials",
-          "quantity": "5"
-        },
-        "2": {
-          "id": 2,
-          "name": "Plumber",
-          "cost": "300",
-          "category": "Labor",
-          "quantity": "1"
-        }
-      },
-      "id": 3
-    },
-    {
-      "name": "Lights",
+      "name": "New Lights",
       "status": "🟢",
-      "cost": 300,
+      "cost": 320,
       "items": {
-        "1": {
-          "id": 1,
+        "undefined": {
           "name": "Bulbs",
-          "cost": "5",
+          "cost": "1",
           "category": "Materials",
-          "quantity": "20"
+          "quantity": "100"
         },
-        "2": {
-          "id": 2,
+        "de16dd-6fbd-66b3-2dc8-d88874ca2043": {
+          "id": "de16dd-6fbd-66b3-2dc8-d88874ca2043",
           "name": "Electrician",
           "cost": "200",
           "category": "Labor",
           "quantity": "1"
+        },
+        "0577d87-b04a-bb1-fc6-868a34be565": {
+          "id": "0577d87-b04a-bb1-fc6-868a34be565",
+          "name": "Dimmers",
+          "cost": "2",
+          "category": "Materials",
+          "quantity": "10"
         }
       },
-      "id": 4
+      "recorded": "2022-05-29T15:57:29.229Z",
+      "id": 1
+    },
+    {
+      "name": "Restroom",
+      "status": "🟡",
+      "cost": 400,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Sink",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "2"
+        },
+        "d0fedd-3221-ccc3-f2d2-e7fe2e357a1": {
+          "id": "d0fedd-3221-ccc3-f2d2-e7fe2e357a1",
+          "name": "Plumber",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "165c85f-5f7f-10c-734b-a2d8700a824": {
+          "id": "165c85f-5f7f-10c-734b-a2d8700a824",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        },
+        "122e11-7e3-136b-2a7c-7bd7b4538184": {
+          "id": "122e11-7e3-136b-2a7c-7bd7b4538184",
+          "name": "",
+          "cost": 0,
+          "category": "",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-05-29T16:50:24.635Z",
+      "id": 2
     }
   ]
 }
