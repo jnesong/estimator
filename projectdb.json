@@ -1,43 +1,27 @@
 {
   "projects": [
     {
-      "name": "Air Condition",
+      "name": "Air Conditioning",
       "status": "🔴",
-      "cost": 200,
+      "cost": 100,
       "items": {
         "1": {
           "id": 1,
-          "name": "Filter",
+          "name": "Filters",
           "cost": "10",
           "category": "Materials",
-          "quantity": "20"
-        }
-      },
-      "recorded": "2022-05-29T17:57:19.451Z",
-      "id": 3
-    },
-    {
-      "name": "Floors",
-      "status": "🟡",
-      "cost": 440,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Tiles",
-          "cost": "400",
-          "category": "Installation",
-          "quantity": "1"
+          "quantity": "10"
         },
-        "1cf14c3-e46-3a21-fce6-60e1308ba140": {
-          "id": "1cf14c3-e46-3a21-fce6-60e1308ba140",
-          "name": "Warranty",
-          "cost": "40",
-          "category": "All Inclusive",
+        "01bfb86-61e5-fef1-8f21-f277375e37": {
+          "id": "01bfb86-61e5-fef1-8f21-f277375e37",
+          "name": "Technician",
+          "cost": "200",
+          "category": "Labor",
           "quantity": "1"
         }
       },
-      "recorded": "2022-05-29T21:06:53.218Z",
-      "id": 7
+      "recorded": "2022-05-30T23:54:46.142Z",
+      "id": 1
     }
   ]
 }

@@ -26,7 +26,7 @@ const EditModal = ({ project, holdEdit }) => {
         id: project.id
     });
     const [editItemComponents, setEditItemComponents] = useState(Object.values(project.items).map(item => (
-        <EditItem key={item.id} id={item.id} item={item} projectId={project.id} deleteItem={deleteItem} createItemLine={createItems} />
+        <EditItem key={item.id} id={item.id} item={item} deleteItem={deleteItem} createItemLine={createItems} />
     )));
 
     function deleteItem(itemId) {
@@ -48,11 +48,10 @@ const EditModal = ({ project, holdEdit }) => {
     }
 
     const handleAddItemLine = () => {
-        setEditItemComponents([...editItemComponents, <EditItem key={uuid()} id={uuid()} item={emptyItem} projectId={project.id} deleteItem={deleteItem} createItemLine={createItems} />])
+        setEditItemComponents([...editItemComponents, <EditItem key={uuid()} id={uuid()} item={emptyItem} deleteItem={deleteItem} createItemLine={createItems} />])
     };//adding item line component when Add New Item Line clicked in Edit Modal
 
     const handleEdit = (e) => {
-        e.preventDefault();
         setProjectData({
             ...projectData,
             [e.target.name]: e.target.value,
@@ -62,6 +61,7 @@ const EditModal = ({ project, holdEdit }) => {
     //creates patch request to project db.json when Save clicked in Edit Modal
     const handleSave = (e) => {
         e.preventDefault();
+        console.log(projectData)
         fetch(serverURL + `/${project.id}`, {
             method: "PATCH",
             headers: {

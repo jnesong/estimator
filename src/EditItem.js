@@ -10,28 +10,16 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
-const EditItem = ({ id, item, projectId, deleteItem, createItemLine }) => {
-    const serverURL = "http://localhost:3000/projects"; // array of displayed projects
-    const [itemName, setItemName] = useState("")
-    const [itemCost, setItemCost] = useState(0)
-    const [currentProject, setCurrentProject] = useState({})
+const EditItem = ({ id, item, deleteItem, createItemLine }) => {
+    const [itemName, setItemName] = useState(item.name)
+    const [itemCost, setItemCost] = useState(item.cost)
     console.log(item)
-
-    // console.log(currentProject)
-
-    // useEffect(() => {
-    //     fetch(serverURL + `/${projectId}`)
-    //         .then(r => r.json())
-    //         .then(project => setCurrentProject(project))
-    // }, [projectId]);
-
-
 
     //variables for category and quantity
     const filter = createFilterOptions();
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState(item.category);
     const categories = ['All Inclusive', 'Labor', 'Materials'];
-    const [quantity, setQuantity] = useState('1');
+    const [quantity, setQuantity] = useState(item.quantity);
     const quantities = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
     const handleCategoryChange = (e, newValue) => {
