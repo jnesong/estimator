@@ -12,6 +12,9 @@ const jenny = createTheme({
   palette: {
     warning: {
       main: '#f5b942'
+    },
+    info: {
+      main: '#0d3678'
     }
   },
   typography: {

@@ -3,14 +3,12 @@ import { useState } from 'react';
 import uuid from 'react-uuid'
 //components
 import NewItem from './NewItem';
-// import AddItem from './buttons/AddItem';
 import Saved from './Saved';
 //css
 import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Button from '@mui/material/Button';
-// import Stack from '@mui/material/Stack';
 
 let items = {};
 
@@ -22,7 +20,6 @@ const NewProject = () => {
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
-    // let newItemComponents = { 1: <NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems} /> };
     const [newItemComponents, setNewItemComponents] = useState([<NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems}/>])
     let date = new Date() //current date and time
 
@@ -36,18 +33,15 @@ const NewProject = () => {
     }; // updates status value with user selection
 
     const handleAddItem = () => {
-        console.log("clicked!")
         setNewItemComponents([...newItemComponents, <NewItem key={uuid()} id={uuid()} deleteItem={deleteItem} createItemLine={createItems} />])
     };
 
     function deleteItem(itemId) {
-        console.log(itemId)
+        // console.log(itemId)
         let updatedItemComponents = newItemComponents.filter(item => item.props.id !== itemId);
         setNewItemComponents(updatedItemComponents);
-        console.log(newItemComponents)
+        // console.log(newItemComponents)
         delete items[itemId];
-    //     // let updatedArray = Object.values(items).filter(item => item.id !== itemId);
-    //     // items = updatedArray; // deletes display of <NewItem /> form component 
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
     function createItems(item) {
@@ -155,7 +149,7 @@ const NewProject = () => {
 
                 <div className="add-button">
                     <Button variant="outlined" color="success" onClick={handleAddItem}>
-                        Add New Item
+                        Add New Line Item
                     </Button>
                 </div>
 

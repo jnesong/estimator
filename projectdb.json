@@ -1,43 +1,6 @@
 {
   "projects": [
     {
-      "name": "Restroom",
-      "status": "🟡",
-      "cost": 400,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Sink",
-          "cost": "100",
-          "category": "Materials",
-          "quantity": "2"
-        },
-        "d0fedd-3221-ccc3-f2d2-e7fe2e357a1": {
-          "id": "d0fedd-3221-ccc3-f2d2-e7fe2e357a1",
-          "name": "Plumber",
-          "cost": "200",
-          "category": "Labor",
-          "quantity": "1"
-        },
-        "165c85f-5f7f-10c-734b-a2d8700a824": {
-          "id": "165c85f-5f7f-10c-734b-a2d8700a824",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "122e11-7e3-136b-2a7c-7bd7b4538184": {
-          "id": "122e11-7e3-136b-2a7c-7bd7b4538184",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-05-29T16:50:24.635Z",
-      "id": 2
-    },
-    {
       "name": "Air Condition",
       "status": "🔴",
       "cost": 200,
@@ -54,50 +17,27 @@
       "id": 3
     },
     {
-      "name": "New Lights",
-      "status": "🟢",
-      "cost": 500,
+      "name": "Floors",
+      "status": "🟡",
+      "cost": 440,
       "items": {
         "1": {
           "id": 1,
-          "name": "Bulbs",
-          "cost": "20",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "227837f-cf7f-f582-36a6-c2a8bd55a10f": {
-          "id": "227837f-cf7f-f582-36a6-c2a8bd55a10f",
-          "name": "Electrician",
-          "cost": "200",
-          "category": "Labor",
+          "name": "Tiles",
+          "cost": "400",
+          "category": "Installation",
           "quantity": "1"
         },
-        "84d83b1-a7ae-17ae-018-a3e1783aae6a": {
-          "id": "84d83b1-a7ae-17ae-018-a3e1783aae6a",
-          "name": "Dimmers",
-          "cost": "25",
-          "category": "Materials",
-          "quantity": "4"
+        "1cf14c3-e46-3a21-fce6-60e1308ba140": {
+          "id": "1cf14c3-e46-3a21-fce6-60e1308ba140",
+          "name": "Warranty",
+          "cost": "40",
+          "category": "All Inclusive",
+          "quantity": "1"
         }
       },
-      "recorded": "2022-05-29T18:13:31.058Z",
-      "id": 5
-    },
-    {
-      "name": "Decorations",
-      "status": "🟢",
-      "cost": 70,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Plants",
-          "cost": "10",
-          "category": "Materials",
-          "quantity": "7"
-        }
-      },
-      "recorded": "2022-05-29T20:01:57.730Z",
-      "id": 6
+      "recorded": "2022-05-29T21:06:53.218Z",
+      "id": 7
     }
   ]
 }

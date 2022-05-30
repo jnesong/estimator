@@ -88,8 +88,17 @@ const Saved = ({ savedProject }) => {
 
     //below, creates cards from savedList array
     let savedCardsList = savedList.map(project => (
-        <SavedCard key={project.id} project={project} deleteProject={deleteProject} />
+        <SavedCard key={project.id} project={project} deleteProject={deleteProject} holdEdit={holdEdit}/>
     ));
+
+    function holdEdit ( editedProject ) {
+        const updatedSavedList = savedList.map( project => {
+            if (project.id === editedProject.id) {
+                return editedProject
+            } else { return project}
+        });
+        setSavedList(updatedSavedList); 
+    }; // connected with Edit Modal component to update client side when project edited
 
     return (
         <>
