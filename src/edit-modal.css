@@ -1,0 +1,51 @@
+.modal {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 2px 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 850px;
+    height: 300px;
+    border: 1px solid rgb(35, 41, 63);
+    background-color: rgba(255, 255, 255, 0.945);
+    padding: 50px;
+    padding-top: 25px;
+    overflow: scroll
+}
+
+.edit-name {
+  border: 1px solid grey;
+  padding:10px;
+  width: 300px;
+  margin-left:10px;
+  background-color: transparent;
+  letter-spacing: 2px;
+  font-family: 'Mulish';
+  font-size: 18px;
+  text-align: left;
+}
+
+.edit-button {
+    margin: 10px;
+}
+
+.edit-item-container {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    padding:15px;
+    padding-left: 0px;
+    grid-template-columns: 250px 150px 150px 150px 25px;
+    grid-template-rows: auto;
+    column-gap: 16px;
+    row-gap: 20px;
+}
+
+.edit-status {
+    width: 100px;
+    height: 50px;
+    display: block;
+    margin-top: 16px;
+}
