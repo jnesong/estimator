@@ -88,8 +88,17 @@ const Saved = ({ savedProject }) => {
 
     //below, creates cards from savedList array
     let savedCardsList = savedList.map(project => (
-        <SavedCard key={project.id} project={project} deleteProject={deleteProject} />
+        <SavedCard key={project.id} project={project} deleteProject={deleteProject} holdEdit={holdEdit}/>
     ));
+
+    function holdEdit ( editedProject ) {
+        const updatedSavedList = savedList.map( project => {
+            if (project.id === editedProject.id) {
+                return editedProject
+            } else { return project}
+        });
+        setSavedList(updatedSavedList); 
+    }; // connected with Edit Modal component to update client side when project edited
 
     return (
         <>
@@ -100,9 +109,9 @@ const Saved = ({ savedProject }) => {
                 <div className="saved-nav">
                     <div className="sort-bar">
                         <p style={{ display: "inline", fontSize: "18px" }}> SORT BY:</p>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={alphabeticalSortHandle}>Alphabet</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={costSortHandle}>Cost</Button>
-                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={statusSortHandle}>Status</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={alphabeticalSortHandle}>Alphabet: A - Z</Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={costSortHandle}> Cost: $ MIN - MAX </Button>
+                        <Button variant="outlined" style={{ marginLeft: "16px" }} onClick={statusSortHandle}> Status: 🔴  🟡  🟢</Button>
                     </div>
                     <Button variant="outlined" startIcon={<UndoIcon />} onClick={handleUndoClick} style={{ width: "180px" }}>
                         Undo Delete

@@ -1,103 +1,57 @@
 {
   "projects": [
     {
-      "name": "Restroom",
+      "name": "New Lights",
       "status": "🟡",
       "cost": 400,
       "items": {
         "1": {
           "id": 1,
-          "name": "Sink",
-          "cost": "100",
+          "name": "Bulbs",
+          "cost": "10",
           "category": "Materials",
-          "quantity": "2"
+          "quantity": "20"
         },
-        "d0fedd-3221-ccc3-f2d2-e7fe2e357a1": {
-          "id": "d0fedd-3221-ccc3-f2d2-e7fe2e357a1",
+        "efd1dce-0d4a-1a0-cfb7-7fe08b75ad": {
+          "id": "efd1dce-0d4a-1a0-cfb7-7fe08b75ad",
+          "name": "Electrician",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-05-30T23:57:16.278Z",
+      "id": 2
+    },
+    {
+      "name": "Restroom",
+      "status": "🟡",
+      "cost": 315,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Pipes",
+          "cost": "15",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        "2f7f7e-40b0-624f-8af8-43b5acd8f77": {
+          "id": "2f7f7e-40b0-624f-8af8-43b5acd8f77",
           "name": "Plumber",
           "cost": "200",
           "category": "Labor",
           "quantity": "1"
         },
-        "165c85f-5f7f-10c-734b-a2d8700a824": {
-          "id": "165c85f-5f7f-10c-734b-a2d8700a824",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        },
-        "122e11-7e3-136b-2a7c-7bd7b4538184": {
-          "id": "122e11-7e3-136b-2a7c-7bd7b4538184",
-          "name": "",
-          "cost": 0,
-          "category": "",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-05-29T16:50:24.635Z",
-      "id": 2
-    },
-    {
-      "name": "Air Condition",
-      "status": "🔴",
-      "cost": 200,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Filter",
-          "cost": "10",
+        "111aa1b-7f54-ac26-f5cf-ee8b4c4f7172": {
+          "id": "111aa1b-7f54-ac26-f5cf-ee8b4c4f7172",
+          "name": "Sink",
+          "cost": "100",
           "category": "Materials",
-          "quantity": "20"
+          "quantity": "1"
         }
       },
-      "recorded": "2022-05-29T17:57:19.451Z",
+      "recorded": "2022-05-31T00:28:48.917Z",
       "id": 3
-    },
-    {
-      "name": "New Lights",
-      "status": "🟢",
-      "cost": 500,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Bulbs",
-          "cost": "20",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "227837f-cf7f-f582-36a6-c2a8bd55a10f": {
-          "id": "227837f-cf7f-f582-36a6-c2a8bd55a10f",
-          "name": "Electrician",
-          "cost": "200",
-          "category": "Labor",
-          "quantity": "1"
-        },
-        "84d83b1-a7ae-17ae-018-a3e1783aae6a": {
-          "id": "84d83b1-a7ae-17ae-018-a3e1783aae6a",
-          "name": "Dimmers",
-          "cost": "25",
-          "category": "Materials",
-          "quantity": "4"
-        }
-      },
-      "recorded": "2022-05-29T18:13:31.058Z",
-      "id": 5
-    },
-    {
-      "name": "Decorations",
-      "status": "🟢",
-      "cost": 70,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Plants",
-          "cost": "10",
-          "category": "Materials",
-          "quantity": "7"
-        }
-      },
-      "recorded": "2022-05-29T20:01:57.730Z",
-      "id": 6
     }
   ]
 }
