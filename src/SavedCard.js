@@ -36,7 +36,7 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
                     <p className="saved-text-status"> {project.status} </p>
                     <p className="saved-text-date"> {project.recorded.slice(0, 10)} </p>
                     <p className="saved-text-name"> {project.name} </p>
-                    <p className="saved-text-items"> View Items ({Object.values(project.items).length}) </p>
+                    <p className="saved-text-items" onClick={handleOpenModal}> View Items ({Object.values(project.items).length}) </p>
                     <p className="saved-text-cost"> Project total: $ {project.cost} </p>
                 </CardContent>
                 <div className="trashcan-on-card-div">

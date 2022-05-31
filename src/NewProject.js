@@ -80,6 +80,7 @@ const NewProject = () => {
         }, 900); // this setTimeout toggles the save button display from a check back to save
     };
 
+    // calculateCost() runs with every click out of an item line field 
     function calculateCost() {
         let totalCost = 0;
         Object.values(items).forEach(item => {
@@ -88,7 +89,7 @@ const NewProject = () => {
             }
         })
         setTotalProjectCost(totalCost)
-    } // calculateCost() runs with every click out of an item line field 
+    };
 
     let newItemComponentsList = newItemComponents.map( component => (
         component

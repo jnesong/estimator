@@ -1,27 +1,57 @@
 {
   "projects": [
     {
-      "name": "Air Conditioning",
-      "status": "🔴",
-      "cost": 100,
+      "name": "New Lights",
+      "status": "🟡",
+      "cost": 400,
       "items": {
         "1": {
           "id": 1,
-          "name": "Filters",
+          "name": "Bulbs",
           "cost": "10",
           "category": "Materials",
-          "quantity": "10"
+          "quantity": "20"
         },
-        "01bfb86-61e5-fef1-8f21-f277375e37": {
-          "id": "01bfb86-61e5-fef1-8f21-f277375e37",
-          "name": "Technician",
+        "efd1dce-0d4a-1a0-cfb7-7fe08b75ad": {
+          "id": "efd1dce-0d4a-1a0-cfb7-7fe08b75ad",
+          "name": "Electrician",
           "cost": "200",
           "category": "Labor",
           "quantity": "1"
         }
       },
-      "recorded": "2022-05-30T23:54:46.142Z",
-      "id": 1
+      "recorded": "2022-05-30T23:57:16.278Z",
+      "id": 2
+    },
+    {
+      "name": "Restroom",
+      "status": "🟡",
+      "cost": 315,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Pipes",
+          "cost": "15",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        "2f7f7e-40b0-624f-8af8-43b5acd8f77": {
+          "id": "2f7f7e-40b0-624f-8af8-43b5acd8f77",
+          "name": "Plumber",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "111aa1b-7f54-ac26-f5cf-ee8b4c4f7172": {
+          "id": "111aa1b-7f54-ac26-f5cf-ee8b4c4f7172",
+          "name": "Sink",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-05-31T00:28:48.917Z",
+      "id": 3
     }
   ]
 }

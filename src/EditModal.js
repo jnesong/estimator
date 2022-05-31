@@ -73,6 +73,20 @@ const EditModal = ({ project, holdEdit }) => {
             .then(editedProject => holdEdit(editedProject)) // updates display/client side, in Saved component
     };
     
+    // calculateCost() runs with every click out of an item line field 
+    function calculateCost() {
+        let totalCost = 0;
+        Object.values(projectData.items).forEach(item => {
+            if(!!item.cost){
+                totalCost += parseFloat(item.cost) * parseInt(item.quantity)
+            }
+        })
+        if (totalCost !== isNaN) {setProjectData({
+            ...projectData,
+            cost: totalCost,
+        })};
+    }; 
+    
     return (
         <>
             <p> <EditIcon color="info" /> <AutoAwesomeIcon color="info" /> </p>
@@ -88,7 +102,7 @@ const EditModal = ({ project, holdEdit }) => {
                     onChange={handleEdit}
                 />
 
-                <p className="project-name-display"> {projectData.name} total:  $ {projectData.cost ? projectData.cost : 0} </p>
+                <p className="project-name-display"> {projectData.name} total:  $ {!!projectData.cost ? projectData.cost : '💬'} </p>
 
                 <div className="edit-status">
                     <FormControl fullWidth size="small">
@@ -108,7 +122,7 @@ const EditModal = ({ project, holdEdit }) => {
                     </FormControl>
                 </div>
 
-                <div className="edit-item-container">
+                <div className="edit-item-container" onBlur={calculateCost}>
                     {editItemComponents}
                 </div>
 
