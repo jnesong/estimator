@@ -33,6 +33,7 @@ const EditModal = ({ project, holdEdit }) => {
         let updatedItemComponents = editItemComponents.filter(item => item.props.id !== itemId);
         setEditItemComponents(updatedItemComponents);
         delete projectData.items[itemId];
+        calculateCost();
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
     function createItems(item) {
@@ -73,7 +74,7 @@ const EditModal = ({ project, holdEdit }) => {
             .then(editedProject => holdEdit(editedProject)) // updates display/client side, in Saved component
     };
     
-    // calculateCost() runs with every click out of an item line field 
+    // calculateCost() runs with every click out of an item line field and when item line deleted
     function calculateCost() {
         let totalCost = 0;
         Object.values(projectData.items).forEach(item => {
@@ -102,7 +103,7 @@ const EditModal = ({ project, holdEdit }) => {
                     onChange={handleEdit}
                 />
 
-                <p className="project-name-display"> {projectData.name} total:  $ {!!projectData.cost ? projectData.cost : '💬'} </p>
+                <p className="project-name-display"> {projectData.name} total:  $ {!!projectData.cost ? projectData.cost : 'Quantity?'} </p>
 
                 <div className="edit-status">
                     <FormControl fullWidth size="small">

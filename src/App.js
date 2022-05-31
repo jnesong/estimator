@@ -1,5 +1,5 @@
 //components
-import NewProject from './NewProject'
+import Landing from './Landing'
 //graphics
 import logoE from './graphics/logoE.png'
 //css
@@ -28,7 +28,7 @@ const App = () => {
     <ThemeProvider theme={jenny}>
       <div>
         <img className="logo" src={logoE} alt="logo in green" />
-        <NewProject />
+        <Landing />
       </div>
     </ThemeProvider>
   );

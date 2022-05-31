@@ -25,8 +25,8 @@
     },
     {
       "name": "Restroom",
-      "status": "🟡",
-      "cost": 315,
+      "status": "🔴",
+      "cost": 115,
       "items": {
         "1": {
           "id": 1,
@@ -35,15 +35,8 @@
           "category": "Materials",
           "quantity": "1"
         },
-        "2f7f7e-40b0-624f-8af8-43b5acd8f77": {
-          "id": "2f7f7e-40b0-624f-8af8-43b5acd8f77",
-          "name": "Plumber",
-          "cost": "200",
-          "category": "Labor",
-          "quantity": "1"
-        },
-        "111aa1b-7f54-ac26-f5cf-ee8b4c4f7172": {
-          "id": "111aa1b-7f54-ac26-f5cf-ee8b4c4f7172",
+        "22e7f5d-52c8-4db4-da00-dba4aaa0b17": {
+          "id": "22e7f5d-52c8-4db4-da00-dba4aaa0b17",
           "name": "Sink",
           "cost": "100",
           "category": "Materials",
@@ -52,6 +45,45 @@
       },
       "recorded": "2022-05-31T00:28:48.917Z",
       "id": 3
+    },
+    {
+      "name": "Carpet",
+      "status": "🟢",
+      "cost": 150,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Roll",
+          "cost": "100",
+          "category": "All Inclusive",
+          "quantity": "1"
+        },
+        "d3ee3c-1bd0-d2aa-cc1-462b1b710cd": {
+          "id": "d3ee3c-1bd0-d2aa-cc1-462b1b710cd",
+          "name": "Glue",
+          "cost": "50",
+          "category": "Materials",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-05-31T20:20:56.578Z",
+      "id": 5
+    },
+    {
+      "name": "Decor",
+      "status": "🟢",
+      "cost": 100,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Plants",
+          "cost": "10",
+          "category": "Materials",
+          "quantity": "10"
+        }
+      },
+      "recorded": "2022-05-31T20:28:16.459Z",
+      "id": 6
     }
   ]
 }
