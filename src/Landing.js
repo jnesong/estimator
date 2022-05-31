@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 
 let items = {};
 
-const NewProject = () => {
+const Landing = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [saveClicked, setSavedClicked] = useState(false); //this is used to let other components know when save has been clicked
     const [buttonSubmitToggle, setButtonSubmitToggle] = useState(true); // controls display on save button
@@ -20,7 +20,7 @@ const NewProject = () => {
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
-    const [newItemComponents, setNewItemComponents] = useState([<NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems}/>])
+    const [newItemComponents, setNewItemComponents] = useState([<NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems} />])
     let date = new Date() //current date and time
 
 
@@ -37,11 +37,10 @@ const NewProject = () => {
     };
 
     function deleteItem(itemId) {
-        // console.log(itemId)
         let updatedItemComponents = newItemComponents.filter(item => item.props.id !== itemId);
         setNewItemComponents(updatedItemComponents);
-        // console.log(newItemComponents)
         delete items[itemId];
+        calculateCost();
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
     function createItems(item) {
@@ -84,14 +83,14 @@ const NewProject = () => {
     function calculateCost() {
         let totalCost = 0;
         Object.values(items).forEach(item => {
-            if(item.cost !== ''){
+            if (item.cost !== '') {
                 totalCost += parseFloat(item.cost) * parseInt(item.quantity)
             }
         })
         setTotalProjectCost(totalCost)
     };
 
-    let newItemComponentsList = newItemComponents.map( component => (
+    let newItemComponentsList = newItemComponents.map(component => (
         component
     )); // allows first item line component to be deleted
 
@@ -169,4 +168,4 @@ const NewProject = () => {
     )
 };
 
-export default NewProject;
+export default Landing;
