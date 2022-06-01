@@ -1,8 +1,7 @@
 ## Estimator
-<p> Estimator was designed for field technicians to estimate the cost of repair for custom facility project. As users enter details about each project, the total cost will be calculated. There is an option to save a project and have a projects' total calculated. There are also options to download a CSV summary of each project to share with the user's team. Furthermore, projects can be sorted by alphabet, cost, and status. The following project status' are currently available: Proactive, Serviceable, and Critical. </p>
+<p> Estimator was designed for field technicians to estimate the cost of repair for custom facility projects. </p>
 
 - - - - 
-<br/>
 
 ### Getting started
 <details>
@@ -70,6 +69,7 @@ Please refer to React Uuid documentation for further details: https://www.npmjs.
 
 ### Usage
 <p> Estimator was created in response to a code challenge prompt. It is not intended for external use at this time. </p>
+<p> As users enter details about each project, the total cost is calculated. Each item line has the option to include a cost category. The current default selection options are Material, Labor, and All Inclusive. Users can also name their own category. There is an option to save a project and have all the saved projects' total calculated. There are also options to download a CSV summary of each project to share with the user's team. Users can edit a saved project at anytime. Users can also retrieve deleted projects with the Undo button. Furthermore, projects can be sorted by alphabet, cost, and status. The following project status' are currently available: Proactive, Serviceable, and Critical.</p>
 
 ### Further Improvements
 - Ability for users to login - therefore a complete backend with password encryption. 
