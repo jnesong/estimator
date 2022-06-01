@@ -9,6 +9,8 @@ import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import DoneIcon from '@mui/icons-material/Done';
 
 let items = {};
 
@@ -148,13 +150,13 @@ const Landing = () => {
                 </div>
 
                 <div className="add-button">
-                    <Button variant="outlined" color="success" onClick={handleAddItem}>
-                        Add New Line Item
+                    <Button variant="outlined" color="success" onClick={handleAddItem} startIcon={<AddIcon />} >
+                        New Line Item
                     </Button>
                 </div>
 
                 <div className="save-button">
-                    <Button variant="outlined" color="success" type="submit">
+                    <Button variant="outlined" color="success" type="submit" startIcon={<DoneIcon />}>
                         {buttonSubmitToggle ? "submit" : "✔ scroll down"}
                     </Button>
                 </div>

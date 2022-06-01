@@ -1,10 +1,10 @@
 //components
-import Landing from './Landing'
+import Landing from './Landing';
 //graphics
-import logoE from './graphics/logoE.png'
+import logoE from './graphics/logoE.png';
 //css
-import { createTheme, ThemeProvider } from '@mui/material'
-import './estimator.css'
+import { createTheme, ThemeProvider } from '@mui/material';
+import './estimator.css';
 
 const jenny = createTheme({
 
@@ -21,7 +21,7 @@ const jenny = createTheme({
     fontFamily: "Mulish",
     fontSize: 12
   }
-})
+});
 
 const App = () => {
   return (

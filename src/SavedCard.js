@@ -3,6 +3,7 @@ import { useState } from 'react';
 //components
 import DeleteButton from './buttons/DeleteButton';
 import EditModal from './EditModal';
+import EstimateCSV from './EstimateCSV';
 //css
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -44,6 +45,9 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
                         <EditIcon />
                     </IconButton>
                     <DeleteButton id={project.id} deleteItem={deleteProject} />
+                </div>
+                <div className="csv-summary-div-on-card">
+                <EstimateCSV project={project} />
                 </div>
             </Card>
 

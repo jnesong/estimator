@@ -13,8 +13,6 @@ import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 const EditItem = ({ id, item, deleteItem, createItemLine }) => {
     const [itemName, setItemName] = useState(item.name)
     const [itemCost, setItemCost] = useState(item.cost)
-    console.log(typeof itemCost) 
-    console.log(itemCost)
 
     //variables for category and quantity
     const filter = createFilterOptions();
