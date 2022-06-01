@@ -12,16 +12,15 @@ import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
 const NewItem = ({ id, deleteItem, createItemLine }) => {
 
-    const [itemName, setItemName] = useState("")
-    const [itemCost, setItemCost] = useState(0)
-
+    const [itemName, setItemName] = useState("");
+    const [itemCost, setItemCost] = useState(0);
     //variables for category and quantity
     const filter = createFilterOptions();
     const [category, setCategory] = useState("");
     const categories = ['All Inclusive', 'Labor', 'Materials'];
     const [quantity, setQuantity] = useState('1');
     const quantities = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
+// autocomplete functions, though e is greyed out below, it is necessary, otherwise type error. 
     const handleCategoryChange = (e, newValue) => {
         if (typeof newValue === 'string') {
             setCategory(newValue);
@@ -29,7 +28,6 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
             setCategory(newValue.inputValue);
         } else { setCategory(newValue); }
     };
-
     const handleQuantityChange = (e, newQuantity) => {
         if (typeof newQuantity === 'string') {
             setQuantity(newQuantity);
@@ -37,14 +35,12 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
             setQuantity(newQuantity.inputValue);
         } else { setQuantity(newQuantity); }
     };
-
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
-    } // updates item name with user typing
-
+    }; // updates item name with user typing
     const handleCostChange = (e) => {
         setItemCost(e.target.value);
-    } // updates item cost with user typing 
+    }; // updates item cost with user typing 
 
     useEffect(() => {
         let itemLine = {
@@ -53,9 +49,9 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
             cost: itemCost,
             category: category,
             quantity: quantity
-        }
-        createItemLine(itemLine) //send item line object up to New Project component
-    }, [id, createItemLine, itemName, itemCost, category, quantity])
+        };
+        createItemLine(itemLine); //send item line object up to New Project component
+    }, [id, createItemLine, itemName, itemCost, category, quantity]);
     // updates itemLineObj with change in any item inputs
 
     return (
@@ -167,12 +163,9 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
                 />
 
                 <DeleteButton id={id} deleteItem={deleteItem} />
-
             </div>
         </>
-
     )
-
 };
 
 export default NewItem;

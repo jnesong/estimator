@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 
-let items = {};
+let items = {};//could alternatively use useRef, ultimately do not want to lose items bw renders
 
 const Landing = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
@@ -23,8 +23,7 @@ const Landing = () => {
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
     const [newItemComponents, setNewItemComponents] = useState([<NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems} />])
-    let date = new Date() //current date and time
-
+    let date = new Date(); //current date and time
 
     const handleProjectNameChange = (e) => {
         setProjectName(e.target.value);
@@ -42,12 +41,12 @@ const Landing = () => {
         let updatedItemComponents = newItemComponents.filter(item => item.props.id !== itemId);
         setNewItemComponents(updatedItemComponents);
         delete items[itemId];
-        calculateCost();
+        calculateCost(); //recalculate cost when item line deleted
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
     function createItems(item) {
         items[item.id] = item;
-    }; // making items object 
+    }; // making items object, see line 15
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -59,7 +58,6 @@ const Landing = () => {
             items: items,
             recorded: date
         } // creates object to send to server
-        console.log(savedProject)
         setButtonSubmitToggle(!buttonSubmitToggle);
         setTimeout(fetch(serverURL, {
             method: "POST",
@@ -87,9 +85,9 @@ const Landing = () => {
         Object.values(items).forEach(item => {
             if (item.cost !== '') {
                 totalCost += parseFloat(item.cost) * parseInt(item.quantity)
-            }
+            };
         })
-        setTotalProjectCost(totalCost)
+        setTotalProjectCost(totalCost);
     };
 
     let newItemComponentsList = newItemComponents.map(component => (
@@ -98,6 +96,7 @@ const Landing = () => {
 
     return (
         <>
+        <p className="app-title"> Create Estimate </p>
             <form onSubmit={handleSubmit}>
 
                 <div className="project-name">

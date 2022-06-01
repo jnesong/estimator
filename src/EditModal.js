@@ -18,7 +18,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 const EditModal = ({ project, holdEdit }) => {
-
+// compare to Landing.js
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [projectData, setProjectData] = useState({
         name: project.name,
@@ -36,7 +36,7 @@ const EditModal = ({ project, holdEdit }) => {
         let updatedItemComponents = editItemComponents.filter(item => item.props.id !== itemId);
         setEditItemComponents(updatedItemComponents);
         delete projectData.items[itemId];
-        calculateCost();
+        calculateCost(); // when item deleted, recalculate cost
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
     function createItems(item) {
@@ -49,7 +49,7 @@ const EditModal = ({ project, holdEdit }) => {
         cost: "",
         category: "",
         quantity: ""
-    }
+    }; //to pass into EditItem component as item prop for new/blank item
 
     const handleAddItemLine = () => {
         setEditItemComponents([...editItemComponents, <EditItem key={uuid()} id={uuid()} item={emptyItem} deleteItem={deleteItem} createItemLine={createItems} />])

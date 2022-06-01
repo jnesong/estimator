@@ -5,8 +5,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const DeleteButton = ( {id, deleteItem} ) => {
 
     const handleDeleteClick = () => {
-        deleteItem(id)
-    }
+        deleteItem(id);
+    };
 
     return (
         <IconButton aria-label="delete" size="small" color="error" onClick={handleDeleteClick}>
