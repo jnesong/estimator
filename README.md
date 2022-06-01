@@ -1,3 +1,9 @@
+## Estimator
+<p> Estimator was designed for field technicians to estimate the cost of repair for custom facility project. As users enter details about each project, the total cost will be calculated. There is an option to save a project and have a projects' total calculated. There are also options to download a CSV summary of each project to share with the user's team. Furthermore, projects can be sorted by alphabet, cost, and status. The following project status' are currently available: Proactive, Serviceable, and Critical. </p>
+
+- - - - 
+<br/>
+
 ### Getting started
 <details>
 <summary> This application was created with React v.18.1.0. </summary>
@@ -59,3 +65,12 @@ npm i react-uuid
 <br/>
 Please refer to React Uuid documentation for further details: https://www.npmjs.com/package/react-uuid
 </details>
+
+- - - -
+
+### Usage
+<p> Estimator was created in response to a code challenge prompt. It is not intended for external use at this time. </p>
+
+### Further Improvements
+- Ability for users to login - therefore a complete backend with password encryption. 
+- Separate calculation sums for material costs, labor costs, all inclusive costs, and miscellaneous costs. 
