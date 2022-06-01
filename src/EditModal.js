@@ -3,11 +3,14 @@ import { useState } from 'react';
 import uuid from 'react-uuid'
 //components
 import EditItem from './EditItem';
+import EstimateCSV from './EstimateCSV';
 //css
 import './edit-modal.css'
 import EditIcon from '@mui/icons-material/Edit';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import Button from '@mui/material/Button';
+import SaveIcon from '@mui/icons-material/Save';
+import AddIcon from '@mui/icons-material/Add';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -44,7 +47,7 @@ const EditModal = ({ project, holdEdit }) => {
         id: "",
         name: "",
         cost: "",
-        category:"",
+        category: "",
         quantity: ""
     }
 
@@ -73,21 +76,23 @@ const EditModal = ({ project, holdEdit }) => {
             .then(r => r.json())
             .then(editedProject => holdEdit(editedProject)) // updates display/client side, in Saved component
     };
-    
+
     // calculateCost() runs with every click out of an item line field and when item line deleted
     function calculateCost() {
         let totalCost = 0;
         Object.values(projectData.items).forEach(item => {
-            if(!!item.cost){
+            if (!!item.cost) {
                 totalCost += parseFloat(item.cost) * parseInt(item.quantity)
             }
         })
-        if (totalCost !== isNaN) {setProjectData({
-            ...projectData,
-            cost: totalCost,
-        })};
-    }; 
-    
+        if (totalCost !== isNaN) {
+            setProjectData({
+                ...projectData,
+                cost: totalCost,
+            })
+        };
+    };
+
     return (
         <>
             <p> <EditIcon color="info" /> <AutoAwesomeIcon color="info" /> </p>
@@ -128,15 +133,19 @@ const EditModal = ({ project, holdEdit }) => {
                 </div>
 
                 <div className="edit-button">
-                    <Button variant="outlined" color="success" onClick={handleAddItemLine} >
-                        Add New Line Item
+                    <Button variant="outlined" color="success" onClick={handleAddItemLine} startIcon={<AddIcon />}>
+                        New Line Item
                     </Button>
                 </div>
 
                 <div className="edit-button">
-                    <Button variant="outlined" color="success" type="submit">
-                        Save
+                    <Button variant="outlined" color="success" type="submit" startIcon={<SaveIcon />}>
+                        Save Changes
                     </Button>
+                </div>
+
+                <div className="csv-summary-div">
+                    <EstimateCSV project={projectData} />
                 </div>
             </form>
         </>

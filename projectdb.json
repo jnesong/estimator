@@ -1,29 +1,6 @@
 {
   "projects": [
     {
-      "name": "New Lights",
-      "status": "🟡",
-      "cost": 400,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Bulbs",
-          "cost": "10",
-          "category": "Materials",
-          "quantity": "20"
-        },
-        "efd1dce-0d4a-1a0-cfb7-7fe08b75ad": {
-          "id": "efd1dce-0d4a-1a0-cfb7-7fe08b75ad",
-          "name": "Electrician",
-          "cost": "200",
-          "category": "Labor",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-05-30T23:57:16.278Z",
-      "id": 2
-    },
-    {
       "name": "Restroom",
       "status": "🔴",
       "cost": 115,
@@ -47,32 +24,69 @@
       "id": 3
     },
     {
+      "name": "New Lights",
+      "status": "🟡",
+      "cost": 200,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Bulbs",
+          "cost": "2",
+          "category": "Materials",
+          "quantity": "20"
+        },
+        "277c87-532-173-ff8a-e707b380451c": {
+          "id": "277c87-532-173-ff8a-e707b380451c",
+          "name": "Electrician",
+          "cost": "100",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "f588def-1ecb-5a87-573d-3bdb7b42226d": {
+          "id": "f588def-1ecb-5a87-573d-3bdb7b42226d",
+          "name": "Dimmers",
+          "cost": "20",
+          "category": "Materials",
+          "quantity": "3"
+        }
+      },
+      "recorded": "2022-05-31T21:38:35.579Z",
+      "id": 8
+    },
+    {
       "name": "Carpet",
-      "status": "🟢",
-      "cost": 150,
+      "status": "🟡",
+      "cost": 4401,
       "items": {
         "1": {
           "id": 1,
           "name": "Roll",
-          "cost": "100",
+          "cost": "200",
+          "category": "Materials",
+          "quantity": "10"
+        },
+        "212ec-78eb-3f0-c0fd-45a83f15e1f": {
+          "id": "212ec-78eb-3f0-c0fd-45a83f15e1f",
+          "name": "Removal Service",
+          "cost": "2000",
           "category": "All Inclusive",
           "quantity": "1"
         },
-        "d3ee3c-1bd0-d2aa-cc1-462b1b710cd": {
-          "id": "d3ee3c-1bd0-d2aa-cc1-462b1b710cd",
-          "name": "Glue",
-          "cost": "50",
-          "category": "Materials",
-          "quantity": "1"
+        "dbce84-867a-2acd-87f5-0aabe0588e1f": {
+          "id": "dbce84-867a-2acd-87f5-0aabe0588e1f",
+          "name": "Installation",
+          "cost": "100.25",
+          "category": "Labor",
+          "quantity": "4"
         }
       },
-      "recorded": "2022-05-31T20:20:56.578Z",
-      "id": 5
+      "recorded": "2022-06-01T04:00:34.444Z",
+      "id": 9
     },
     {
       "name": "Decor",
       "status": "🟢",
-      "cost": 100,
+      "cost": 450,
       "items": {
         "1": {
           "id": 1,
@@ -80,6 +94,20 @@
           "cost": "10",
           "category": "Materials",
           "quantity": "10"
+        },
+        "46a0c41-3caf-27e5-e5c6-baa7dc70faa2": {
+          "id": "46a0c41-3caf-27e5-e5c6-baa7dc70faa2",
+          "name": "Pots",
+          "cost": "25",
+          "category": "Materials",
+          "quantity": "10"
+        },
+        "4e544bd-c252-0c7-e771-d330e7baec5": {
+          "id": "4e544bd-c252-0c7-e771-d330e7baec5",
+          "name": "Gardner",
+          "cost": "100",
+          "category": "Labor",
+          "quantity": "1"
         }
       },
       "recorded": "2022-05-31T20:28:16.459Z",

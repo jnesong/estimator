@@ -102,8 +102,6 @@ const Saved = ({ savedProject }) => {
 
     return (
         <>
-            <p className="pdf-summary-text"> Download PDF Summary </p>
-
             <div className="saved">
                 <p className="projects-total-text"> Projects Total: $ {totalSavedCost} </p>
                 <div className="saved-nav">

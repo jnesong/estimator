@@ -4,6 +4,7 @@
 Start the application by running:
 <br/>
 <br/>
+npm install
 npm start
 <br/>
 <br/>
