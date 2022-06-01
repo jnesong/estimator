@@ -1,34 +1,34 @@
 {
   "projects": [
     {
-      "name": "New Lights",
-      "status": "🟡",
-      "cost": 200,
+      "name": "Fire Sprinklers",
+      "status": "🔴",
+      "cost": 202,
       "items": {
         "1": {
           "id": 1,
-          "name": "Bulbs",
-          "cost": "2",
+          "name": "Sprinkler",
+          "cost": "7",
           "category": "Materials",
-          "quantity": "20"
+          "quantity": "11"
         },
-        "277c87-532-173-ff8a-e707b380451c": {
-          "id": "277c87-532-173-ff8a-e707b380451c",
-          "name": "Electrician",
+        "be5cc2-84f0-4b4a-8c1-5e220c3cbf8": {
+          "id": "be5cc2-84f0-4b4a-8c1-5e220c3cbf8",
+          "name": "Plumber",
           "cost": "100",
           "category": "Labor",
           "quantity": "1"
         },
-        "f588def-1ecb-5a87-573d-3bdb7b42226d": {
-          "id": "f588def-1ecb-5a87-573d-3bdb7b42226d",
-          "name": "Dimmers",
-          "cost": "20",
-          "category": "Materials",
-          "quantity": "3"
+        "da33fa0-b067-c0f6-8f1c-586550be551": {
+          "id": "da33fa0-b067-c0f6-8f1c-586550be551",
+          "name": "Test",
+          "cost": "25",
+          "category": "All Inclusive",
+          "quantity": "1"
         }
       },
-      "recorded": "2022-05-31T21:38:35.579Z",
-      "id": 8
+      "recorded": "2022-06-01T14:43:09.600Z",
+      "id": 10
     },
     {
       "name": "Carpet",
@@ -59,6 +59,36 @@
       },
       "recorded": "2022-06-01T04:00:34.444Z",
       "id": 9
+    },
+    {
+      "name": "Air Quality",
+      "status": "🔴",
+      "cost": 280.5,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Filters",
+          "cost": "5.50",
+          "category": "Materials",
+          "quantity": "11"
+        },
+        "275de00-585-3cba-51ca-edec8fd08ebf": {
+          "id": "275de00-585-3cba-51ca-edec8fd08ebf",
+          "name": "Installation",
+          "cost": "100",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "83508-04e0-e47e-ced7-80b823f1c83a": {
+          "id": "83508-04e0-e47e-ced7-80b823f1c83a",
+          "name": "Maintenance",
+          "cost": "120",
+          "category": "All Inclusive",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-01T14:55:23.946Z",
+      "id": 11
     },
     {
       "name": "Decor",

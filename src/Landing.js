@@ -156,7 +156,7 @@ const Landing = () => {
 
                 <div className="save-button">
                     <Button variant="outlined" color="success" type="submit" startIcon={<DoneIcon />}>
-                        {buttonSubmitToggle ? "submit" : "✔ scroll down"}
+                        {buttonSubmitToggle ? "submit" : "scroll down"}
                     </Button>
                 </div>
 
