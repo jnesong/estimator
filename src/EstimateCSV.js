@@ -9,7 +9,7 @@ const EstimatePDF = ({ project }) => {
         `\n${item.name}, ${item.cost}, ${item.category}, ${item.quantity}`
     ));
 
-    itemStrings = itemStrings.toString()
+    itemStrings = itemStrings.toString();
 
     let dataString = `Project Name, ${project.name} 
     Status, ${project.status} 
@@ -20,8 +20,6 @@ const EstimatePDF = ({ project }) => {
     Name, Cost, Category, Quantity
     ${itemStrings}
     `
-
-
     const handleDownload = () => {
         const element = document.createElement("a");
         const file = new Blob([dataString], { type: 'text/csv' });

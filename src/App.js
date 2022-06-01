@@ -6,7 +6,7 @@ import logoE from './graphics/logoE.png';
 import { createTheme, ThemeProvider } from '@mui/material';
 import './estimator.css';
 
-const jenny = createTheme({
+const estimator = createTheme({
 
   //10 lines - customizing material UI palette and text
   palette: {
@@ -25,7 +25,7 @@ const jenny = createTheme({
 
 const App = () => {
   return (
-    <ThemeProvider theme={jenny}>
+    <ThemeProvider theme={estimator}>
       <div>
         <img className="logo" src={logoE} alt="logo in green" />
         <Landing />

@@ -11,8 +11,6 @@ import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
 
 const SavedCard = ({ project, deleteProject, holdEdit }) => {
 
@@ -61,7 +59,6 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
                     <EditModal project={project} holdEdit={holdEdit}/>
                 </Box>
             </Modal>
-
         </>
     )
 };

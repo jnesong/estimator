@@ -1,9 +1,7 @@
 //libraries
 import { useState, useEffect } from 'react';
 //components
-// import CategoryCost from './CategoryCost'
 import DeleteButton from './buttons/DeleteButton';
-// import Quantity from './Quantity';
 //css
 import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -11,24 +9,24 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
 const EditItem = ({ id, item, deleteItem, createItemLine }) => {
-    const [itemName, setItemName] = useState(item.name)
-    const [itemCost, setItemCost] = useState(item.cost)
+//compare to NewItem.js
+    const [itemName, setItemName] = useState(item.name);
+    const [itemCost, setItemCost] = useState(item.cost);
 
-    //variables for category and quantity
+    //variables for item category and quantity
     const filter = createFilterOptions();
     const [category, setCategory] = useState(item.category);
     const categories = ['All Inclusive', 'Labor', 'Materials'];
     const [quantity, setQuantity] = useState(item.quantity);
     const quantities = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
+    // autocomplete functions, though e is greyed out below, it is necessary, otherwise type error. 
     const handleCategoryChange = (e, newValue) => {
         if (typeof newValue === 'string') {
             setCategory(newValue);
         } else if (newValue && newValue.inputValue) {
             setCategory(newValue.inputValue);
         } else { setCategory(newValue); }
-    };
-
+    }; 
     const handleQuantityChange = (e, newQuantity) => {
         if (typeof newQuantity === 'string') {
             setQuantity(newQuantity);
@@ -39,11 +37,10 @@ const EditItem = ({ id, item, deleteItem, createItemLine }) => {
 
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
-    } // updates item name with user typing
-
+    }; // updates item name with user typing
     const handleCostChange = (e) => {
         setItemCost(e.target.value);
-    } // updates item cost with user typing 
+    }; // updates item cost with user typing 
 
     useEffect(() => {
         let currentItem = {
@@ -52,9 +49,9 @@ const EditItem = ({ id, item, deleteItem, createItemLine }) => {
             cost: itemCost,
             category: category,
             quantity: quantity
-        }
-        createItemLine(currentItem) //send item line object up to Edit Modal component
-    }, [id, createItemLine, itemName, itemCost, category, quantity])
+        };
+        createItemLine(currentItem); //send item line object up to Edit Modal component
+    }, [id, createItemLine, itemName, itemCost, category, quantity]);
     // updates itemLineObj with change in any item inputs
 
     return (
@@ -165,12 +162,8 @@ const EditItem = ({ id, item, deleteItem, createItemLine }) => {
             />
 
             <DeleteButton id={id} deleteItem={deleteItem} />
-
-
         </>
-
     )
-
 };
 
 export default EditItem;

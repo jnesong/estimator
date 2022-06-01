@@ -1,29 +1,6 @@
 {
   "projects": [
     {
-      "name": "Restroom",
-      "status": "🔴",
-      "cost": 115,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Pipes",
-          "cost": "15",
-          "category": "Materials",
-          "quantity": "1"
-        },
-        "22e7f5d-52c8-4db4-da00-dba4aaa0b17": {
-          "id": "22e7f5d-52c8-4db4-da00-dba4aaa0b17",
-          "name": "Sink",
-          "cost": "100",
-          "category": "Materials",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-05-31T00:28:48.917Z",
-      "id": 3
-    },
-    {
       "name": "New Lights",
       "status": "🟡",
       "cost": 200,
