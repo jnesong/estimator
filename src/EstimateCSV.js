@@ -2,7 +2,7 @@
 import Button from '@mui/material/Button';
 import DownloadIcon from '@mui/icons-material/Download';
 
-const EstimatePDF = ({ project }) => {
+const EstimateCSV = ({ project }) => {
 
     let downloadDate = new Date();
     let itemStrings = Object.values(project.items).map(( item ) => (
@@ -17,7 +17,7 @@ const EstimatePDF = ({ project }) => {
     Date Recorded, ${project.recorded.slice(0, 10)}
     \n
     Item Report:
-    Name, Cost, Category, Quantity
+    Item Name, Cost, Category, Quantity
     ${itemStrings}
     `
     const handleDownload = () => {
@@ -40,4 +40,4 @@ const EstimatePDF = ({ project }) => {
     );
 };
 
-export default EstimatePDF;
+export default EstimateCSV;
