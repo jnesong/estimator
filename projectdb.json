@@ -31,36 +31,6 @@
       "id": 8
     },
     {
-      "name": "Carpet",
-      "status": "🟡",
-      "cost": 4401,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Roll",
-          "cost": "200",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "212ec-78eb-3f0-c0fd-45a83f15e1f": {
-          "id": "212ec-78eb-3f0-c0fd-45a83f15e1f",
-          "name": "Removal Service",
-          "cost": "2000",
-          "category": "All Inclusive",
-          "quantity": "1"
-        },
-        "dbce84-867a-2acd-87f5-0aabe0588e1f": {
-          "id": "dbce84-867a-2acd-87f5-0aabe0588e1f",
-          "name": "Installation",
-          "cost": "100.25",
-          "category": "Labor",
-          "quantity": "4"
-        }
-      },
-      "recorded": "2022-06-01T04:00:34.444Z",
-      "id": 9
-    },
-    {
       "name": "Decor",
       "status": "🟢",
       "cost": 450,
@@ -89,6 +59,43 @@
       },
       "recorded": "2022-05-31T20:28:16.459Z",
       "id": 6
+    },
+    {
+      "name": "New Fire Sprinklers",
+      "status": "🔴",
+      "cost": 750,
+      "items": {
+        "1": {
+          "id": 1,
+          "name": "Sprinklers",
+          "cost": "10",
+          "category": "Materials",
+          "quantity": "5"
+        },
+        "438f8c-66ee-b4d6-a73d-771d71003f81": {
+          "id": "438f8c-66ee-b4d6-a73d-771d71003f81",
+          "name": "Installation",
+          "cost": "400",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "d5f1260-1cc6-d408-0876-4afd23f231cd": {
+          "id": "d5f1260-1cc6-d408-0876-4afd23f231cd",
+          "name": "Maintenance",
+          "cost": "200",
+          "category": "All Inclusive",
+          "quantity": "1"
+        },
+        "12a1bdc-dbbb-f4ca-6b7-bed2c2b43bf3": {
+          "id": "12a1bdc-dbbb-f4ca-6b7-bed2c2b43bf3",
+          "name": "Test",
+          "cost": "100",
+          "category": "Extra",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-01T04:56:52.888Z",
+      "id": 10
     }
   ]
 }
