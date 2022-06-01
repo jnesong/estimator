@@ -10,6 +10,7 @@ Start the application by running:
 <br/>
 <br/>
 npm install
+<br/>
 npm start
 <br/>
 <br/>

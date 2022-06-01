@@ -31,94 +31,27 @@
       "id": 10
     },
     {
-      "name": "Carpet",
-      "status": "🟡",
-      "cost": 4401,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Roll",
-          "cost": "200",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "212ec-78eb-3f0-c0fd-45a83f15e1f": {
-          "id": "212ec-78eb-3f0-c0fd-45a83f15e1f",
-          "name": "Removal Service",
-          "cost": "2000",
-          "category": "All Inclusive",
-          "quantity": "1"
-        },
-        "dbce84-867a-2acd-87f5-0aabe0588e1f": {
-          "id": "dbce84-867a-2acd-87f5-0aabe0588e1f",
-          "name": "Installation",
-          "cost": "100.25",
-          "category": "Labor",
-          "quantity": "4"
-        }
-      },
-      "recorded": "2022-06-01T04:00:34.444Z",
-      "id": 9
-    },
-    {
       "name": "Air Quality",
-      "status": "🔴",
-      "cost": 280.5,
+      "status": "🟢",
+      "cost": 520,
       "items": {
         "1": {
           "id": 1,
           "name": "Filters",
-          "cost": "5.50",
+          "cost": "10",
           "category": "Materials",
-          "quantity": "11"
+          "quantity": "22"
         },
-        "275de00-585-3cba-51ca-edec8fd08ebf": {
-          "id": "275de00-585-3cba-51ca-edec8fd08ebf",
-          "name": "Installation",
-          "cost": "100",
-          "category": "Labor",
-          "quantity": "1"
-        },
-        "83508-04e0-e47e-ced7-80b823f1c83a": {
-          "id": "83508-04e0-e47e-ced7-80b823f1c83a",
+        "4b87bbd-0d2-8aaf-b643-226523de688": {
+          "id": "4b87bbd-0d2-8aaf-b643-226523de688",
           "name": "Maintenance",
-          "cost": "120",
+          "cost": "300",
           "category": "All Inclusive",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-01T14:55:23.946Z",
+      "recorded": "2022-06-01T15:22:46.628Z",
       "id": 11
-    },
-    {
-      "name": "Decor",
-      "status": "🟢",
-      "cost": 450,
-      "items": {
-        "1": {
-          "id": 1,
-          "name": "Plants",
-          "cost": "10",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "46a0c41-3caf-27e5-e5c6-baa7dc70faa2": {
-          "id": "46a0c41-3caf-27e5-e5c6-baa7dc70faa2",
-          "name": "Pots",
-          "cost": "25",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "4e544bd-c252-0c7-e771-d330e7baec5": {
-          "id": "4e544bd-c252-0c7-e771-d330e7baec5",
-          "name": "Gardner",
-          "cost": "100",
-          "category": "Labor",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-05-31T20:28:16.459Z",
-      "id": 6
     }
   ]
 }
