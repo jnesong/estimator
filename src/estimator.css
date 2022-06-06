@@ -54,9 +54,9 @@ body {
     letter-spacing: 2px;
     font-family: 'Mulish';
     font-size: 16px;
-    display: inline-block;
-    margin-left: 200px;
-    position: absolute;
+    display: inline;
+    margin-left: 190px;
+    position: static;
 }
 
 .new-item-container {
