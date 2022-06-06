@@ -24,29 +24,6 @@
       "id": 1
     },
     {
-      "name": "Air Quality",
-      "status": "🟡",
-      "cost": 502.5,
-      "items": {
-        "2b41338-e3e6-5536-a1-ee7808f64701": {
-          "id": "2b41338-e3e6-5536-a1-ee7808f64701",
-          "name": "Filters",
-          "cost": "10.25",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "44343c-e6db-e4-e751-52be858bcf26": {
-          "id": "44343c-e6db-e4-e751-52be858bcf26",
-          "name": "Maintenance ",
-          "cost": "400",
-          "category": "All Inclusive",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-06-06T21:56:25.831Z",
-      "id": 3
-    },
-    {
       "name": "Carpet",
       "status": "🟢",
       "cost": 525,
@@ -75,6 +52,29 @@
       },
       "recorded": "2022-06-06T21:57:47.927Z",
       "id": 4
+    },
+    {
+      "name": "Air Quality",
+      "status": "🟡",
+      "cost": 502.5,
+      "items": {
+        "2b41338-e3e6-5536-a1-ee7808f64701": {
+          "id": "2b41338-e3e6-5536-a1-ee7808f64701",
+          "name": "Filters",
+          "cost": "10.25",
+          "category": "Materials",
+          "quantity": "10"
+        },
+        "44343c-e6db-e4-e751-52be858bcf26": {
+          "id": "44343c-e6db-e4-e751-52be858bcf26",
+          "name": "Maintenance ",
+          "cost": "400",
+          "category": "All Inclusive",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-06T21:56:25.831Z",
+      "id": 3
     }
   ]
 }
