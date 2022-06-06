@@ -3,55 +3,78 @@
     {
       "name": "Fire Sprinklers",
       "status": "🔴",
-      "cost": 202,
+      "cost": 177,
       "items": {
-        "1": {
-          "id": 1,
-          "name": "Sprinkler",
+        "a078f83-580c-d331-7c85-4c1f10201b7": {
+          "id": "a078f83-580c-d331-7c85-4c1f10201b7",
+          "name": "Sprinklers",
           "cost": "7",
           "category": "Materials",
           "quantity": "11"
         },
-        "be5cc2-84f0-4b4a-8c1-5e220c3cbf8": {
-          "id": "be5cc2-84f0-4b4a-8c1-5e220c3cbf8",
+        "bbaa337-332c-6b05-5c6b-d3bcb086a460": {
+          "id": "bbaa337-332c-6b05-5c6b-d3bcb086a460",
           "name": "Plumber",
           "cost": "100",
           "category": "Labor",
           "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-06T21:53:49.446Z",
+      "id": 1
+    },
+    {
+      "name": "Carpet",
+      "status": "🟢",
+      "cost": 525,
+      "items": {
+        "53db76c-414f-1fcb-26d-2467fdddef8": {
+          "id": "53db76c-414f-1fcb-26d-2467fdddef8",
+          "name": "Roll",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "2"
         },
-        "da33fa0-b067-c0f6-8f1c-586550be551": {
-          "id": "da33fa0-b067-c0f6-8f1c-586550be551",
-          "name": "Test",
+        "4b1c318-73f5-5f35-30c0-f2232db430e": {
+          "id": "4b1c318-73f5-5f35-30c0-f2232db430e",
+          "name": "Installation",
+          "cost": "300",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "4e0832c-64f-2e1-afdf-cb46b371372b": {
+          "id": "4e0832c-64f-2e1-afdf-cb46b371372b",
+          "name": "Glue",
           "cost": "25",
-          "category": "All Inclusive",
+          "category": "Materials",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-01T14:43:09.600Z",
-      "id": 10
+      "recorded": "2022-06-06T21:57:47.927Z",
+      "id": 4
     },
     {
       "name": "Air Quality",
-      "status": "🟢",
-      "cost": 520,
+      "status": "🟡",
+      "cost": 502.5,
       "items": {
-        "1": {
-          "id": 1,
+        "2b41338-e3e6-5536-a1-ee7808f64701": {
+          "id": "2b41338-e3e6-5536-a1-ee7808f64701",
           "name": "Filters",
-          "cost": "10",
+          "cost": "10.25",
           "category": "Materials",
-          "quantity": "22"
+          "quantity": "10"
         },
-        "4b87bbd-0d2-8aaf-b643-226523de688": {
-          "id": "4b87bbd-0d2-8aaf-b643-226523de688",
-          "name": "Maintenance",
-          "cost": "300",
+        "44343c-e6db-e4-e751-52be858bcf26": {
+          "id": "44343c-e6db-e4-e751-52be858bcf26",
+          "name": "Maintenance ",
+          "cost": "400",
           "category": "All Inclusive",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-01T15:22:46.628Z",
-      "id": 11
+      "recorded": "2022-06-06T21:56:25.831Z",
+      "id": 3
     }
   ]
 }

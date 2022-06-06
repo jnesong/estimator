@@ -65,7 +65,7 @@ const EditModal = ({ project, holdEdit }) => {
     //creates patch request to project db.json when Save clicked in Edit Modal
     const handleSave = (e) => {
         e.preventDefault();
-        console.log(projectData)
+        // console.log(projectData)
         fetch(serverURL + `/${project.id}`, {
             method: "PATCH",
             headers: {
@@ -117,7 +117,7 @@ const EditModal = ({ project, holdEdit }) => {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             name="status"
-                            defaultValue={projectData.status}
+                            value={projectData.status}
                             label="status"
                             onChange={handleEdit}
                         >
