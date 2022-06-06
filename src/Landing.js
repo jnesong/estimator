@@ -16,13 +16,12 @@ let items = {};//could alternatively use useRef, ultimately do not want to lose 
 
 const Landing = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
-    const [saveClicked, setSavedClicked] = useState(false); //this is used to let other components know when save has been clicked
     const [buttonSubmitToggle, setButtonSubmitToggle] = useState(true); // controls display on save button
     const [projectName, setProjectName] = useState(""); // holds user entered project name, updates onChange
     const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
-    const [newItemComponents, setNewItemComponents] = useState([<NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems} />])
+    const [newItemComponents, setNewItemComponents] = useState([<NewItem key={uuid()} id={uuid()} deleteItem={deleteItem} createItemLine={createItems} />])
     let date = new Date(); //current date and time
 
     const handleProjectNameChange = (e) => {
@@ -50,7 +49,6 @@ const Landing = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setSavedClicked(!saveClicked);
         const savedProject = {
             name: projectName,
             status: status,
@@ -59,7 +57,7 @@ const Landing = () => {
             recorded: date
         } // creates object to send to server
         setButtonSubmitToggle(!buttonSubmitToggle);
-        setTimeout(fetch(serverURL, {
+        setTimeout(()=>{fetch(serverURL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -67,12 +65,13 @@ const Landing = () => {
             body: JSON.stringify(savedProject) // project object sent to server in JSON string
         })
             .then(r => r.json())
-            .then(data => console.log(data)), 300); // 1/3 second timeout placed on this
+            .then(data => console.log(data))}, 300); // 1/3 second timeout placed on this
+    
         setTimeout(() => {
             setButtonSubmitToggle(true)
             // setProjectName("")
             // setInfoRadio("")
-            // setNewItems([<NewItem key={1} count={1} deleteItem={deleteItem} createItemLine={createItems} />])
+            // setNewItemComponents([<NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems} />])
             // items = {}
             // setTotalProjectCost(0)
             //^ not sure why these are not resetting the project form
@@ -163,7 +162,7 @@ const Landing = () => {
             </form>
 
             <Saved
-                savedProject={saveClicked}
+                savedProject={buttonSubmitToggle}
             />
         </>
     )

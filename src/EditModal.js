@@ -117,7 +117,7 @@ const EditModal = ({ project, holdEdit }) => {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             name="status"
-                            defaultValue={projectData.status}
+                            value={projectData.status}
                             label="status"
                             onChange={handleEdit}
                         >
