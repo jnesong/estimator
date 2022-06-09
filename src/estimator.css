@@ -38,10 +38,7 @@ body {
     margin-left: 10px;
     margin-bottom: 20px;
 }
-.csv-summary-div-on-card {
-    margin-left: 65px;
-    margin-bottom: 20px;
-}
+
 
 /* styling for new project and its items */
 
@@ -189,7 +186,7 @@ body {
     opacity: 80%
 }
 
-.trashcan-on-card-div {
-    text-align: center;
+.tool-icons-on-card-div {
+    text-align: right;
     padding:20px;
 }

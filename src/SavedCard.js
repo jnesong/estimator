@@ -38,15 +38,14 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
                     <p className="saved-text-items" onClick={handleOpenModal}> View Items ({Object.values(project.items).length}) </p>
                     <p className="saved-text-cost"> Project total: $ {project.cost} </p>
                 </CardContent>
-                <div className="trashcan-on-card-div">
+                <div className="tool-icons-on-card-div">
+                    <EstimateCSV project={project} />
                     <IconButton color="info" aria-label="add to shopping cart" onClick={handleOpenModal} style={{ marginRight: "10px" }}>
                         <EditIcon />
                     </IconButton>
                     <DeleteButton id={project.id} deleteItem={deleteProject} />
                 </div>
-                <div className="csv-summary-div-on-card">
-                <EstimateCSV project={project} />
-                </div>
+
             </Card>
 
             <Modal
@@ -56,7 +55,7 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box className="modal">
-                    <EditModal project={project} holdEdit={holdEdit}/>
+                    <EditModal project={project} holdEdit={holdEdit} />
                 </Box>
             </Modal>
         </>
