@@ -18,7 +18,7 @@ const Landing = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [buttonSubmitToggle, setButtonSubmitToggle] = useState(true); // controls display on save button
     const [projectName, setProjectName] = useState(""); // holds user entered project name, updates onChange
-    const [infoRadio, setInfoRadio] = useState(""); // holds user selected status, string to display to user, updates onChange
+    const [infoRadio, setInfoRadio] = useState("Serviceable"); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
     const [newItemComponents, setNewItemComponents] = useState([<NewItem key={uuid()} id={uuid()} deleteItem={deleteItem} createItemLine={createItems} />])
@@ -110,7 +110,7 @@ const Landing = () => {
 
                     <div className="project-status">
 
-                        <RadioGroup row name="row-radio-buttons-group" >
+                        <RadioGroup row name="row-radio-buttons-group" defaultValue="🟡">
 
                             <Radio
                                 color="success"
