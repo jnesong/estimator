@@ -1,29 +1,6 @@
 {
   "projects": [
     {
-      "name": "Fire Sprinklers",
-      "status": "🔴",
-      "cost": 700,
-      "items": {
-        "3c68361-435-da05-5ec-ff12f358a1e": {
-          "id": "3c68361-435-da05-5ec-ff12f358a1e",
-          "name": "Sprinkler",
-          "cost": "25",
-          "category": "Materials",
-          "quantity": "20"
-        },
-        "135af2d-e43-1dfe-0b65-f375d8aad20c": {
-          "id": "135af2d-e43-1dfe-0b65-f375d8aad20c",
-          "name": "Plumber",
-          "cost": "200",
-          "category": "Labor",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-06-14T05:35:13.766Z",
-      "id": 1
-    },
-    {
       "name": "Carpet",
       "status": "🟢",
       "cost": 2101,
@@ -52,6 +29,52 @@
       },
       "recorded": "2022-06-14T05:36:02.171Z",
       "id": 2
+    },
+    {
+      "name": "Fire Sprinklers",
+      "status": "🔴",
+      "cost": 700,
+      "items": {
+        "3c68361-435-da05-5ec-ff12f358a1e": {
+          "id": "3c68361-435-da05-5ec-ff12f358a1e",
+          "name": "Sprinkler",
+          "cost": "25",
+          "category": "Materials",
+          "quantity": "20"
+        },
+        "135af2d-e43-1dfe-0b65-f375d8aad20c": {
+          "id": "135af2d-e43-1dfe-0b65-f375d8aad20c",
+          "name": "Plumber",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-14T05:35:13.766Z",
+      "id": 1
+    },
+    {
+      "name": "Lights",
+      "status": "🟡",
+      "cost": 425,
+      "items": {
+        "151d6ef-7bd4-7ce3-b64d-abe2c0ce648": {
+          "id": "151d6ef-7bd4-7ce3-b64d-abe2c0ce648",
+          "name": "LED Bulbs",
+          "cost": "5",
+          "category": "Materials",
+          "quantity": "25"
+        },
+        "d7b2d6-62ee-f8-2afc-18a4f2bb03fc": {
+          "id": "d7b2d6-62ee-f8-2afc-18a4f2bb03fc",
+          "name": "Electrician",
+          "cost": "300",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-14T05:46:39.458Z",
+      "id": 3
     }
   ]
 }
