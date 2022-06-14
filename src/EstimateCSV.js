@@ -1,11 +1,11 @@
 //css
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import DownloadIcon from '@mui/icons-material/Download';
 
 const EstimateCSV = ({ project }) => {
 
     let downloadDate = new Date();
-    let itemStrings = Object.values(project.items).map(( item ) => (
+    let itemStrings = Object.values(project.items).map((item) => (
         `\n${item.name}, ${item.cost}, ${item.category}, ${item.quantity}`
     ));
 
@@ -31,11 +31,12 @@ const EstimateCSV = ({ project }) => {
 
     return (
         <>
-            <footer>
-                <Button variant="outlined" color="info" type="submit" onClick={handleDownload} startIcon={<DownloadIcon />}>
-                    CSV summary
-                </Button>
-            </footer>
+                <IconButton 
+                color="info" 
+                onClick={handleDownload} 
+                style={{ marginRight: "10px" }}>
+                    <DownloadIcon />
+                </IconButton>
         </>
     );
 };

@@ -5,8 +5,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 850px;
-    height: 300px;
+    width: 900px;
+    height: 600px;
     border: 1px solid rgb(35, 41, 63);
     background-color: rgba(255, 255, 255, 0.945);
     padding: 50px;
@@ -24,10 +24,6 @@
   font-family: 'Mulish';
   font-size: 18px;
   text-align: left;
-}
-
-.edit-button {
-    margin: 10px;
 }
 
 .edit-item-container {

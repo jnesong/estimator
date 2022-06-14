@@ -1,79 +1,79 @@
 {
   "projects": [
     {
-      "name": "Fire Sprinklers",
-      "status": "🔴",
-      "cost": 177,
-      "items": {
-        "a078f83-580c-d331-7c85-4c1f10201b7": {
-          "id": "a078f83-580c-d331-7c85-4c1f10201b7",
-          "name": "Sprinklers",
-          "cost": "7",
-          "category": "Materials",
-          "quantity": "11"
-        },
-        "bbaa337-332c-6b05-5c6b-d3bcb086a460": {
-          "id": "bbaa337-332c-6b05-5c6b-d3bcb086a460",
-          "name": "Plumber",
-          "cost": "100",
-          "category": "Labor",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-06-06T21:53:49.446Z",
-      "id": 1
-    },
-    {
       "name": "Carpet",
       "status": "🟢",
-      "cost": 525,
+      "cost": 2101,
       "items": {
-        "53db76c-414f-1fcb-26d-2467fdddef8": {
-          "id": "53db76c-414f-1fcb-26d-2467fdddef8",
-          "name": "Roll",
-          "cost": "100",
-          "category": "Materials",
-          "quantity": "2"
+        "5aab5-307f-acd-ede7-d602eec04755": {
+          "id": "5aab5-307f-acd-ede7-d602eec04755",
+          "name": "Lobby",
+          "cost": "2000",
+          "category": "All Inclusive",
+          "quantity": "1"
         },
-        "4b1c318-73f5-5f35-30c0-f2232db430e": {
-          "id": "4b1c318-73f5-5f35-30c0-f2232db430e",
-          "name": "Installation",
-          "cost": "300",
+        "514713-a7ac-8c86-614-b13e62fdcd31": {
+          "id": "514713-a7ac-8c86-614-b13e62fdcd31",
+          "name": "Estimate",
+          "cost": "100",
           "category": "Labor",
           "quantity": "1"
         },
-        "4e0832c-64f-2e1-afdf-cb46b371372b": {
-          "id": "4e0832c-64f-2e1-afdf-cb46b371372b",
-          "name": "Glue",
-          "cost": "25",
-          "category": "Materials",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-06-06T21:57:47.927Z",
-      "id": 4
-    },
-    {
-      "name": "Air Quality",
-      "status": "🟡",
-      "cost": 502.5,
-      "items": {
-        "2b41338-e3e6-5536-a1-ee7808f64701": {
-          "id": "2b41338-e3e6-5536-a1-ee7808f64701",
-          "name": "Filters",
-          "cost": "10.25",
-          "category": "Materials",
-          "quantity": "10"
-        },
-        "44343c-e6db-e4-e751-52be858bcf26": {
-          "id": "44343c-e6db-e4-e751-52be858bcf26",
-          "name": "Maintenance ",
-          "cost": "400",
+        "c235b1a-3c7b-3e5c-a4ab-e5838dcaa3b": {
+          "id": "c235b1a-3c7b-3e5c-a4ab-e5838dcaa3b",
+          "name": "Miscel",
+          "cost": "1",
           "category": "All Inclusive",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-06T21:56:25.831Z",
+      "recorded": "2022-06-14T05:36:02.171Z",
+      "id": 2
+    },
+    {
+      "name": "Fire Sprinklers",
+      "status": "🔴",
+      "cost": 700,
+      "items": {
+        "3c68361-435-da05-5ec-ff12f358a1e": {
+          "id": "3c68361-435-da05-5ec-ff12f358a1e",
+          "name": "Sprinkler",
+          "cost": "25",
+          "category": "Materials",
+          "quantity": "20"
+        },
+        "135af2d-e43-1dfe-0b65-f375d8aad20c": {
+          "id": "135af2d-e43-1dfe-0b65-f375d8aad20c",
+          "name": "Plumber",
+          "cost": "200",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-14T05:35:13.766Z",
+      "id": 1
+    },
+    {
+      "name": "Lights",
+      "status": "🟡",
+      "cost": 425,
+      "items": {
+        "151d6ef-7bd4-7ce3-b64d-abe2c0ce648": {
+          "id": "151d6ef-7bd4-7ce3-b64d-abe2c0ce648",
+          "name": "LED Bulbs",
+          "cost": "5",
+          "category": "Materials",
+          "quantity": "25"
+        },
+        "d7b2d6-62ee-f8-2afc-18a4f2bb03fc": {
+          "id": "d7b2d6-62ee-f8-2afc-18a4f2bb03fc",
+          "name": "Electrician",
+          "cost": "300",
+          "category": "Labor",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-14T05:46:39.458Z",
       "id": 3
     }
   ]

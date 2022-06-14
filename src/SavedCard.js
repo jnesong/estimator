@@ -16,6 +16,7 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
 
     const cardStyle = {
         width: "300px",
+        // height:"200px",
         margin: "auto",
         paddingTop: "10px",
         // backgroundColor: "#f2f8ff",
@@ -28,9 +29,22 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
     const handleOpenModal = () => setOpenModal(true);
     const handleCloseModal = () => setOpenModal(false);
 
+    //state to open card tools
+    const [openTools, setOpenTools] = useState(false)
+    const cardTools = <>
+        <EstimateCSV project={project} />
+        <IconButton color="info" aria-label="add to shopping cart" onClick={handleOpenModal} style={{ marginRight: "10px" }}>
+            <EditIcon />
+        </IconButton>
+        <DeleteButton id={project.id} deleteItem={deleteProject} />
+        </>
+
     return (
         <>
-            <Card style={cardStyle}>
+            <Card style={cardStyle}
+                onMouseEnter={() => setOpenTools(true)}
+                onMouseLeave={() => setOpenTools(false)}
+            >
                 <CardContent >
                     <p className="saved-text-status"> {project.status} </p>
                     <p className="saved-text-date"> {project.recorded.slice(0, 10)} </p>
@@ -38,14 +52,8 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
                     <p className="saved-text-items" onClick={handleOpenModal}> View Items ({Object.values(project.items).length}) </p>
                     <p className="saved-text-cost"> Project total: $ {project.cost} </p>
                 </CardContent>
-                <div className="trashcan-on-card-div">
-                    <IconButton color="info" aria-label="add to shopping cart" onClick={handleOpenModal} style={{ marginRight: "10px" }}>
-                        <EditIcon />
-                    </IconButton>
-                    <DeleteButton id={project.id} deleteItem={deleteProject} />
-                </div>
-                <div className="csv-summary-div-on-card">
-                <EstimateCSV project={project} />
+                <div className="tool-icons-on-card-div">
+                    {openTools &&cardTools}
                 </div>
             </Card>
 
@@ -56,7 +64,7 @@ const SavedCard = ({ project, deleteProject, holdEdit }) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box className="modal">
-                    <EditModal project={project} holdEdit={holdEdit}/>
+                    <EditModal project={project} holdEdit={holdEdit} />
                 </Box>
             </Modal>
         </>
