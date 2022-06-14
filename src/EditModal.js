@@ -9,6 +9,7 @@ import './edit-modal.css'
 import EditIcon from '@mui/icons-material/Edit';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import SaveIcon from '@mui/icons-material/Save';
 import AddIcon from '@mui/icons-material/Add';
 import TextField from '@mui/material/TextField';
@@ -18,7 +19,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 const EditModal = ({ project, holdEdit }) => {
-// compare to Landing.js
+    // compare to Landing.js
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [projectData, setProjectData] = useState({
         name: project.name,
@@ -132,19 +133,13 @@ const EditModal = ({ project, holdEdit }) => {
                     {editItemComponents}
                 </div>
 
-                <div className="edit-button">
-                    <Button variant="outlined" color="success" onClick={handleAddItemLine} startIcon={<AddIcon />}>
-                        New Line Item
-                    </Button>
-                </div>
-
-                <div className="edit-button">
-                    <Button variant="outlined" color="success" type="submit" startIcon={<SaveIcon />}>
-                        Save Changes
-                    </Button>
-                </div>
-
                 <div className="csv-summary-div">
+                    <IconButton color="success" onClick={handleAddItemLine}>
+                        <AddIcon />
+                    </IconButton>
+                    <IconButton color="success" type="submit">
+                        <SaveIcon />
+                    </IconButton>
                     <EstimateCSV project={projectData} />
                 </div>
             </form>

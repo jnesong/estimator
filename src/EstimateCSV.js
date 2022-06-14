@@ -33,7 +33,6 @@ const EstimateCSV = ({ project }) => {
         <>
                 <IconButton 
                 color="info" 
-                aria-label="add to shopping cart" 
                 onClick={handleDownload} 
                 style={{ marginRight: "10px" }}>
                     <DownloadIcon />
