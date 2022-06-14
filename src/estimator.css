@@ -189,4 +189,5 @@ body {
 .tool-icons-on-card-div {
     text-align: right;
     padding:20px;
+    padding-top: 1px;
 }
