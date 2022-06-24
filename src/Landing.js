@@ -12,8 +12,6 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 
-// let tempItems = {};// ultimately do not want to lose items bw renders
-
 const Landing = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [buttonSubmitToggle, setButtonSubmitToggle] = useState(true); // controls display on save button
@@ -45,7 +43,8 @@ const Landing = () => {
     };
 
     function deleteItem(itemId) {
-        delete items[itemId];
+        delete items[itemId];// delete the item from the actual held data
+        //then map over the new items data to create accurate item line fields
         let updatedItemComponents = Object.values(items).map(item => (
         <NewItem key={item.id} id={item.id} item={item} deleteItem={deleteItem} createItemLine={createItems} />
         ));
@@ -54,7 +53,7 @@ const Landing = () => {
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
     // this function needs to be able to update items
-    // recongizing IDs so there are not dupes.
+    // recongizing IDs so there are no dupes.
     function createItems(item) {
         items[item.id] = item;
     }; // making items object, see line 15
