@@ -2,78 +2,85 @@
   "projects": [
     {
       "name": "Carpet",
-      "status": "🟢",
-      "cost": 2101,
+      "status": "🟡",
+      "cost": 750,
       "items": {
-        "5aab5-307f-acd-ede7-d602eec04755": {
-          "id": "5aab5-307f-acd-ede7-d602eec04755",
-          "name": "Lobby",
-          "cost": "2000",
-          "category": "All Inclusive",
-          "quantity": "1"
-        },
-        "514713-a7ac-8c86-614-b13e62fdcd31": {
-          "id": "514713-a7ac-8c86-614-b13e62fdcd31",
-          "name": "Estimate",
-          "cost": "100",
-          "category": "Labor",
-          "quantity": "1"
-        },
-        "c235b1a-3c7b-3e5c-a4ab-e5838dcaa3b": {
-          "id": "c235b1a-3c7b-3e5c-a4ab-e5838dcaa3b",
-          "name": "Miscel",
-          "cost": "1",
-          "category": "All Inclusive",
-          "quantity": "1"
-        }
-      },
-      "recorded": "2022-06-14T05:36:02.171Z",
-      "id": 2
-    },
-    {
-      "name": "Fire Sprinklers",
-      "status": "🔴",
-      "cost": 700,
-      "items": {
-        "3c68361-435-da05-5ec-ff12f358a1e": {
-          "id": "3c68361-435-da05-5ec-ff12f358a1e",
-          "name": "Sprinkler",
-          "cost": "25",
-          "category": "Materials",
-          "quantity": "20"
-        },
-        "135af2d-e43-1dfe-0b65-f375d8aad20c": {
-          "id": "135af2d-e43-1dfe-0b65-f375d8aad20c",
-          "name": "Plumber",
+        "8ab5cd7-2573-5bc4-cc8-cc8ca82bb64f": {
+          "id": "8ab5cd7-2573-5bc4-cc8-cc8ca82bb64f",
+          "name": "Roll",
           "cost": "200",
-          "category": "Labor",
+          "category": "Materials",
+          "quantity": "2"
+        },
+        "2eaa6f6-847d-6dfc-88c1-eb4153a4ec31": {
+          "id": "2eaa6f6-847d-6dfc-88c1-eb4153a4ec31",
+          "name": "Glue",
+          "cost": "50",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        "17fbf35-61e3-bc8-462b-2e4070f0771": {
+          "id": "17fbf35-61e3-bc8-462b-2e4070f0771",
+          "name": "Installation",
+          "cost": "300",
+          "category": "All Inclusive",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-14T05:35:13.766Z",
+      "recorded": "2022-06-24T15:22:53.994Z",
       "id": 1
     },
     {
       "name": "Lights",
-      "status": "🟡",
-      "cost": 425,
+      "status": "🟢",
+      "cost": 390,
       "items": {
-        "151d6ef-7bd4-7ce3-b64d-abe2c0ce648": {
-          "id": "151d6ef-7bd4-7ce3-b64d-abe2c0ce648",
+        "6d4683e-77e-6cf2-0efa-dd10160da8": {
+          "id": "6d4683e-77e-6cf2-0efa-dd10160da8",
           "name": "LED Bulbs",
-          "cost": "5",
+          "cost": "2",
           "category": "Materials",
-          "quantity": "25"
+          "quantity": "30"
         },
-        "d7b2d6-62ee-f8-2afc-18a4f2bb03fc": {
-          "id": "d7b2d6-62ee-f8-2afc-18a4f2bb03fc",
+        "bdc282-4cf3-368f-37bd-8acf853f350": {
+          "id": "bdc282-4cf3-368f-37bd-8acf853f350",
+          "name": "Dimmers",
+          "cost": "15",
+          "category": "Materials",
+          "quantity": "2"
+        },
+        "7b752a5-c3e7-66d2-8f24-b104c0dd64f": {
+          "id": "7b752a5-c3e7-66d2-8f24-b104c0dd64f",
           "name": "Electrician",
           "cost": "300",
           "category": "Labor",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-14T05:46:39.458Z",
+      "recorded": "2022-06-24T15:30:40.675Z",
+      "id": 2
+    },
+    {
+      "name": "Fire Sprinklers",
+      "status": "🔴",
+      "cost": 600,
+      "items": {
+        "a312-b125-ad3-7f08-8106dece0c": {
+          "id": "a312-b125-ad3-7f08-8106dece0c",
+          "name": "Sprinklers",
+          "cost": "10",
+          "category": "Materials",
+          "quantity": "20"
+        },
+        "a87f0f6-517d-ba0-a8d2-cfd48075": {
+          "id": "a87f0f6-517d-ba0-a8d2-cfd48075",
+          "name": "Maintenance",
+          "cost": "400",
+          "category": "All Inclusive",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-24T15:32:03.810Z",
       "id": 3
     }
   ]

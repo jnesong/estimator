@@ -12,7 +12,6 @@ const EditItem = ({ id, item, deleteItem, createItemLine }) => {
 //compare to NewItem.js
     const [itemName, setItemName] = useState(item.name);
     const [itemCost, setItemCost] = useState(item.cost);
-
     //variables for item category and quantity
     const filter = createFilterOptions();
     const [category, setCategory] = useState(item.category);
@@ -34,7 +33,6 @@ const EditItem = ({ id, item, deleteItem, createItemLine }) => {
             setQuantity(newQuantity.inputValue);
         } else { setQuantity(newQuantity); }
     };
-
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
     }; // updates item name with user typing

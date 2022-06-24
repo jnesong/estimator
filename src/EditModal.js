@@ -8,7 +8,6 @@ import EstimateCSV from './EstimateCSV';
 import './edit-modal.css'
 import EditIcon from '@mui/icons-material/Edit';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import SaveIcon from '@mui/icons-material/Save';
 import AddIcon from '@mui/icons-material/Add';
@@ -34,9 +33,11 @@ const EditModal = ({ project, holdEdit }) => {
     )));
 
     function deleteItem(itemId) {
-        let updatedItemComponents = editItemComponents.filter(item => item.props.id !== itemId);
-        setEditItemComponents(updatedItemComponents);
         delete projectData.items[itemId];
+        let updatedItemComponents = Object.values(projectData.items).map(item => (
+            <EditItem key={item.id} id={item.id} item={item} deleteItem={deleteItem} createItemLine={createItems} />
+        ));
+        setEditItemComponents(updatedItemComponents);
         calculateCost(); // when item deleted, recalculate cost
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
@@ -49,7 +50,7 @@ const EditModal = ({ project, holdEdit }) => {
         name: "",
         cost: "",
         category: "",
-        quantity: ""
+        quantity: "1"
     }; //to pass into EditItem component as item prop for new/blank item
 
     const handleAddItemLine = () => {
