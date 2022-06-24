@@ -75,4 +75,3 @@ Please refer to React Uuid documentation for further details: https://www.npmjs.
 ### Further Improvements
 - Ability for users to login and keep saved projects - therefore a complete backend with password encryption. 
 - Separate calculation sums for material costs, labor costs, all inclusive costs, and miscellaneous costs. 
-- Change button display to icons only. Currently, words are displayed for function clarity. 
