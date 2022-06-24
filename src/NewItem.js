@@ -10,15 +10,15 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
-const NewItem = ({ id, deleteItem, createItemLine }) => {
+const NewItem = ({ id, item, deleteItem, createItemLine }) => {
 
-    const [itemName, setItemName] = useState("");
-    const [itemCost, setItemCost] = useState(0);
+    const [itemName, setItemName] = useState(item.name);
+    const [itemCost, setItemCost] = useState(item.cost);
     //variables for category and quantity
     const filter = createFilterOptions();
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState(item.category);
     const categories = ['All Inclusive', 'Labor', 'Materials'];
-    const [quantity, setQuantity] = useState('1');
+    const [quantity, setQuantity] = useState(item.quantity);
     const quantities = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 // autocomplete functions, though e is greyed out below, it is necessary, otherwise type error. 
     const handleCategoryChange = (e, newValue) => {
@@ -38,6 +38,7 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
     const handleItemNameChange = (e) => {
         setItemName(e.target.value);
     }; // updates item name with user typing
+
     const handleCostChange = (e) => {
         setItemCost(e.target.value);
     }; // updates item cost with user typing 
@@ -51,6 +52,7 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
             quantity: quantity
         };
         createItemLine(itemLine); //send item line object up to New Project component
+        // return console.log(itemLine); questionable if cleanup is needed?
     }, [id, createItemLine, itemName, itemCost, category, quantity]);
     // updates itemLineObj with change in any item inputs
 
@@ -63,6 +65,7 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
                     id="outlined-required"
                     label="Item"
                     variant="outlined"
+                    defaultValue={item.name}
                     onChange={handleItemNameChange}
                 />
 
@@ -73,14 +76,14 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
                         { event.preventDefault(); }
                     }}
                     id="outlined-adornment-amount"
-                    value={itemCost}
+                    defaultValue={item.cost}
                     onChange={handleCostChange}
                     startAdornment={<InputAdornment position="start">$</InputAdornment>}
 
                 />
 
                 <Autocomplete
-                    value={category}
+                    defaultValue={item.category}
                     onChange={handleCategoryChange}
                     filterOptions={(options, params) => {
                         const filtered = filter(options, params);
@@ -124,7 +127,7 @@ const NewItem = ({ id, deleteItem, createItemLine }) => {
                             (/\./.test(event.key) && quantity.includes("."))) //it is a “.” AND the input value already includes a “.”
                         { event.preventDefault(); }
                     }}
-                    value={quantity}
+                    defaultValue={item.quantity}
                     onChange={handleQuantityChange}
                     filterOptions={(options, params) => {
                         const filtered = filter(options, params);

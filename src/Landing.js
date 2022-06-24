@@ -12,8 +12,6 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 
-let items = {};//could alternatively use useRef, ultimately do not want to lose items bw renders
-
 const Landing = () => {
     const serverURL = "http://localhost:3000/projects"; // array of displayed projects
     const [buttonSubmitToggle, setButtonSubmitToggle] = useState(true); // controls display on save button
@@ -21,8 +19,16 @@ const Landing = () => {
     const [infoRadio, setInfoRadio] = useState("Serviceable"); // holds user selected status, string to display to user, updates onChange
     const [status, setStatus] = useState("🟡"); //holds user selected status value, updated onChange
     let [totalProjectCost, setTotalProjectCost] = useState(0); // holds total of all items' costs to display at the top right
-    const [newItemComponents, setNewItemComponents] = useState([<NewItem key={uuid()} id={uuid()} deleteItem={deleteItem} createItemLine={createItems} />])
+    const emptyItem = {
+        id: "",
+        name: "",
+        cost: "",
+        category: "",
+        quantity: "1"
+    }; //to pass into NewItem component as item prop for new/blank item
+    const [newItemComponents, setNewItemComponents] = useState([<NewItem key={uuid()} id={uuid()} item={emptyItem} deleteItem={deleteItem} createItemLine={createItems} />])
     let date = new Date(); //current date and time
+    const [items, setItems] = useState({})
 
     const handleProjectNameChange = (e) => {
         setProjectName(e.target.value);
@@ -33,16 +39,21 @@ const Landing = () => {
     }; // updates status value with user selection
 
     const handleAddItem = () => {
-        setNewItemComponents([...newItemComponents, <NewItem key={uuid()} id={uuid()} deleteItem={deleteItem} createItemLine={createItems} />])
+        setNewItemComponents([...newItemComponents, <NewItem key={uuid()} id={uuid()} item={emptyItem} deleteItem={deleteItem} createItemLine={createItems} />])
     };
 
     function deleteItem(itemId) {
-        let updatedItemComponents = newItemComponents.filter(item => item.props.id !== itemId);
+        delete items[itemId];// delete the item from the actual held data
+        //then map over the new items data to create accurate item line fields
+        let updatedItemComponents = Object.values(items).map(item => (
+        <NewItem key={item.id} id={item.id} item={item} deleteItem={deleteItem} createItemLine={createItems} />
+        ));
         setNewItemComponents(updatedItemComponents);
-        delete items[itemId];
         calculateCost(); //recalculate cost when item line deleted
     }; // this is NOT for project deletion, a project HAS MANY items and items BELONG TO a project
 
+    // this function needs to be able to update items
+    // recongizing IDs so there are no dupes.
     function createItems(item) {
         items[item.id] = item;
     }; // making items object, see line 15
@@ -72,7 +83,7 @@ const Landing = () => {
             // setProjectName("")
             // setInfoRadio("")
             // setNewItemComponents([<NewItem key={1} id={1} deleteItem={deleteItem} createItemLine={createItems} />])
-            // items = {}
+            // tempItems = {}
             // setTotalProjectCost(0)
             //^ not sure why these are not resetting the project form
         }, 900); // this setTimeout toggles the save button display from a check back to save
@@ -92,6 +103,7 @@ const Landing = () => {
     let newItemComponentsList = newItemComponents.map(component => (
         component
     )); // allows first item line component to be deleted
+
 
     return (
         <>
@@ -137,7 +149,7 @@ const Landing = () => {
                     </div>
 
                     <p className="info-radio"> {infoRadio} </p>
-                    <p className="project-name-display"> {projectName} total:  $ {totalProjectCost ? totalProjectCost : 0} </p>
+                    <p className="project-name-display"> {projectName} total:  $ {totalProjectCost ? totalProjectCost : "enter values"} </p>
 
                 </div>
 
