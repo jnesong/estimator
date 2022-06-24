@@ -1,69 +1,145 @@
 {
   "projects": [
     {
-      "name": "Carpet",
-      "status": "🟡",
-      "cost": 750,
+      "name": "Communications Antena",
+      "status": "🔴",
+      "cost": 600.75,
       "items": {
-        "8ab5cd7-2573-5bc4-cc8-cc8ca82bb64f": {
-          "id": "8ab5cd7-2573-5bc4-cc8-cc8ca82bb64f",
-          "name": "Roll",
-          "cost": "200",
-          "category": "Materials",
-          "quantity": "2"
-        },
-        "2eaa6f6-847d-6dfc-88c1-eb4153a4ec31": {
-          "id": "2eaa6f6-847d-6dfc-88c1-eb4153a4ec31",
-          "name": "Glue",
-          "cost": "50",
-          "category": "Materials",
-          "quantity": "1"
-        },
-        "17fbf35-61e3-bc8-462b-2e4070f0771": {
-          "id": "17fbf35-61e3-bc8-462b-2e4070f0771",
-          "name": "Installation",
-          "cost": "300",
+        "2ed0bc7-10f-2e1-21bf-f8bb72d741c": {
+          "id": "2ed0bc7-10f-2e1-21bf-f8bb72d741c",
+          "name": "Antena",
+          "cost": "600.75",
           "category": "All Inclusive",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-24T15:22:53.994Z",
-      "id": 1
+      "recorded": "2022-06-24T16:16:34.249Z",
+      "id": 4
     },
     {
-      "name": "Lights",
-      "status": "🟢",
-      "cost": 390,
+      "name": "Rover 2",
+      "status": "🟡",
+      "cost": 1400,
       "items": {
-        "6d4683e-77e-6cf2-0efa-dd10160da8": {
-          "id": "6d4683e-77e-6cf2-0efa-dd10160da8",
-          "name": "LED Bulbs",
-          "cost": "2",
-          "category": "Materials",
-          "quantity": "30"
-        },
-        "bdc282-4cf3-368f-37bd-8acf853f350": {
-          "id": "bdc282-4cf3-368f-37bd-8acf853f350",
-          "name": "Dimmers",
-          "cost": "15",
-          "category": "Materials",
-          "quantity": "2"
-        },
-        "7b752a5-c3e7-66d2-8f24-b104c0dd64f": {
-          "id": "7b752a5-c3e7-66d2-8f24-b104c0dd64f",
-          "name": "Electrician",
+        "4e13bc-7178-d2db-36dc-50d7be5cf4c": {
+          "id": "4e13bc-7178-d2db-36dc-50d7be5cf4c",
+          "name": "Battery",
           "cost": "300",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        "be17da6-7cac-7a8-ef7-167c2cd20": {
+          "id": "be17da6-7cac-7a8-ef7-167c2cd20",
+          "name": "Solar panels",
+          "cost": "200",
+          "category": "Materials",
+          "quantity": "4"
+        },
+        "0fd76e2-fbe-6646-e2b7-f3e5d16a1f": {
+          "id": "0fd76e2-fbe-6646-e2b7-f3e5d16a1f",
+          "name": "Plutonium",
+          "cost": "300",
+          "category": "Materials",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-24T16:23:58.215Z",
+      "id": 7
+    },
+    {
+      "name": "HAB Potato Farm",
+      "status": "🟡",
+      "cost": 2620,
+      "items": {
+        "5f7156-b36e-22db-e525-640e8ba34bb5": {
+          "id": "5f7156-b36e-22db-e525-640e8ba34bb5",
+          "name": "Hydrogen",
+          "cost": "100",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        "2a3f3e8-57cc-d1bb-060-00a4a8736c": {
+          "id": "2a3f3e8-57cc-d1bb-060-00a4a8736c",
+          "name": "Soil",
+          "cost": "20",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        "64d5da3-1200-081-211-e1157be3ac5": {
+          "id": "64d5da3-1200-081-211-e1157be3ac5",
+          "name": "Potatoes",
+          "cost": "50",
+          "category": "Materials",
+          "quantity": "50"
+        },
+        "055f6-ae8-6348-8dab-eb7c3013ac00": {
+          "id": "055f6-ae8-6348-8dab-eb7c3013ac00",
+          "name": "Fire",
+          "cost": "0",
           "category": "Labor",
           "quantity": "1"
         }
       },
-      "recorded": "2022-06-24T15:30:40.675Z",
-      "id": 2
+      "recorded": "2022-06-24T16:21:40.997Z",
+      "id": 6
+    },
+    {
+      "name": "Pathfinder",
+      "status": "🔴",
+      "cost": 3532,
+      "items": {
+        "b0a746a-a723-7004-7d81-aabb1f586dc0": {
+          "id": "b0a746a-a723-7004-7d81-aabb1f586dc0",
+          "name": "Battery",
+          "cost": "500",
+          "category": "Materials",
+          "quantity": "1"
+        },
+        "f7f1cfc-f07e-808-2012-3f6e6f5f854b": {
+          "id": "f7f1cfc-f07e-808-2012-3f6e6f5f854b",
+          "name": "Astrophysicist",
+          "cost": "3000",
+          "category": "Labor",
+          "quantity": "1"
+        },
+        "3fdfd0-cdd7-18fc-3ba3-48ae3623a150": {
+          "id": "3fdfd0-cdd7-18fc-3ba3-48ae3623a150",
+          "name": "White boards",
+          "cost": "2",
+          "category": "Materials",
+          "quantity": "16"
+        }
+      },
+      "recorded": "2022-06-24T16:54:27.045Z",
+      "id": 8
+    },
+    {
+      "name": "Biomonitors",
+      "status": "🟢",
+      "cost": 2100,
+      "items": {
+        "7c2563-3f25-2085-4dc-e4ec770aa7b": {
+          "id": "7c2563-3f25-2085-4dc-e4ec770aa7b",
+          "name": "Probes",
+          "cost": "90",
+          "category": "Materials",
+          "quantity": "10"
+        },
+        "36e853-243-224d-2b5c-e8cdb3e501": {
+          "id": "36e853-243-224d-2b5c-e8cdb3e501",
+          "name": "System",
+          "cost": "1200",
+          "category": "All Inclusive",
+          "quantity": "1"
+        }
+      },
+      "recorded": "2022-06-24T16:17:52.248Z",
+      "id": 5
     },
     {
       "name": "Fire Sprinklers",
-      "status": "🔴",
-      "cost": 600,
+      "status": "🟢",
+      "cost": 1100,
       "items": {
         "a312-b125-ad3-7f08-8106dece0c": {
           "id": "a312-b125-ad3-7f08-8106dece0c",
@@ -75,7 +151,7 @@
         "a87f0f6-517d-ba0-a8d2-cfd48075": {
           "id": "a87f0f6-517d-ba0-a8d2-cfd48075",
           "name": "Maintenance",
-          "cost": "400",
+          "cost": "900",
           "category": "All Inclusive",
           "quantity": "1"
         }

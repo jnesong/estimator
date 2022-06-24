@@ -2,6 +2,7 @@
 import Landing from './Landing';
 //graphics
 import logoE from './graphics/logoE.png';
+import filler from './graphics/filler.gif';
 //css
 import { createTheme, ThemeProvider } from '@mui/material';
 import './estimator.css';
@@ -27,7 +28,7 @@ const App = () => {
   return (
     <ThemeProvider theme={estimator}>
       <div>
-        <img className="logo" src={logoE} alt="logo in green" />
+        <img className="logo" src={filler} alt="© GUILLAUME KURKDJIAN 2020" />
         <Landing />
       </div>
     </ThemeProvider>
